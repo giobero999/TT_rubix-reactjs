@@ -92,7 +92,8 @@ var ApplicationSidebar = React.createClass({
                     <SidebarNav>
                       <SidebarNavItem href='/app/file-utilities/dropzone' glyph='icon-stroke-gap-icons-Download' name='Dropzone' />
                       <SidebarNavItem href='/app/file-utilities/crop' glyph='icon-ikons-crop' name='Image Cropping' />
-                      <SidebarNavItem href='/app/file-utilities/standart' glyph='icon-ikons-crop' name='Standart' />
+                      <SidebarNavItem href='/app/file-utilities/cropping' glyph='icon-ikons-crop' name='Cropping' />
+                      <SidebarNavItem href='/app/file-utilities/upload' glyph='icon-stroke-gap-icons-Download' name='Upload' />
                     </SidebarNav>
                   </SidebarNavItem>
                   <SidebarNavItem href='/app/fonts' glyph='icon-fontello-fontsize' name='Fonts' />

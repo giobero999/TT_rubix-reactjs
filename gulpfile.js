@@ -391,7 +391,7 @@ gulp.task('express', function() {
       NODE_ENV: process.env.NODE_ENV || 'development',
       APP: defaultAppName,
       RTL: createRTL,
-      PORT: 3000,
+      PORT: 3010,
       WPORT: wport,
       WHOST: whost
     },
@@ -457,8 +457,8 @@ var createMonitor = function() {
       m.on('changed', callback);
       m.on('removed', callback);
     });
-  }
-}
+  };
+};
 
 if(!production) {
   var m = createMonitor();
@@ -525,7 +525,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.l20n, ['react-l20n:watch']);
   gulp.watch(paths.scss, ['rebuild:css']);
   gulp.watch(paths.bootstrap, ['react-bootstrap:watch']);
-  gulp.watch(paths.ttf, ['base64-css:watch'])
+  gulp.watch(paths.ttf, ['base64-css:watch']);
   gulp.watch(paths.jsx.concat(paths.scss), ['notify']);
 });
 

@@ -1,4 +1,4 @@
-/*! rubix - v2.3.0 - 2015-09-14 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
+/*! rubix - v2.3.0 - 2015-10-26 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
 (function() {
 /*DO NOT MODIFY*/
 
@@ -291,7 +291,7 @@ var l20n=_RL20n_.l20n,
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "preloader.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "preloader.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "preloader.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "preloader.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Ploader = __HUA.createClass({displayName: "Ploader",
 	  getInitialState: function() {
@@ -619,50 +619,53 @@ var l20n=_RL20n_.l20n,
 	var lists = __webpack_require__(71);
 	var dropzone = __webpack_require__(72);
 	var crop = __webpack_require__(73);
+	var confirm = __webpack_require__(74);
+	var standart = __webpack_require__(75);
 
 	/* EXTRA PAGES */
-	var login = __webpack_require__(74);
-	var signup = __webpack_require__(75);
-	var lock = __webpack_require__(76);
-	var pricing = __webpack_require__(77);
-	var invoice = __webpack_require__(78);
+	var login = __webpack_require__(76);
+	var signup = __webpack_require__(77);
+	var lock = __webpack_require__(78);
+	var pricing = __webpack_require__(79);
+	var invoice = __webpack_require__(80);
 
 	/* DOCUMENTATION PAGES */
-	var installation = __webpack_require__(79);
-	var gulpfilebasics = __webpack_require__(81);
-	var gulpfilesass = __webpack_require__(82);
-	var gulpfilejsx = __webpack_require__(83);
-	var gulpfilewebfont = __webpack_require__(84);
-	var gulpfilescaffolding = __webpack_require__(85);
-	var gulpfileexternalplugins = __webpack_require__(86);
-	var reactdoc = __webpack_require__(87);
-	var rubixdoc = __webpack_require__(88);
-	var rubixsassdoc = __webpack_require__(91);
-	var bootstrapgrid = __webpack_require__(93);
-	var typography = __webpack_require__(108);
-	var code = __webpack_require__(109);
-	var tables = __webpack_require__(110);
-	var forms = __webpack_require__(111);
-	var inputsdocs = __webpack_require__(112);
-	var textareadocs = __webpack_require__(117);
-	var checkradio = __webpack_require__(120);
-	var selectdocs = __webpack_require__(125);
-	var buttondocs = __webpack_require__(126);
-	var dropdowndocs = __webpack_require__(127);
-	var buttongroupdocs = __webpack_require__(130);
-	var css = __webpack_require__(131);
-	var inputgroupdocs = __webpack_require__(132);
-	var navdocs = __webpack_require__(133);
-	var navbardocs = __webpack_require__(136);
-	var breadcrumbdocs = __webpack_require__(137);
-	var paginationdocs = __webpack_require__(138);
-	var labelsbadgesdocs = __webpack_require__(139);
-	var jumbodocs = __webpack_require__(140);
-	var alertdocs = __webpack_require__(141);
-	var progressdocs = __webpack_require__(142);
-	var mediadocs = __webpack_require__(143);
-	var listgroupdocs = __webpack_require__(144);
-	var l20ndocs = __webpack_require__(145);
+	var installation = __webpack_require__(81);
+	var gulpfilebasics = __webpack_require__(83);
+	var gulpfilesass = __webpack_require__(84);
+	var gulpfilejsx = __webpack_require__(85);
+	var gulpfilewebfont = __webpack_require__(86);
+	var gulpfilescaffolding = __webpack_require__(87);
+	var gulpfileexternalplugins = __webpack_require__(88);
+	var reactdoc = __webpack_require__(89);
+	var rubixdoc = __webpack_require__(90);
+	var rubixsassdoc = __webpack_require__(93);
+	var bootstrapgrid = __webpack_require__(95);
+	var typography = __webpack_require__(110);
+	var code = __webpack_require__(111);
+	var tables = __webpack_require__(112);
+	var forms = __webpack_require__(113);
+	var inputsdocs = __webpack_require__(114);
+	var textareadocs = __webpack_require__(119);
+	var checkradio = __webpack_require__(122);
+	var selectdocs = __webpack_require__(127);
+	var buttondocs = __webpack_require__(128);
+	var dropdowndocs = __webpack_require__(129);
+	var buttongroupdocs = __webpack_require__(132);
+	var css = __webpack_require__(133);
+	var inputgroupdocs = __webpack_require__(134);
+	var navdocs = __webpack_require__(135);
+	var navbardocs = __webpack_require__(138);
+	var breadcrumbdocs = __webpack_require__(139);
+	var paginationdocs = __webpack_require__(140);
+	var labelsbadgesdocs = __webpack_require__(141);
+	var jumbodocs = __webpack_require__(142);
+	var alertdocs = __webpack_require__(143);
+	var progressdocs = __webpack_require__(144);
+	var mediadocs = __webpack_require__(145);
+	var listgroupdocs = __webpack_require__(146);
+	var l20ndocs = __webpack_require__(147);
+
 
 	/* ROUTES */
 	module.exports = (
@@ -724,12 +727,14 @@ var l20n=_RL20n_.l20n,
 
 	    React.createElement(Route, {path: "/app/file-utilities/dropzone", handler: dropzone}), 
 	    React.createElement(Route, {path: "/app/file-utilities/crop", handler: crop}), 
+	    React.createElement(Route, {path: "/app/file-utilities/standart", handler: standart}), 
 
 	    React.createElement(Route, {path: "/app/login", handler: login}), 
 	    React.createElement(Route, {path: "/app/signup", handler: signup}), 
 	    React.createElement(Route, {path: "/app/lock", handler: lock}), 
 	    React.createElement(Route, {path: "/app/pricing", handler: pricing}), 
 	    React.createElement(Route, {path: "/app/invoice", handler: invoice}), 
+	    React.createElement(Route, {path: "/app/confirm", handler: confirm}), 
 
 	    React.createElement(Route, {path: "/app/docs/css", handler: css}), 
 	    React.createElement(Route, {path: "/app/docs/installation", handler: installation}), 
@@ -776,7 +781,7 @@ var l20n=_RL20n_.l20n,
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "notfound.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "notfound.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "notfound.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "notfound.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -838,7 +843,7 @@ var l20n=_RL20n_.l20n,
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "header.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "header.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "header.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "header.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var docCookies = __webpack_require__(9);
 
@@ -1500,7 +1505,7 @@ var l20n=_RL20n_.l20n,
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "sidebar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sidebar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "sidebar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sidebar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var ChatComponent = __webpack_require__(11)
 
@@ -1592,10 +1597,11 @@ var l20n=_RL20n_.l20n,
 	                  React.createElement(SidebarNavItem, {href: "/app/grid", glyph: "icon-ikons-grid-1 float-right-rtl", name: "Grid"}), 
 	                  React.createElement(SidebarNavItem, {href: "/app/calendar", glyph: "icon-fontello-calendar-alt", name: "Calendar"}), 
 	                  React.createElement(SidebarNavItem, {href: "/app/lists", glyph: "icon-fontello-flow-cascade", name: "Lists"}), 
-	                  React.createElement(SidebarNavItem, {glyph: "icon-fontello-folder-open-empty", name: React.createElement("span", null, "File Utilities ", React.createElement(BLabel, {className: "bg-orange fg-darkbrown"}, "2"))}, 
+	                  React.createElement(SidebarNavItem, {glyph: "icon-fontello-folder-open-empty", name: React.createElement("span", null, "File Utilities ", React.createElement(BLabel, {className: "bg-orange fg-darkbrown"}, "3"))}, 
 	                    React.createElement(SidebarNav, null, 
 	                      React.createElement(SidebarNavItem, {href: "/app/file-utilities/dropzone", glyph: "icon-stroke-gap-icons-Download", name: "Dropzone"}), 
-	                      React.createElement(SidebarNavItem, {href: "/app/file-utilities/crop", glyph: "icon-ikons-crop", name: "Image Cropping"})
+	                      React.createElement(SidebarNavItem, {href: "/app/file-utilities/crop", glyph: "icon-ikons-crop", name: "Image Cropping"}), 
+	                      React.createElement(SidebarNavItem, {href: "/app/file-utilities/standart", glyph: "icon-ikons-crop", name: "Standart"})
 	                    )
 	                  ), 
 	                  React.createElement(SidebarNavItem, {href: "/app/fonts", glyph: "icon-fontello-fontsize", name: "Fonts"})
@@ -2175,7 +2181,7 @@ var l20n=_RL20n_.l20n,
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "chat.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "chat.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "chat.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "chat.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	/** @jsx React.DOM */
 
@@ -2265,7 +2271,7 @@ var l20n=_RL20n_.l20n,
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "footer.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "footer.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "footer.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "footer.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Footer = __HUA.createClass({displayName: "Footer",
 	  getInitialState: function() {
@@ -2300,7 +2306,7 @@ var l20n=_RL20n_.l20n,
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tablesaw.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tablesaw.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tablesaw.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tablesaw.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -2315,7 +2321,7 @@ var l20n=_RL20n_.l20n,
 	  render: function() {
 	    return (
 	      React.createElement(Container, {id: "body"}, 
-	     
+
 	        React.createElement(Grid, null, 
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {xs: 12}, 
@@ -2326,8 +2332,6 @@ var l20n=_RL20n_.l20n,
 	                      React.createElement(Row, null, 
 	                        React.createElement(Col, {xs: 12}, 
 	                          React.createElement("h3", null, "Tablesaw: Kitchen Sink", React.createElement(Button, {inverse: true, outlined: true, style: {marginBottom: 5}, bsStyle: "default"}, "add"), ' ')
-	                           
-
 	                        )
 	                      )
 	                    )
@@ -2482,7 +2486,7 @@ var l20n=_RL20n_.l20n,
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dashboard.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dashboard.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dashboard.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dashboard.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -3389,7 +3393,7 @@ var l20n=_RL20n_.l20n,
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "inbox.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "inbox.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "inbox.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "inbox.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -3623,7 +3627,7 @@ var l20n=_RL20n_.l20n,
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "compose.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "compose.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "compose.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "compose.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	/** @jsx React.DOM */
 
@@ -3765,7 +3769,7 @@ var l20n=_RL20n_.l20n,
 /* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "mail.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "mail.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "mail.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "mail.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -3957,7 +3961,7 @@ var l20n=_RL20n_.l20n,
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gallery.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gallery.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gallery.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gallery.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -4094,7 +4098,7 @@ var l20n=_RL20n_.l20n,
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "social.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "social.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "social.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "social.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -4417,7 +4421,7 @@ var l20n=_RL20n_.l20n,
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "posts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "posts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "posts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "posts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -4731,7 +4735,7 @@ var l20n=_RL20n_.l20n,
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "single_post.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "single_post.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "single_post.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "single_post.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -4883,7 +4887,7 @@ var l20n=_RL20n_.l20n,
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "panels.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "panels.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "panels.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "panels.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -5594,7 +5598,7 @@ var l20n=_RL20n_.l20n,
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "line_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "line_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "line_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "line_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -5939,7 +5943,7 @@ var l20n=_RL20n_.l20n,
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "area_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "area_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "area_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "area_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -6349,7 +6353,7 @@ var l20n=_RL20n_.l20n,
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "barcol_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "barcol_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "barcol_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "barcol_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -6856,7 +6860,7 @@ var l20n=_RL20n_.l20n,
 /* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "mixed_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "mixed_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "mixed_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "mixed_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -7184,7 +7188,7 @@ var l20n=_RL20n_.l20n,
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "piedonut_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "piedonut_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "piedonut_series.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "piedonut_series.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -7352,7 +7356,7 @@ var l20n=_RL20n_.l20n,
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "chartjs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "chartjs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "chartjs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "chartjs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -7603,7 +7607,7 @@ var l20n=_RL20n_.l20n,
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "c3.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "c3.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "c3.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "c3.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -7954,7 +7958,7 @@ var l20n=_RL20n_.l20n,
 /* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "morris.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "morris.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "morris.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "morris.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -8094,7 +8098,7 @@ var l20n=_RL20n_.l20n,
 /* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "timeline.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "timeline.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "timeline.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "timeline.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -8349,13 +8353,13 @@ var l20n=_RL20n_.l20n,
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "interactive-timeline.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "interactive-timeline.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "interactive-timeline.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "interactive-timeline.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var dataObject = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./dataObject.json\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var dataObject = __webpack_require__(33);
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -8424,11 +8428,250 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 33 */,
+/* 33 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"timeline": {
+			"headline": "Revolutionary User Interfaces",
+			"startDate": "1600",
+			"text": "<p>The human computer interface helps to define computing at any one time. As computers have become more mainstream the interfaces have become more intimate. This is the journey of computer technology and how it has come to touch all of our lives.</p>",
+			"type": "default",
+			"asset": {
+				"media": "/imgs/timeline/user-interface/input.png",
+				"credit": "credit: Arjuna Soriano",
+				"caption": "From punch cards to multi touch."
+			},
+			"date": [
+				{
+					"startDate": "1600",
+					"headline": "The Antikythera",
+					"text": "In the year 1900, sponge divers discovered the Antikythera Mechanism, a remarkable mechanical computer used to track the cycles of the solar system dated to as early as 89 B.C. There was no input however. All computations were carried out by the intricate system of clockwork like plates and wheels..",
+					"asset": {
+						"media": "http://youtu.be/DiQSHiAYt98",
+						"credit": "credit: <a href=\"http://www.nature.com/nature/videoarchive/index.html\">Nature Video Channel</a>",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1642",
+					"headline": "Pascal's Calculator",
+					"text": "<p>Blaise Pascal invented this calculator to help his father reorganize the French tax system. It could add and subtract in one step and multiply and divide by repetition.</p><p>Input was achieved by spinning the little wheels: inspiration for the iPod click wheel?</p>",
+					"asset": {
+						"media": "/imgs/timeline/user-interface/pascaline.jpg",
+						"credit": "credit: Â© 2005 <a href=\"http://commons.wikimedia.org/wiki/User:David.Monniaux\">David Monniaux</a>  ",
+						"caption": "This piece is on display at MusÃ©e des Arts et MÃ©tiers, Paris."
+					}
+				},
+				{
+					"startDate": "1820",
+					"headline": "Thomas Arithometer",
+					"text": "This is the first mass-produced calculator that could add, subtract, multiply and divide. Numbers were  input with all of the little knobs and dials and then the handle was twisted to perform the calculation.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/5/59/Arithmometre.jpg",
+						"credit": "credit: By <a href=\"http://commons.wikimedia.org/wiki/File%3AArithmometre.jpg\">Ezrdr</a>, via Wikimedia Commons",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1801",
+					"headline": "Jacquard Loom",
+					"text": "A loom is not a computer. It is the first machine however to use punch-cards as a means of input into a machine. By changing the arrangement of the holes in the card, the loom would weave different patterns. ",
+					"asset": {
+						"media": "http://youtu.be/2ypE4ZJF7qY",
+						"credit": "credit: <a href='http://www.youtube.com/user/FiberMusings'>FiberMusings</a>",
+						"caption": "The Jacquard loom is still in use today in modern factories. The punch-cards can be clearly seen being pulled to the top of the loom."
+					}
+				},
+				{
+					"startDate": "1833",
+					"headline": "The Analytical Engine",
+					"text": "Charles Babbage designed but was never able to produce a working model but it is significant in that it relied upon punched cards for data and programs and would employ a language similar to modern assembly language complete with loops and conditional branching (for the nerds out there).",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/a/a4/Analytical_Engine_%282290032530%29.jpg",
+						"credit": "credit: By <a href='http://commons.wikimedia.org/wiki/File%3AAnalytical_Engine_(2290032530).jpg'>Marcin Wichary</a> via Wikimedia Commons",
+						"caption": "This modern model of the Analytical Engine is housed at the Science Museum in London."
+					}
+				},
+				{
+					"startDate": "1868",
+					"headline": "The Typewriter",
+					"text": "Again, not a computer but an important step forward in user interfaces. Invented by Christopher Sholes, An American engineer, the typewriter was layed out in the familiar QWERTY style.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/9/9a/Sholes_typewriter.jpg",
+						"credit": "credit:By George Iles, via Wikimedia Commons",
+						"caption": "A prototype of the typewriter with the QWERTY layout clearly visible."
+					}
+				},
+				{
+					"startDate": "1890",
+					"headline": "Herman Hollerith",
+					"text": "In 1890, Hollerith introduced his tabulating machine to be used in the census. He also later invented a key punch, a machine that punched the holes into cards operated by a keyboard. His company was one of the companies that later merged to form IBM.",
+					"asset": {
+						"media": "http://youtu.be/UZVEp78b0XI?t=1m54s",
+						"credit": "credit:<a href=\"http://www.youtube.com/user/clipcafe\">clipcafe</a>",
+						"caption": "A history of early IBM punch card machines and featuring a Pascal calculator."
+					}
+				},
+				{
+					"startDate": "1940",
+					"headline": "Remote Access Computing",
+					"text": "George Stibitz demonstrated the Complex Number Calculator (CNC) at Dartmouth College. The astonishing part was that the CNC was in New York City.",
+					"asset": {
+						"media": "",
+						"credit": "",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1946",
+					"headline": "ENIAC",
+					"text": "Weighing 30 tons, and containing over 18,000 vacuum tubes, the ENIAC was the first truly modern computer. It could be programmed for many complex programs and used an early keyboard as its input.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/1/16/Classic_shot_of_the_ENIAC.jpg",
+						"credit": "credit: U.S. Army photo",
+						"caption": "\"Cpl. Irwin Goldstein (foreground) sets the switches on one of the ENIAC's function tables at the Moore School of Electrical Engineering.\" (Caption via Wikimedia)"
+					}
+				},
+				{
+					"startDate": "1951",
+					"headline": "UNICVAC I",
+					"text": "The Universal Automatic Computer I weighed in at 13 tons and sold for over one million dollars. It was the first mass produced computer, selling 46 units. The massive cockpit of a console featured a keyboard",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/5/55/Museum_of_Science%2C_Boston%2C_MA_-_IMG_3163.JPG",
+						"credit": "credit: By Daderot (Own work) [Public domain], via Wikimedia Commons",
+						"caption": "Input for the UNIVAC I was via keyboard in this massive input console."
+					}
+				},
+				{
+					"startDate": "1964",
+					"headline": "Multics",
+					"text": "A collaboration between MIT, Bell Laboratories and General Electric created the Multics system. It was a multi-user, time sharing system that spurred along the use of a new interface, a monitor.",
+					"asset": {
+						"media": "",
+						"credit": "",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1968",
+					"headline": "Minicomputer",
+					"text": "Data General introduces the Nova Minicomputer which served as an inspiration for Steve Wozniak's design of the Apple I.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/7/7f/Data_General_Nova_SN_1.agr.JPG",
+						"credit": "credit: By Arnold Reinhold, via Wikimedia Commons",
+						"caption": "The first Data General Nova minicomputer displayed at the Computer History Museum in Silicon Valley."
+					}
+				},
+				{
+					"startDate": "1968,12,9",
+					"headline": "The Mouse",
+					"text": "Douglas C. Engelbart and his team demonstrated an online system featuring a mouse, hypertext and the first graphical user interface, a \"windows\" system. The mouse was encased in a wood body and had only one button.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/f/f0/SRI_Douglas_Engelbart_2008.jpg",
+						"credit": "credit: By SRI International, via Wikimedia Commons",
+						"caption": "Douglas Engelbart with the first computer mouse prototype."
+					}
+				},
+				{
+					"startDate": "1974",
+					"headline": "Xerox Alto",
+					"text": "The Xerox Alto was the first workstation with a built in mouse with three buttons.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/5/5e/Xerox_Alto_mit_Rechner.JPG",
+						"credit": "credit: By Joho345, via Wikimedia Commons",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1976",
+					"headline": "Apple I",
+					"text": "Steve Wozniak designed the Apple I, a single-board computer that he and Steve Jobs sold for $500 each. Thus began Apple Inc. and the Personal Computer.",
+					"asset": {
+						"media": "http://www.flickr.com/photos/euthman/281712899/",
+						"credit": "credit: <a href='http://www.flickr.com/photos/euthman/281712899/'>Ed Uthman</a> via Flickr",
+						"caption": "An Apple I computer on display at the Smithsonian."
+					}
+				},
+				{
+					"startDate": "1976",
+					"headline": "The Osborne I",
+					"text": "Weighing 24 pounds and costing under $2,000, the Osborne I was the first portable computer, although you probably couldn't use it in your lap for too long.",
+					"asset": {
+						"media": "http://www.flickr.com/photos/mightyohm/5333827381/",
+						"credit": "credit: <a href='http://www.flickr.com/photos/mightyohm/5333827381/'>Jeff Keyzer</a> via Flickr",
+						"caption": "An Apple I computer on display at the Smithsonian."
+					}
+				},
+				{
+					"startDate": "1982",
+					"headline": "Windows 1.0",
+					"text": "Microsoft unveils what will become the dominant operating system for the next several decades.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/a/a9/Microsoft_Windows_1.0_page1.jpg",
+						"credit": "credit: By Microsoft, via Wikimedia Commons",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "1984",
+					"headline": "The Macintosh",
+					"text": "Apple introduced the Macintosh which was the first commercially successful computer with a mouse and a Graphical User Interface. Apple's Think Different Superbowl commercial also plays this year.",
+					"asset": {
+						"media": "https://farm3.staticflickr.com/2077/2179402603_bd8f1fcbe6_b.jpg",
+						"credit": "credit: <a href='http://www.flickr.com/photos/mwichary/2179402603/'>Marcin Wichary</a> via Flickr",
+						"caption": "The Original Macintosh with extra external floppy drive."
+					}
+				},
+				{
+					"startDate": "1997",
+					"headline": "The Stylus",
+					"text": "Personal digital assistants introduce the touch screen with the use of a stylus. Handwriting recognition was hit or miss but some companies developed simplified alphabet input strokes to improve recognition.",
+					"asset": {
+						"media": "/imgs/timeline/user-interface/palm.png",
+						"credit": "credit: <a href='http://en.wikipedia.org/wiki/File:Palmpilot5000_eu.png'>Channel R</a> via Wikimedia Commons",
+						"caption": "A Palm Pilot."
+					}
+				},
+				{
+					"startDate": "2001,10,23",
+					"headline": "Continuous Scrolling",
+					"text": "The first iPod introduces the wheel as a user interface. It allowed users to continuously scroll through thousands of songs seemlessly. This interface helped Apple dominate the music player business and eventually the music content business through its iTunes ecosystem.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/3/35/Ipod_1G.png",
+						"credit": "credit: By Rjcflyer@aol.com at en.wikipedia via Wikimedia Commons",
+						"caption": "The Original iPod with click wheel user interface."
+					}
+				},
+				{
+					"startDate": "2007",
+					"headline": "Multi Touch",
+					"text": "Steve Jobs unveils the iPhone and the multi touch interface.",
+					"asset": {
+						"media": "http://upload.wikimedia.org/wikipedia/commons/4/49/IPhone_at_Macworld_%28angled_view%29.jpg",
+						"credit": "credit: By blakeburris, via <a href='http://commons.wikimedia.org/wiki/File:IPhone_at_Macworld_(angled_view).jpg'>Wikimedia Commons</a>",
+						"caption": ""
+					}
+				},
+				{
+					"startDate": "2012",
+					"headline": "Speech Recognition",
+					"text": "<p>Speech recognition has been tested and improved upon for years in military cockpits in the U.S. France and U.K. In fact, Siri, the speech recognition engine used in the iPhone 4S was developed first by DARPA, the Defense Advanced Research Projects Agency.</p>",
+					"asset": {
+						"media": "/imgs/timeline/user-interface/4s.jpg",
+						"credit": "credit: Apple Inc.",
+						"caption": ""
+					}
+				}
+			]
+		}
+	};
+
+/***/ },
 /* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "codemirror.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "codemirror.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "codemirror.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "codemirror.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -8516,13 +8759,13 @@ var l20n=_RL20n_.l20n,
 /* 36 */
 /***/ function(module, exports) {
 
-	module.exports = "function findSequence(goal) {\n  function find(start, history) {\n    if (start == goal)\n      return history;\n    else if (start > goal)\n      return null;\n    else\n      return find(start + 5, \"(\" + history + \" + 5)\") ||\n             find(start * 3, \"(\" + history + \" * 3)\");\n  }\n  return find(1, \"1\");\n}\n"
+	module.exports = "module.exports = \"function findSequence(goal) {\\n  function find(start, history) {\\n    if (start == goal)\\n      return history;\\n    else if (start > goal)\\n      return null;\\n    else\\n      return find(start + 5, \\\"(\\\" + history + \\\" + 5)\\\") ||\\n             find(start * 3, \\\"(\\\" + history + \\\" * 3)\\\");\\n  }\\n  return find(1, \\\"1\\\");\\n}\\n\""
 
 /***/ },
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "maps.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "maps.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "maps.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "maps.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -8900,7 +9143,7 @@ var l20n=_RL20n_.l20n,
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "editor.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "editor.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "editor.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "editor.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -8970,7 +9213,7 @@ var l20n=_RL20n_.l20n,
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "fonts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "fonts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "fonts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "fonts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -12831,7 +13074,7 @@ var l20n=_RL20n_.l20n,
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "buttons.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "buttons.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "buttons.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "buttons.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -12863,6 +13106,7 @@ var l20n=_RL20n_.l20n,
 	                        React.createElement(Col, {xs: 12}, 
 	                          React.createElement("h4", null, "Large"), 
 	                          React.createElement("p", null, 
+	                              
 	                            React.createElement(Button, {lg: true, outlined: true, style: {marginBottom: 5}, bsStyle: "default"}, "Default"), ' ', 
 	                            React.createElement(Button, {lg: true, outlined: true, style: {marginBottom: 5}, bsStyle: "primary"}, "Primary"), ' ', 
 	                            React.createElement(Button, {lg: true, outlined: true, style: {marginBottom: 5}, bsStyle: "success"}, "Success"), ' ', 
@@ -13705,7 +13949,7 @@ var l20n=_RL20n_.l20n,
 /* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropdowns.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropdowns.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropdowns.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropdowns.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -14363,7 +14607,7 @@ var l20n=_RL20n_.l20n,
 /* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tabs_and_navs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tabs_and_navs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tabs_and_navs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tabs_and_navs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -15023,7 +15267,7 @@ var l20n=_RL20n_.l20n,
 /* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "sliders.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sliders.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "sliders.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sliders.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -15710,7 +15954,7 @@ var l20n=_RL20n_.l20n,
 /* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "knobs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "knobs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "knobs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "knobs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -15915,7 +16159,7 @@ var l20n=_RL20n_.l20n,
 /* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "modals.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "modals.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "modals.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "modals.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -16267,7 +16511,7 @@ var l20n=_RL20n_.l20n,
 /* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "messenger.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "messenger.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "messenger.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "messenger.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -16598,7 +16842,7 @@ var l20n=_RL20n_.l20n,
 /* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "form_controls.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "form_controls.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "form_controls.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "form_controls.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -17343,7 +17587,7 @@ var l20n=_RL20n_.l20n,
 /* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "xeditable.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "xeditable.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "xeditable.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "xeditable.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -17659,7 +17903,7 @@ var l20n=_RL20n_.l20n,
 /* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "wizard.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "wizard.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "wizard.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "wizard.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -17997,7 +18241,7 @@ var l20n=_RL20n_.l20n,
 /* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "bootstrap-tables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "bootstrap-tables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "bootstrap-tables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "bootstrap-tables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -18448,7 +18692,7 @@ var l20n=_RL20n_.l20n,
 /* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "datatables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "datatables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "datatables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "datatables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -18461,21 +18705,53 @@ var l20n=_RL20n_.l20n,
 	      .dataTable({
 	        responsive: true,
 	        columnDefs: [
-	          { targets: [-1, -3], className: 'dt-body-right' }
+	          { targets: [-1, -5], className: 'dt-body-right' }
 	        ]
 	    });
+
 	  },
+	  gold: function() {
+	    e.preventDefault();
+	    e.stopPropagation();
+	    this.transitionTo('/app/invoice');
+	  },
+	  getModal: function() {
+	    return (
+	      React.createElement(Modal, null, 
+	        React.createElement(ModalHeader, null, 
+	          React.createElement(Button, {onClick: ModalManager.remove, onTouchEnd: ModalManager.remove, close: true}), 
+	          React.createElement("h4", {className: "modal-title"}, "Packages")
+	        ), 
+	        React.createElement(ModalBody, null, 
+	          React.createElement("p", null, "What package do you prefer")
+	        ), 
+	        React.createElement(ModalFooter, {onClick: ModalManager.remove, onTouchEnd: ModalManager.remove}, 
+	          React.createElement(Link, {to: "/app/file-utilities/standart", style: {border:0}}, React.createElement(Button, {bsStyle: "primary", style: { marginRight:15}}, "Standart")), 
+	          React.createElement("span", null, "or"), 
+	          React.createElement(Link, {to: "/app/file-utilities/standart", style: {border:0}}, React.createElement(Button, {bsStyle: "danger", style: {borderRadius:8,  marginLeft:15}}, "Gold"))
+	        )
+	      )
+	    );
+	  },
+
 	  render: function() {
 	    return (
 	      React.createElement(Container, {id: "body"}, 
 	        React.createElement(Grid, null, 
+
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {xs: 12}, 
 	              React.createElement(PanelContainer, null, 
+
 	                React.createElement(Panel, null, 
 	                  React.createElement(PanelBody, null, 
 	                    React.createElement(Grid, null, 
 	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement("div", {className: "text-right"}, 
+	                              React.createElement(Button, {lg: true, style: {margin: 15, borderRadius:3}, bsStyle: "danger", id: "button-click", onClick: ModalManager.create.bind(this, this.getModal()), onTouchEnd: ModalManager.create.bind(this, this.getModal())}, "Create Campaign")
+	                        )
+	                      ), 
 	                        React.createElement(Col, {xs: 12}, 
 	                          React.createElement(Table, {id: "example", className: "display", cellSpacing: "0", width: "100%"}, 
 	                            React.createElement("thead", null, 
@@ -18486,6 +18762,7 @@ var l20n=_RL20n_.l20n,
 	                                React.createElement("th", null, "Age"), 
 	                                React.createElement("th", null, "Start date"), 
 	                                React.createElement("th", null, "Salary")
+
 	                              )
 	                            ), 
 	                            React.createElement("tfoot", null, 
@@ -18997,7 +19274,7 @@ var l20n=_RL20n_.l20n,
 /* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "grid.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "grid.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -19206,7 +19483,7 @@ var l20n=_RL20n_.l20n,
 /* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "calendar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "calendar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "calendar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "calendar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -19426,7 +19703,7 @@ var l20n=_RL20n_.l20n,
 /* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "lists.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "lists.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "lists.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "lists.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -19522,7 +19799,7 @@ var l20n=_RL20n_.l20n,
 /* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropzone.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropzone.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropzone.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropzone.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -19605,7 +19882,7 @@ var l20n=_RL20n_.l20n,
 /* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "crop.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "crop.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "crop.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "crop.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20050,7 +20327,194 @@ var l20n=_RL20n_.l20n,
 /* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "login.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "confirm.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "confirm.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(10);
+	var Footer = __webpack_require__(12);
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, {gutterBottom: true}, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12, className: "text-center"}, 
+	              React.createElement(PanelContainer, null, 
+	                React.createElement(Panel, null, 
+	                  React.createElement(PanelBody, null, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement("div", null, 
+	                            React.createElement(Icon, {style: {fontSize: 160, lineHeight: 1}, glyph: "icon-stroke-gap-icons-Mail"})
+	                          ), 
+
+	                          React.createElement("h4", {style: {marginBottom:10}}, 
+	                            "Thank you for registration..."
+	                          ), 
+	                          React.createElement("h3", {style: {marginBottom: 15, marginTop: 0}}, "Please check your E-mail!"), 
+	                          React.createElement("h4", null, "After verifing your E-mail you can log in")
+	                        ), 
+	                          React.createElement(Col, null, 
+	                            React.createElement(Grid, null, 
+	                              React.createElement(Row, null, 
+	                                React.createElement(Col, {xs: 12, className: "text-center", style: {marginBottom: 55, marginTop: 20}}, 
+	                                    React.createElement(Link, {to: "/app/login"}, React.createElement(Button, {lg: true, style: {marginBottom: 0}, bsStyle: "success"}, "Log In"))
+	                                )
+	                              )
+	                            )
+	                          )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Confirm = __HUA.createClass({displayName: "Confirm",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Confirm;
+
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "standart.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "standart.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(10);
+	var Footer = __webpack_require__(12);
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    $('#my-awesome-dropzone').dropzone({
+	      paramName: "file", // The name that will be used to transfer the file
+	      maxFilesize: 2, // MB
+	      accept: function(file, done) {
+	        done();
+	      }
+	    });
+	    $('#wizard-1').steps({
+	      autoFocus: true
+	    });
+
+	    $("#form-2").validate({
+	      rules: {
+	        confirm_password: {
+	          equalTo: "#password"
+	        }
+	      }
+	    });
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12}, 
+	              React.createElement(PanelContainer, {controlStyles: "bg-darkgreen45 fg-white"}, 
+	                React.createElement(Panel, null, 
+	                  React.createElement(PanelHeader, {className: "bg-darkgreen45 fg-white", style: {margin: 0}}, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement("h3", null, "Standart Package")
+	                        )
+	                      )
+	                    )
+	                  ), 
+	                  React.createElement(PanelBody, null
+
+	                  ), 
+	                  React.createElement(PanelBody, null, 
+	                    React.createElement(Grid, null, 
+
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement(Form, {action: "/dropzone/file-upload", 
+	                                className: "dropzone", 
+	                                id: "my-awesome-dropzone"}
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Standart = __HUA.createClass({displayName: "Standart",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Standart;
+
+	/* start wizard
+	----------
+	  <Row>
+	    <Col xs={12}>
+	      <div id='wizard-1'>
+	        <h1>First Step</h1>
+	        <div>drop or click to upload your picture</div>
+
+	        <h1>Second Step</h1>
+	        <div><LoremIpsum query='5s' /></div>
+	      </div>
+	    </Col>
+	  </Row>
+	--------
+	end wizard */
+
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "login.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20077,14 +20541,14 @@ var l20n=_RL20n_.l20n,
 	            React.createElement(Grid, null, 
 	              React.createElement(Row, null, 
 	                React.createElement(Col, {sm: 12}, 
-	                  React.createElement(PanelContainer, {noControls: true}, 
+	                  React.createElement(PanelContainer, {noControls: true, style: {borderRadius:0}}, 
 	                    React.createElement(Panel, null, 
-	                      React.createElement(PanelBody, {style: {padding: 0}}, 
-	                        React.createElement("div", {className: "text-center bg-darkblue fg-white"}, 
-	                          React.createElement("h3", {style: {margin: 0, padding: 10}}, "Sign in to taxitube")
+	                      React.createElement(PanelBody, {style: {padding: 0, borderRadius:1}}, 
+	                        React.createElement("div", {className: "text-center bg-red fg-white login-header-bg"}, 
+	                          React.createElement("h3", {style: {margin: 0, padding: 20, fontSize:30}}, "Sign in to Taxitube")
 	                        ), 
 	                        React.createElement("div", {className: "bg-hoverblue fg-black50 text-center", style: {padding: 12.5}}, 
-	                          
+
 	                          React.createElement("div", {style: {marginTop: 12.5, marginBottom: 8.5}}, 
 	                            React.createElement(Button, {id: "facebook-btn", lg: true, bsStyle: "darkblue", type: "submit", onClick: this.back}, 
 	                              React.createElement(Icon, {glyph: "icon-fontello-facebook"}), 
@@ -20099,7 +20563,7 @@ var l20n=_RL20n_.l20n,
 	                          React.createElement("div", {className: "text-center", style: {padding: 12.5}}, 
 	                            "or use your taxitube account"
 	                          ), 
-	                          React.createElement("div", {style: {padding: 2, paddingTop: 0, paddingBottom: 0, margin: 'auto', marginBottom: 5, marginTop: 10}}, 
+	                          React.createElement("div", {style: {padding: 2, paddingTop: 0, paddingBottom: 0, margin: 20, marginBottom: 5, marginTop: 10}}, 
 	                            React.createElement(Form, {onSubmit: this.back}, 
 	                              React.createElement(FormGroup, null, 
 	                                React.createElement(InputGroup, {lg: true}, 
@@ -20124,7 +20588,7 @@ var l20n=_RL20n_.l20n,
 	                                      React.createElement(Link, {to: "/app/signup"}, "Create a taxitube account")
 	                                    ), 
 	                                    React.createElement(Col, {xs: 6, collapseLeft: true, collapseRight: true, className: "text-right"}, 
-	                                      React.createElement(Button, {outlined: true, lg: true, type: "submit", bsStyle: "blue", onClick: this.back}, "Login")
+	                                      React.createElement(Button, {lg: true, type: "submit", bsStyle: "red", onClick: this.back}, "Login")
 	                                    )
 	                                  )
 	                                )
@@ -20164,10 +20628,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "signup.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "signup.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "signup.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "signup.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20178,10 +20642,75 @@ var l20n=_RL20n_.l20n,
 	  back: function(e) {
 	    e.preventDefault();
 	    e.stopPropagation();
-	    this.transitionTo('/app/invoice');
+	    this.transitionTo('/app/confirm');
 	  },
-	  componentDidMount: function() {
+
+
+	handleSubmit:function(e){
+	    e.preventDefault();
+	    e.stopPropagation();
+	    console.log("redirecting..");
+
+		var userEmail = document.getElementById('useremail');
+
+		if (fieldsAreNotEmpty()){
+			if(checkPass()){
+
+				console.log("yvelaferi shevsebulia")
+				var formData = {
+				  emailaddress: this.refs.emailaddress.getDOMNode().value,
+				  emailaddress2: this.refs.emailaddress2.getDOMNode().value,
+				  useremail: this.refs.useremail.getDOMNode().value,
+				  customerid: this.refs.customerid.getDOMNode().value,
+				  customername: this.refs.customername.getDOMNode().value,
+				  city: this.refs.city.getDOMNode().value,
+				  country: this.refs.country.getDOMNode().value,
+				  postcode: this.refs.postcode.getDOMNode().value,
+				  password: this.refs.password.getDOMNode().value,
+				  passwordconfirm: this.refs.passwordconfirm.getDOMNode().value,
+				  phone: this.refs.phone.getDOMNode().value,
+				  director: this.refs.director.getDOMNode().value,
+				  username: this.refs.username.getDOMNode().value
+				}; //Array
+				console.log("rformdatas shemdeg");
+
+				$.ajax({
+				  url: "registerurl",
+				  type: "POST",
+				  data: formData,
+				  success: function (data, textStatus, jqXHR) {
+					console.log("received=" + data);
+					if (data == 1) {
+					  $('#error_msg').html("User exists");
+					} else {
+					  $('#error_msg').html("success redirecting..");
+					  $(location).attr('href', '/index.html');
+					}
+
+					console.log("submited");
+					//data - response from server
+				  },
+				  error: function (jqXHR, textStatus, errorThrown) {
+					console.log("error");
+				  }
+				});
+			}
+	    // this.transitionTo('/app/confirm');
+	    }
+		else{
+	      console.log("romeligaca veli aravaliduria");
+	    }
+
+	},
+	componentDidMount: function() {
 	    $('html').addClass('authentication');
+	    $('#phone,#postcode').keypress(function (e) {
+	     //if the letter is not digit then display error and don't type anything
+	     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
+	      {
+	        return false;
+	    }
+	   });
 	  },
 	  componentWillUnmount: function() {
 	    $('html').removeClass('authentication');
@@ -20198,21 +20727,22 @@ var l20n=_RL20n_.l20n,
 	                    React.createElement(Panel, null, 
 	                      React.createElement(PanelBody, {style: {padding: 0}}, 
 	                        React.createElement("div", {className: "text-center bg-darkblue fg-white"}, 
-	                          React.createElement("h3", {style: {margin: 0, padding: 25}}, "Sign up")
+	                          React.createElement("h3", {style: {margin: 0, padding: 25}}, "Sign up"), 
+	                         React.createElement("div", {id: "error_msg"})
 	                        ), 
 	                        React.createElement("div", null, 
 	                          React.createElement("div", {style: {padding: 25, paddingTop: 0, paddingBottom: 0, margin: 'auto', marginBottom: 25, marginTop: 25}}, 
-	                            React.createElement(Form, {onSubmit: this.back}, 
+	                            React.createElement(Form, {onSubmit: this.handleSubmit}, 
 	                              React.createElement(FormGroup, null, 
 	                                React.createElement(InputGroup, {md: true}, 
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-user"})
 	                                  ), 
-	                                  React.createElement(Input, {autoFocus: true, type: "text", id: "username", className: "border-focus-blue", placeholder: "Customer Name"}), 
-	                                  React.createElement(InputGroupAddon, null, 
+	                                  React.createElement(Input, {autoFocus: true, type: "text", ref: "customername", id: "customername", className: "border-focus-blue", placeholder: "Customer Name"}), 
+			                              React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-th-large"})
 	                                  ), 
-	                                  React.createElement(Input, {autoFocus: true, type: "text", id: "username", className: "border-focus-blue", placeholder: "Customer ID"})
+	                                  React.createElement(Input, {autoFocus: true, type: "text", ref: "customerid", id: "customerid", className: "border-focus-blue", placeholder: "Customer ID"})
 	                                )
 	                              ), 
 
@@ -20221,27 +20751,28 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-reply"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "email", id: "emailaddress", className: "border-focus-blue", placeholder: "Address Line", require: true}), 
+	                                  React.createElement(Input, {type: "text", id: "emailaddress", ref: "emailaddress", className: "border-focus-blue", placeholder: "Address Line", require: true}), 
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-reply"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "email", id: "emailaddress", className: "border-focus-blue", placeholder: "Address Line 2"})
+	                                  React.createElement(Input, {type: "text", id: "emailaddress2", ref: "emailaddress2", className: "border-focus-blue", placeholder: "Address Line 2"})
 	                                )
 	                              ), 
+
 	                              React.createElement(FormGroup, null, 
 	                                React.createElement(InputGroup, {md: true}, 
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-asterisk"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "email", id: "city", className: "border-focus-blue", placeholder: "City", require: true}), 
+	                                  React.createElement(Input, {type: "text", id: "city", ref: "city", className: "border-focus-blue", placeholder: "City"}), 
 	                                   React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-asterisk"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "email", id: "country", className: "border-focus-blue", placeholder: "Country", require: true}), 
+	                                  React.createElement(Input, {type: "text", id: "country", ref: "country", className: "border-focus-blue", placeholder: "Country"}), 
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-asterisk"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "email", id: "country", className: "border-focus-blue", placeholder: "Post Code", require: true})
+	                                  React.createElement(Input, {type: "text", id: "postcode", ref: "postcode", className: "border-focus-blue", placeholder: "Post Code", require: true})
 	                                )
 	                              ), 
 	                              React.createElement(FormGroup, null, 
@@ -20249,11 +20780,11 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-phone"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "text", id: "text", className: "border-focus-blue", placeholder: "Phone"}), 
-	                                  React.createElement(InputGroupAddon, null, 
+	                                  React.createElement(Input, {type: "text", className: "textfield", id: "phone", ref: "phone", className: "border-focus-blue", placeholder: "Phone", onkeypress: "return isNumber(event)"}), 
+				                            React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-user"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "text", id: "text", className: "border-focus-blue", placeholder: "Director"})
+	                                  React.createElement(Input, {type: "text", id: "director", ref: "director", className: "border-focus-blue", placeholder: "Director"})
 	                                )
 	                              ), 
 	                              React.createElement(FormGroup, null, 
@@ -20261,7 +20792,7 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-user"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "text", id: "text", className: "border-focus-blue", placeholder: "Username"})
+	                                  React.createElement(Input, {type: "text", id: "username", ref: "username", className: "border-focus-blue", placeholder: "Username"})
 	                                )
 	                              ), 
 	                              React.createElement(FormGroup, null, 
@@ -20269,7 +20800,7 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-mail-alt"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "text", id: "text", className: "border-focus-blue", placeholder: "Email"})
+	                                  React.createElement(Input, {type: "email", id: "useremail", ref: "useremail", className: "border-focus-blue", placeholder: "Email"})
 	                                )
 	                              ), 
 	                              React.createElement(FormGroup, null, 
@@ -20277,7 +20808,7 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-key"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "password", id: "password", className: "border-focus-blue", placeholder: "password"})
+	                                  React.createElement(Input, {type: "password", id: "password", ref: "password", className: "border-focus-blue", placeholder: "password"})
 	                                )
 	                              ), 
 	                              React.createElement(FormGroup, null, 
@@ -20285,7 +20816,8 @@ var l20n=_RL20n_.l20n,
 	                                  React.createElement(InputGroupAddon, null, 
 	                                    React.createElement(Icon, {glyph: "icon-fontello-key"})
 	                                  ), 
-	                                  React.createElement(Input, {type: "password", id: "password", className: "border-focus-blue", placeholder: "repeat password"})
+	                                  React.createElement(Input, {type: "password", id: "passwordconfirm", ref: "passwordconfirm", className: "border-focus-blue", placeholder: "repeat password"}), 
+	                                  React.createElement("span", {id: "confirmMessage", className: "confirmMessage", onpaste: "return false;"})
 	                                )
 	                              ), 
 
@@ -20294,7 +20826,7 @@ var l20n=_RL20n_.l20n,
 	                                React.createElement(Grid, null, 
 	                                  React.createElement(Row, null, 
 	                                    React.createElement(Col, {xs: 12, collapseLeft: true, collapseRight: true}, 
-	                                      React.createElement(Button, {type: "submit", outlined: true, lg: true, bsStyle: "blue", block: true, onClick: this.back}, "Create account")
+	                                      React.createElement(Button, {type: "submit", outlined: true, lg: true, bsStyle: "blue", block: true}, "Create account")
 	                                    )
 	                                  )
 	                                )
@@ -20320,7 +20852,7 @@ var l20n=_RL20n_.l20n,
 	                              )
 	                            ), 
 	                            React.createElement("div", {style: {marginTop: 25}}, 
-	                              "Already have an account? ", React.createElement(Link, {to: "/app/login"}, "Login")
+	                              "Already have an account? ", React.createElement(Link, {to: "/app/login"}, "Loginn")
 	                            )
 	                          )
 	                        )
@@ -20336,6 +20868,149 @@ var l20n=_RL20n_.l20n,
 	    );
 	  }
 	});
+
+	function checkPass()
+	{
+	  console.log("check passwordshi vart")
+	  console.log("check passwordshi vart cvlilebaa")
+	  var pass1 = document.getElementById('password');
+	  console.log(pass1.value)
+	  var pass2 = document.getElementById('passwordconfirm');
+	  console.log(pass2.value)
+
+	  var message = document.getElementById('confirmMessage');
+
+	  var goodColor = "#66cc66";
+	  var badColor = "#ff6666";
+
+	  if(pass1.value == pass2.value && pass2.value != ""){
+		//massage.style.backgroundColor=white;
+		//massage.innerHTML="";
+	    console.log("pass1.value == pass2.value")
+	    pass2.style.borderColor = goodColor;
+	    message.style.color = goodColor;
+	    message.innerHTML = "Passwords Match!";
+	    console.log("Password Match");
+	    return true;
+	  }else if(pass1.value != pass2.value){
+	    console.log("pass1.value AR UDRIS pass2.value")
+	    pass2.style.borderColor = badColor;
+	    message.style.color = badColor;
+	    message.innerHTML = "Passwords Do Not Match!"
+	    console.log("Passwords Do Not Match!")
+	    return false;
+	  }
+	}
+
+	function fieldsAreNotEmpty(){
+
+	  var userEmail = document.getElementById('useremail');
+	  var address = document.getElementById('emailaddress');
+	  var address2 = document.getElementById('emailaddress2');
+	  var customerId = document.getElementById('customerid');
+	  var customerName = document.getElementById('customername');
+	  var city = document.getElementById('city');
+	  var country = document.getElementById('country');
+	  var postCode = document.getElementById('postcode');
+	  var password = document.getElementById('password');
+	  var phone = document.getElementById('phone');
+	  var director = document.getElementById('director');
+	  var username = document.getElementById('username');
+	  var badColor = "#ff6666";
+	  var count = 0.
+
+	  if(customerName.value == ""){
+	    customerName.style.borderColor = badColor;
+		count = count + 1;
+	  }
+	  else{
+		customerName.style.borderColor = "lightblue";
+	  }
+	  if(customerId.value == ""){
+	    customerId.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		customerId.style.borderColor = "lightblue";
+	  }
+	  if(address.value == ""){
+	    address.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		address.style.borderColor = "lightblue";
+	  }
+	  if(address2.value == ""){
+	    address2.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		address2.style.borderColor = "lightblue";
+	  }
+	  if(city.value == ""){
+	    city.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		city.style.borderColor = "lightblue";
+	  }
+	  if(country.value == ""){
+	    country.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		country.style.borderColor = "lightblue";
+	  }
+	  if(postCode.value == ""){
+	    postCode.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		postCode.style.borderColor = "lightblue";
+	  }
+	  if(phone.value == ""){
+	    phone.style.borderColor = badColor;
+		count =count + 1;
+	  }else{
+		phone.style.borderColor = "lightblue";
+	  }
+	  if(director.value == ""){
+	    director.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		director.style.borderColor = "lightblue";
+	  }
+	  if(username.value == ""){
+	    username.style.borderColor = badColor;
+		count += 1;
+	  }else{
+		username.style.borderColor = "lightblue";
+	  }
+	   if(userEmail.value == ""){
+	    userEmail.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		userEmail.style.borderColor = "lightblue";
+	  }
+	  if(password.value == ""){
+	    password.style.borderColor = badColor;
+		count = count + 1;
+	  }else{
+		password.style.borderColor = "lightblue";
+	  }
+	  if (count > 0) return false;
+	  return true;
+	}
+
+	function isNumber(evt) {
+		console.log("isNumeric metodshi")
+	    evt = (evt) ? evt : window.event;
+		console.log("evt is win")
+		console.log(evt)
+		console.log("evt is shemdeg")
+	    var charCode = (evt.which) ? evt.which : evt.keyCode;
+		console.log(charCode)
+	    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			console.log(charCode)
+
+	        return false;
+	    }
+	    return true;
+	}
 
 	var classSet = React.addons.classSet;
 	var SignupPage = __HUA.createClass({displayName: "SignupPage",
@@ -20356,10 +21031,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "lock.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "lock.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "lock.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "lock.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20443,10 +21118,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "pricing.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "pricing.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "pricing.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "pricing.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20598,10 +21273,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "invoice.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "invoice.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "invoice.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "invoice.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -20786,16 +21461,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "installation.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "installation.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "installation.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "installation.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var package_snippet = JSON.stringify(__webpack_require__(80), null, 2);
+	var package_snippet = JSON.stringify(__webpack_require__(82), null, 2);
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -21171,7 +21846,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -21223,13 +21898,13 @@ var l20n=_RL20n_.l20n,
 			"webpack-dev-server": "^1.6.6",
 			"yargs": "^1.3.3"
 		}
-	}
+	};
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilebasics.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilebasics.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilebasics.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilebasics.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21414,10 +22089,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilesass.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilesass.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilesass.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilesass.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21558,10 +22233,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilejsx.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilejsx.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilejsx.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilejsx.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21684,10 +22359,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilewebfont.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilewebfont.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilewebfont.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilewebfont.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21760,10 +22435,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilescaffolding.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilescaffolding.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfilescaffolding.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfilescaffolding.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21844,10 +22519,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfileexternalplugins.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfileexternalplugins.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gulpfileexternalplugins.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gulpfileexternalplugins.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -21928,10 +22603,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "reactdoc.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "reactdoc.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "reactdoc.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "reactdoc.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
@@ -22004,21 +22679,21 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "rubix.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rubix.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "rubix.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rubix.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var treesnippet = textExtract(__webpack_require__(90));
+	var treesnippet = textExtract(__webpack_require__(92));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -22291,10 +22966,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "doc_container.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "doc_container.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "doc_container.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "doc_container.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	/** @jsx React.DOM */
 
@@ -22347,28 +23022,28 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 90 */
+/* 92 */
 /***/ function(module, exports) {
 
-	module.exports = ".\n├── CHANGELOG.md\n├── globals.js\n├── gulpfile.js\n├── launch.js\n├── node_modules\n├── package.json\n├── plugins.js\n├── prebuild\n├── public\n│   ├── css\n│   │   ├── app\n│   │   ├── demo\n│   │   ├── fonts\n│   │   └── vendor\n│   ├── favicons\n│   ├── fonts\n│   │   ├── Lato-others\n│   │   ├── dropbox\n│   │   │   ├── app\n│   │   │   └── demo\n│   │   └── glyphicon\n│   ├── imgs\n│   ├── js\n│   │   ├── app\n│   │   ├── common\n│   │   ├── demo\n│   │   ├── minified\n│   │   ├── polyfills\n│   │   └── vendor\n│   └── locales\n│       ├── app\n│       └── demo\n├── scaffold.js\n├── server.jsx\n└── src\n    ├── global\n    │   ├── requires\n    │   ├── sass\n    │   └── vendor\n    ├── jsx\n    │   ├── app\n    │   └── demo\n    └── sass\n        ├── app\n        └── demo\n"
+	module.exports = "module.exports = \".\\n├── CHANGELOG.md\\n├── globals.js\\n├── gulpfile.js\\n├── launch.js\\n├── node_modules\\n├── package.json\\n├── plugins.js\\n├── prebuild\\n├── public\\n│   ├── css\\n│   │   ├── app\\n│   │   ├── demo\\n│   │   ├── fonts\\n│   │   └── vendor\\n│   ├── favicons\\n│   ├── fonts\\n│   │   ├── Lato-others\\n│   │   ├── dropbox\\n│   │   │   ├── app\\n│   │   │   └── demo\\n│   │   └── glyphicon\\n│   ├── imgs\\n│   ├── js\\n│   │   ├── app\\n│   │   ├── common\\n│   │   ├── demo\\n│   │   ├── minified\\n│   │   ├── polyfills\\n│   │   └── vendor\\n│   └── locales\\n│       ├── app\\n│       └── demo\\n├── scaffold.js\\n├── server.jsx\\n└── src\\n    ├── global\\n    │   ├── requires\\n    │   ├── sass\\n    │   └── vendor\\n    ├── jsx\\n    │   ├── app\\n    │   └── demo\\n    └── sass\\n        ├── app\\n        └── demo\\n\""
 
 /***/ },
-/* 91 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "rubixsass.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rubixsass.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "rubixsass.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "rubixsass.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var sasstreesnippet = textExtract(__webpack_require__(92));
+	var sasstreesnippet = textExtract(__webpack_require__(94));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -22459,38 +23134,38 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 92 */
+/* 94 */
 /***/ function(module, exports) {
 
-	module.exports = "sass\n|-- <project-name>\n|   |-- colors.scss\n|   |-- font-faces.scss\n|   |-- main.scss\n|   |-- theme.scss\n|   |-- pages\n|   |   `-- _pages.scss\n|   |-- print\n|   |   `-- _print.scss\n|   |-- theme\n|   |   |-- _colors.scss\n|   |   |-- _theme-mixin.scss\n|   |   |-- components\n|   |   |   |-- _breadcrumbs.scss\n|   |   |   |-- _button.scss\n|   |   |   |-- _components.scss\n|   |   |   |-- _datepicker.scss\n|   |   |   |-- _dropdown.scss\n|   |   |   |-- _forms.scss\n|   |   |   |-- _ion-rangeSlider.scss\n|   |   |   |-- _ion-tabs.scss\n|   |   |   |-- _link.scss\n|   |   |   |-- _messenger.scss\n|   |   |   |-- _pagination.scss\n|   |   |   |-- _panel.scss\n|   |   |   |-- _select2.scss\n|   |   |   `-- _vex.scss\n|   |   `-- sections\n|   |       |-- _body.scss\n|   |       |-- _footer.scss\n|   |       |-- _header.scss\n|   |       |-- _sections.scss\n|   |       `-- _sidebar.scss\n"
+	module.exports = "module.exports = \"sass\\n|-- <project-name>\\n|   |-- colors.scss\\n|   |-- font-faces.scss\\n|   |-- main.scss\\n|   |-- theme.scss\\n|   |-- pages\\n|   |   `-- _pages.scss\\n|   |-- print\\n|   |   `-- _print.scss\\n|   |-- theme\\n|   |   |-- _colors.scss\\n|   |   |-- _theme-mixin.scss\\n|   |   |-- components\\n|   |   |   |-- _breadcrumbs.scss\\n|   |   |   |-- _button.scss\\n|   |   |   |-- _components.scss\\n|   |   |   |-- _datepicker.scss\\n|   |   |   |-- _dropdown.scss\\n|   |   |   |-- _forms.scss\\n|   |   |   |-- _ion-rangeSlider.scss\\n|   |   |   |-- _ion-tabs.scss\\n|   |   |   |-- _link.scss\\n|   |   |   |-- _messenger.scss\\n|   |   |   |-- _pagination.scss\\n|   |   |   |-- _panel.scss\\n|   |   |   |-- _select2.scss\\n|   |   |   `-- _vex.scss\\n|   |   `-- sections\\n|   |       |-- _body.scss\\n|   |       |-- _footer.scss\\n|   |       |-- _header.scss\\n|   |       |-- _sections.scss\\n|   |       `-- _sidebar.scss\\n\""
 
 /***/ },
-/* 93 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "grid.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "grid.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
 	var textExtract = __webpack_require__(35);
-	var gridbasic = textExtract(__webpack_require__(95));
-	var gridsnippet = textExtract(__webpack_require__(96));
-	var gridfixedwidth = textExtract(__webpack_require__(97));
-	var gridzeropadding = textExtract(__webpack_require__(98));
-	var gridgutter = textExtract(__webpack_require__(94));
-	var griddir = textExtract(__webpack_require__(99));
-	var gridnest = textExtract(__webpack_require__(100));
-	var rowsyntax = textExtract(__webpack_require__(101));
-	var colsyntax = textExtract(__webpack_require__(102));
-	var colclearfix = textExtract(__webpack_require__(103));
-	var colhiddenvisible = textExtract(__webpack_require__(104));
-	var coloffsets = textExtract(__webpack_require__(105));
-	var colpushpull = textExtract(__webpack_require__(106));
-	var colcollapse = textExtract(__webpack_require__(107));
+	var gridbasic = textExtract(__webpack_require__(96));
+	var gridsnippet = textExtract(__webpack_require__(97));
+	var gridfixedwidth = textExtract(__webpack_require__(98));
+	var gridzeropadding = textExtract(__webpack_require__(99));
+	var gridgutter = textExtract(__webpack_require__(100));
+	var griddir = textExtract(__webpack_require__(101));
+	var gridnest = textExtract(__webpack_require__(102));
+	var rowsyntax = textExtract(__webpack_require__(103));
+	var colsyntax = textExtract(__webpack_require__(104));
+	var colclearfix = textExtract(__webpack_require__(105));
+	var colhiddenvisible = textExtract(__webpack_require__(106));
+	var coloffsets = textExtract(__webpack_require__(107));
+	var colpushpull = textExtract(__webpack_require__(108));
+	var colcollapse = textExtract(__webpack_require__(109));
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -22760,100 +23435,100 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 94 */
-/***/ function(module, exports) {
-
-	module.exports = "<Grid gutter>\n</Grid>\n"
-
-/***/ },
-/* 95 */
-/***/ function(module, exports) {
-
-	module.exports = "<Grid>\n</Grid>\n"
-
-/***/ },
 /* 96 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid>\n  <Row>\n    <Col sm={6} md={6} lg={6} xsOnlyGutterBottom smCollapseRight>\n      <Well noMargin>Col(lg:6)</Well>\n    </Col>\n    <Col sm={6} md={6} lg={6}>\n      <Well noMargin>Col(lg:6)</Well>\n    </Col>\n  </Row>\n</Grid>\n<Grid gutterTop>\n  <Row>\n    <Col sm={4} md={4} lg={4} xsOnlyGutterBottom smCollapseRight>\n      <Well noMargin>Col(lg:4)</Well>\n    </Col>\n    <Col sm={4} md={4} lg={4} xsOnlyGutterBottom smCollapseRight>\n      <Well noMargin>Col(lg:4)</Well>\n    </Col>\n    <Col sm={4} md={4} lg={4}>\n      <Well noMargin>Col(lg:4)</Well>\n    </Col>\n  </Row>\n</Grid>\n<Grid gutterTop>\n  <Row>\n    <Col sm={3} md={3} lg={3} xsOnlyGutterBottom smCollapseRight>\n      <Well noMargin>Col(lg:3)</Well>\n    </Col>\n    <Col sm={3} md={3} lg={3} xsOnlyGutterBottom smCollapseRight>\n      <Well noMargin>Col(lg:3)</Well>\n    </Col>\n    <Col sm={6} md={6} lg={6}>\n      <Well noMargin>Col(lg:6)</Well>\n    </Col>\n  </Row>\n</Grid>\n<Grid gutterTop gutterBottom>\n  <Row>\n    <Col md={2} lg={2} xsOnlyGutterBottom smOnlyGutterBottom mdCollapseRight>\n      <Well noMargin>Col(lg:2)</Well>\n    </Col>\n    <Col md={4} lg={4} xsOnlyGutterBottom smOnlyGutterBottom mdCollapseRight>\n      <Well noMargin>Col(lg:4)</Well>\n    </Col>\n    <Col md={6} lg={6}>\n      <Well noMargin>Col(lg:6)</Well>\n    </Col>\n  </Row>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid>\\n</Grid>\\n\""
 
 /***/ },
 /* 97 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid fixed>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid>\\n  <Row>\\n    <Col sm={6} md={6} lg={6} xsOnlyGutterBottom smCollapseRight>\\n      <Well noMargin>Col(lg:6)</Well>\\n    </Col>\\n    <Col sm={6} md={6} lg={6}>\\n      <Well noMargin>Col(lg:6)</Well>\\n    </Col>\\n  </Row>\\n</Grid>\\n<Grid gutterTop>\\n  <Row>\\n    <Col sm={4} md={4} lg={4} xsOnlyGutterBottom smCollapseRight>\\n      <Well noMargin>Col(lg:4)</Well>\\n    </Col>\\n    <Col sm={4} md={4} lg={4} xsOnlyGutterBottom smCollapseRight>\\n      <Well noMargin>Col(lg:4)</Well>\\n    </Col>\\n    <Col sm={4} md={4} lg={4}>\\n      <Well noMargin>Col(lg:4)</Well>\\n    </Col>\\n  </Row>\\n</Grid>\\n<Grid gutterTop>\\n  <Row>\\n    <Col sm={3} md={3} lg={3} xsOnlyGutterBottom smCollapseRight>\\n      <Well noMargin>Col(lg:3)</Well>\\n    </Col>\\n    <Col sm={3} md={3} lg={3} xsOnlyGutterBottom smCollapseRight>\\n      <Well noMargin>Col(lg:3)</Well>\\n    </Col>\\n    <Col sm={6} md={6} lg={6}>\\n      <Well noMargin>Col(lg:6)</Well>\\n    </Col>\\n  </Row>\\n</Grid>\\n<Grid gutterTop gutterBottom>\\n  <Row>\\n    <Col md={2} lg={2} xsOnlyGutterBottom smOnlyGutterBottom mdCollapseRight>\\n      <Well noMargin>Col(lg:2)</Well>\\n    </Col>\\n    <Col md={4} lg={4} xsOnlyGutterBottom smOnlyGutterBottom mdCollapseRight>\\n      <Well noMargin>Col(lg:4)</Well>\\n    </Col>\\n    <Col md={6} lg={6}>\\n      <Well noMargin>Col(lg:6)</Well>\\n    </Col>\\n  </Row>\\n</Grid>\\n\""
 
 /***/ },
 /* 98 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid collapse>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid fixed>\\n</Grid>\\n\""
 
 /***/ },
 /* 99 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid gutterTop gutterLeft gutterRight gutterBottom>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid collapse>\\n</Grid>\\n\""
 
 /***/ },
 /* 100 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid>\n  <Row>\n    <Col xs={12}>\n      <Grid fixed gutter>\n        <Row>\n          <Col xs={6} sm={3} md={4} lg={2}></Col>\n        </Row>\n      </Grid>\n    </Col>\n  </Row>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid gutter>\\n</Grid>\\n\""
 
 /***/ },
 /* 101 */
 /***/ function(module, exports) {
 
-	module.exports = "<Row>\n</Row>\n"
+	module.exports = "module.exports = \"<Grid gutterTop gutterLeft gutterRight gutterBottom>\\n</Grid>\\n\""
 
 /***/ },
 /* 102 */
 /***/ function(module, exports) {
 
-	module.exports = "<Col xs={12} sm={12} md={12} lg={12}>\n</Col>\n"
+	module.exports = "module.exports = \"<Grid>\\n  <Row>\\n    <Col xs={12}>\\n      <Grid fixed gutter>\\n        <Row>\\n          <Col xs={6} sm={3} md={4} lg={2}></Col>\\n        </Row>\\n      </Grid>\\n    </Col>\\n  </Row>\\n</Grid>\\n\""
 
 /***/ },
 /* 103 */
 /***/ function(module, exports) {
 
-	module.exports = "<Col clearfix>\n</Col>\n"
+	module.exports = "module.exports = \"<Row>\\n</Row>\\n\""
 
 /***/ },
 /* 104 */
 /***/ function(module, exports) {
 
-	module.exports = "<Col xs={6} md={3} lg={4} sm={12} hidden='xs, md, lg, print' visible='sm'>\n</Col>\n"
+	module.exports = "module.exports = \"<Col xs={12} sm={12} md={12} lg={12}>\\n</Col>\\n\""
 
 /***/ },
 /* 105 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid>\n  <Row>\n    <Col md={4}>\n      Col(md:4)\n    </Col>\n    <Col md={4} mdOffset={4}>\n      Col(md:4,mdOffset:4)\n    </Col>\n  </Row>\n</Grid>\n"
+	module.exports = "module.exports = \"<Col clearfix>\\n</Col>\\n\""
 
 /***/ },
 /* 106 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid>\n  <Row>\n    <Col md={9} mdPush={3}>\n      Col(md:9, mdPush:3)\n    </Col>\n    <Col md={3} mdPull={9}>\n      Col(md:3, mdPull:9)\n    </Col>\n  </Row>\n</Grid>\n"
+	module.exports = "module.exports = \"<Col xs={6} md={3} lg={4} sm={12} hidden='xs, md, lg, print' visible='sm'>\\n</Col>\\n\""
 
 /***/ },
 /* 107 */
 /***/ function(module, exports) {
 
-	module.exports = "<Grid>\n  <Row>\n    <Col xs={6} collapseRight>\n    </Col>\n    <Col xs={6} collapseLeft>\n    </Col>\n  </Row>\n</Grid>\n"
+	module.exports = "module.exports = \"<Grid>\\n  <Row>\\n    <Col md={4}>\\n      Col(md:4)\\n    </Col>\\n    <Col md={4} mdOffset={4}>\\n      Col(md:4,mdOffset:4)\\n    </Col>\\n  </Row>\\n</Grid>\\n\""
 
 /***/ },
 /* 108 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"<Grid>\\n  <Row>\\n    <Col md={9} mdPush={3}>\\n      Col(md:9, mdPush:3)\\n    </Col>\\n    <Col md={3} mdPull={9}>\\n      Col(md:3, mdPull:9)\\n    </Col>\\n  </Row>\\n</Grid>\\n\""
+
+/***/ },
+/* 109 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"<Grid>\\n  <Row>\\n    <Col xs={6} collapseRight>\\n    </Col>\\n    <Col xs={6} collapseLeft>\\n    </Col>\\n  </Row>\\n</Grid>\\n\""
+
+/***/ },
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "typography.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "typography.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "typography.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "typography.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -23482,16 +24157,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 109 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "code.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "code.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "code.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "code.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -23613,16 +24288,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 110 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -24170,16 +24845,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 111 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "forms.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "forms.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "forms.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "forms.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -24454,24 +25129,24 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 112 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "inputsdocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "inputsdocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "inputsdocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "inputsdocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var inputgetdomnode = textExtract(__webpack_require__(113));
-	var inputgetchecked = textExtract(__webpack_require__(114));
-	var inputsetchecked = textExtract(__webpack_require__(115));
-	var inputgetvalue = textExtract(__webpack_require__(116));
+	var inputgetdomnode = textExtract(__webpack_require__(115));
+	var inputgetchecked = textExtract(__webpack_require__(116));
+	var inputsetchecked = textExtract(__webpack_require__(117));
+	var inputgetvalue = textExtract(__webpack_require__(118));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -24624,46 +25299,46 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 113 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var node = this.refs.inputelement.getInputDOMNode();\n    console.log(node.value === 'Default text');\n  },\n  render: function() {\n    return (\n      <Input type='text' ref='inputelement' defaultValue='Default text' />\n    );\n  }  \n});\n"
-
-/***/ },
-/* 114 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var checked = this.refs.checkboxelement.getChecked();\n    console.log(checked === true);\n  },\n  render: function() {\n    return (\n      <Input type='checkbox' ref='checkboxelement' defaultChecked />\n    );\n  }  \n});\n"
-
-/***/ },
 /* 115 */
 /***/ function(module, exports) {
 
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    this.refs.checkboxelement.setChecked(false);\n    var checked = this.refs.checkboxelement.getChecked();\n    console.log(checked === false);\n  },\n  render: function() {\n    return (\n      <Input type='checkbox' ref='checkboxelement' defaultChecked />\n    );\n  }  \n});\n"
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var node = this.refs.inputelement.getInputDOMNode();\\n    console.log(node.value === 'Default text');\\n  },\\n  render: function() {\\n    return (\\n      <Input type='text' ref='inputelement' defaultValue='Default text' />\\n    );\\n  }  \\n});\\n\""
 
 /***/ },
 /* 116 */
 /***/ function(module, exports) {
 
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var value = this.refs.inputelement.getValue();\n    console.log(value === 'Default Value');\n  },\n  render: function() {\n    return (\n      <Input type='text' ref='inputelement' defaultValue='Default Value' />\n    );\n  }  \n});\n"
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var checked = this.refs.checkboxelement.getChecked();\\n    console.log(checked === true);\\n  },\\n  render: function() {\\n    return (\\n      <Input type='checkbox' ref='checkboxelement' defaultChecked />\\n    );\\n  }  \\n});\\n\""
 
 /***/ },
 /* 117 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    this.refs.checkboxelement.setChecked(false);\\n    var checked = this.refs.checkboxelement.getChecked();\\n    console.log(checked === false);\\n  },\\n  render: function() {\\n    return (\\n      <Input type='checkbox' ref='checkboxelement' defaultChecked />\\n    );\\n  }  \\n});\\n\""
+
+/***/ },
+/* 118 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var value = this.refs.inputelement.getValue();\\n    console.log(value === 'Default Value');\\n  },\\n  render: function() {\\n    return (\\n      <Input type='text' ref='inputelement' defaultValue='Default Value' />\\n    );\\n  }  \\n});\\n\""
+
+/***/ },
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "textareadocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "textareadocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "textareadocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "textareadocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var textareadomnode = textExtract(__webpack_require__(118));
-	var textareagetvalue = textExtract(__webpack_require__(119));
+	var textareadomnode = textExtract(__webpack_require__(120));
+	var textareagetvalue = textExtract(__webpack_require__(121));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -24741,36 +25416,36 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 118 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var node = this.refs.textareaelement.getInputDOMNode();\n    console.log(node.getAttribute('rows') === 3);\n  },\n  render: function() {\n    return (\n      <Textarea ref='textareaelement' rows='3' />\n    );\n  }  \n});\n"
-
-/***/ },
-/* 119 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var value = this.refs.textareaelement.getValue();\n    console.log(value === 'Default Value');\n  },\n  render: function() {\n    return (\n      <Textarea ref='textareaelement' rows='3' defaultValue='Default Value' />\n    );\n  }  \n});\n"
-
-/***/ },
 /* 120 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var node = this.refs.textareaelement.getInputDOMNode();\\n    console.log(node.getAttribute('rows') === 3);\\n  },\\n  render: function() {\\n    return (\\n      <Textarea ref='textareaelement' rows='3' />\\n    );\\n  }  \\n});\\n\""
+
+/***/ },
+/* 121 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var value = this.refs.textareaelement.getValue();\\n    console.log(value === 'Default Value');\\n  },\\n  render: function() {\\n    return (\\n      <Textarea ref='textareaelement' rows='3' defaultValue='Default Value' />\\n    );\\n  }  \\n});\\n\""
+
+/***/ },
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "checkradio.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "checkradio.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "checkradio.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "checkradio.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var rccheckedstate = textExtract(__webpack_require__(121));
-	var setrccheckedstate = textExtract(__webpack_require__(122));
-	var isrccheckedstate = textExtract(__webpack_require__(123));
-	var rcgetvalue = textExtract(__webpack_require__(124));
+	var rccheckedstate = textExtract(__webpack_require__(123));
+	var setrccheckedstate = textExtract(__webpack_require__(124));
+	var isrccheckedstate = textExtract(__webpack_require__(125));
+	var rcgetvalue = textExtract(__webpack_require__(126));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -24921,48 +25596,48 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 121 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var checkedState = this.refs.check.getChecked();\n    console.log(checkedState === true);\n  },\n  render: function() {\n    return (\n      <Checkbox ref='check' defaultChecked>\n        Should be checked\n      </Checkbox>\n    );\n  }\n});\n"
-
-/***/ },
-/* 122 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    this.refs.check.setChecked(false);\n    console.log(checkedState === false);\n  },\n  render: function() {\n    return (\n      <Checkbox ref='check' defaultChecked>\n        Should be checked\n      </Checkbox>\n    );\n  }\n});\n"
-
-/***/ },
 /* 123 */
 /***/ function(module, exports) {
 
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    if(this.refs.check.isChecked())\n      console.log('Checkbox is checked');\n    else\n      console.log('Checkbox is unchecked');\n  },\n  render: function() {\n    return (\n      <Checkbox ref='check' defaultChecked>\n        Should be checked\n      </Checkbox>\n    );\n  }\n});\n"
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var checkedState = this.refs.check.getChecked();\\n    console.log(checkedState === true);\\n  },\\n  render: function() {\\n    return (\\n      <Checkbox ref='check' defaultChecked>\\n        Should be checked\\n      </Checkbox>\\n    );\\n  }\\n});\\n\""
 
 /***/ },
 /* 124 */
 /***/ function(module, exports) {
 
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function() {\n    var value = this.refs.check.getValue();\n    console.log(value === 'Should be checked');\n  },\n  render: function() {\n    return (\n      <Checkbox ref='check' defaultChecked>\n        Should be checked\n      </Checkbox>\n    );\n  }\n});\n"
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    this.refs.check.setChecked(false);\\n    console.log(checkedState === false);\\n  },\\n  render: function() {\\n    return (\\n      <Checkbox ref='check' defaultChecked>\\n        Should be checked\\n      </Checkbox>\\n    );\\n  }\\n});\\n\""
 
 /***/ },
 /* 125 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    if(this.refs.check.isChecked())\\n      console.log('Checkbox is checked');\\n    else\\n      console.log('Checkbox is unchecked');\\n  },\\n  render: function() {\\n    return (\\n      <Checkbox ref='check' defaultChecked>\\n        Should be checked\\n      </Checkbox>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 126 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function() {\\n    var value = this.refs.check.getValue();\\n    console.log(value === 'Should be checked');\\n  },\\n  render: function() {\\n    return (\\n      <Checkbox ref='check' defaultChecked>\\n        Should be checked\\n      </Checkbox>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "select.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "select.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "select.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "select.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var rccheckedstate = textExtract(__webpack_require__(121));
-	var setrccheckedstate = textExtract(__webpack_require__(122));
-	var isrccheckedstate = textExtract(__webpack_require__(123));
-	var rcgetvalue = textExtract(__webpack_require__(124));
+	var rccheckedstate = textExtract(__webpack_require__(123));
+	var setrccheckedstate = textExtract(__webpack_require__(124));
+	var isrccheckedstate = textExtract(__webpack_require__(125));
+	var rcgetvalue = textExtract(__webpack_require__(126));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -25084,24 +25759,24 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 126 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "buttons.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "buttons.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "buttons.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "buttons.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var rccheckedstate = textExtract(__webpack_require__(121));
-	var setrccheckedstate = textExtract(__webpack_require__(122));
-	var isrccheckedstate = textExtract(__webpack_require__(123));
-	var rcgetvalue = textExtract(__webpack_require__(124));
+	var rccheckedstate = textExtract(__webpack_require__(123));
+	var setrccheckedstate = textExtract(__webpack_require__(124));
+	var isrccheckedstate = textExtract(__webpack_require__(125));
+	var rcgetvalue = textExtract(__webpack_require__(126));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -25345,22 +26020,22 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 127 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropdowns.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropdowns.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "dropdowns.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dropdowns.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var dropdownbasic = textExtract(__webpack_require__(128));
-	var dropdownalign = textExtract(__webpack_require__(129));
+	var dropdownbasic = textExtract(__webpack_require__(130));
+	var dropdownalign = textExtract(__webpack_require__(131));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  handleSelection: function(itemprops) {
@@ -25928,28 +26603,28 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 128 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  handleSelection: function(itemprops) {\n    // access any property attached to MenuItem child component.\n    // ex: itemprops.keyaction === 'another-action' if MenuItem\n    // with \"Another action\" is clicked.\n    var value = itemprops.children;\n    alert(value);\n    if(itemprops.keyaction === 'another-action')\n      alert('You clicked another-action');\n  },\n  render: function() {\n    return (\n      <Dropdown>\n        <DropdownButton bsStyle='blue' container={this} menu='menu1'>\n          <span>Dropdown </span><Caret/>\n        </DropdownButton>\n        <Menu ref='menu1' bsStyle='blue' onItemSelect={this.handleSelection}>\n          <MenuItem active href='#'>Action</MenuItem>\n          <MenuItem keyaction='another-action' href='#'>Another action</MenuItem>\n          <MenuItem href='#'>Something else here</MenuItem>\n          <MenuItem divider/>\n          <MenuItem href='#'>Separated link</MenuItem>\n        </Menu>\n      </Dropdown>\n    );\n  }\n});\n"
-
-/***/ },
-/* 129 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  handleSelection: function(itemprops) {\n    // access any property attached to MenuItem child component.\n    // ex: itemprops.keyaction === 'another-action' if MenuItem\n    // with \"Another action\" is clicked.\n    var value = itemprops.children;\n    alert(value);\n    if(itemprops.keyaction === 'another-action')\n      alert('You clicked another-action');\n  },\n  render: function() {\n    return (\n      <Dropdown>\n        <DropdownButton bsStyle='red' container={this} menu='menu2'>\n          <span>Dropdown </span><Caret/>\n        </DropdownButton>\n        <Menu ref='menu2' bsStyle='red' onItemSelect={this.handleSelection} alignRight>\n          <MenuItem active href='#'>Action</MenuItem>\n          <MenuItem keyaction='another-action' href='#'>Another action</MenuItem>\n          <MenuItem href='#'>Something else here</MenuItem>\n          <MenuItem divider/>\n          <MenuItem href='#'>Separated link</MenuItem>\n        </Menu>\n      </Dropdown>\n    );\n  }\n});\n"
-
-/***/ },
 /* 130 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  handleSelection: function(itemprops) {\\n    // access any property attached to MenuItem child component.\\n    // ex: itemprops.keyaction === 'another-action' if MenuItem\\n    // with \\\"Another action\\\" is clicked.\\n    var value = itemprops.children;\\n    alert(value);\\n    if(itemprops.keyaction === 'another-action')\\n      alert('You clicked another-action');\\n  },\\n  render: function() {\\n    return (\\n      <Dropdown>\\n        <DropdownButton bsStyle='blue' container={this} menu='menu1'>\\n          <span>Dropdown </span><Caret/>\\n        </DropdownButton>\\n        <Menu ref='menu1' bsStyle='blue' onItemSelect={this.handleSelection}>\\n          <MenuItem active href='#'>Action</MenuItem>\\n          <MenuItem keyaction='another-action' href='#'>Another action</MenuItem>\\n          <MenuItem href='#'>Something else here</MenuItem>\\n          <MenuItem divider/>\\n          <MenuItem href='#'>Separated link</MenuItem>\\n        </Menu>\\n      </Dropdown>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 131 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  handleSelection: function(itemprops) {\\n    // access any property attached to MenuItem child component.\\n    // ex: itemprops.keyaction === 'another-action' if MenuItem\\n    // with \\\"Another action\\\" is clicked.\\n    var value = itemprops.children;\\n    alert(value);\\n    if(itemprops.keyaction === 'another-action')\\n      alert('You clicked another-action');\\n  },\\n  render: function() {\\n    return (\\n      <Dropdown>\\n        <DropdownButton bsStyle='red' container={this} menu='menu2'>\\n          <span>Dropdown </span><Caret/>\\n        </DropdownButton>\\n        <Menu ref='menu2' bsStyle='red' onItemSelect={this.handleSelection} alignRight>\\n          <MenuItem active href='#'>Action</MenuItem>\\n          <MenuItem keyaction='another-action' href='#'>Another action</MenuItem>\\n          <MenuItem href='#'>Something else here</MenuItem>\\n          <MenuItem divider/>\\n          <MenuItem href='#'>Separated link</MenuItem>\\n        </Menu>\\n      </Dropdown>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "button_groups.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "button_groups.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "button_groups.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "button_groups.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -26316,10 +26991,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 131 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "css.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "css.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "css.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "css.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var CSS = __HUA.createClass({displayName: "CSS",
 	  render: function() {
@@ -27618,16 +28293,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 132 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "input_groups.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "input_groups.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "input_groups.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "input_groups.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -28007,22 +28682,22 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 133 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "navs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "navs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "navs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "navs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
 	var textExtract = __webpack_require__(35);
-	var basictab = textExtract(__webpack_require__(134));
-	var tabselect = textExtract(__webpack_require__(135));
+	var basictab = textExtract(__webpack_require__(136));
+	var tabselect = textExtract(__webpack_require__(137));
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  componentDidMount: function() {
@@ -28347,28 +29022,28 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 134 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  handleSelect: function(itemprops) {\n    alert(itemprops.pane);\n  },\n  render: function() {\n    return (\n      <TabList bsStyle='orange75' onTabSelect={this.handleSelect} listName='tab1'>\n        <Tab pane='tab1:home' active>Home</Tab>\n        <Tab pane='tab1:profile'>Profile</Tab>\n        <Tab>\n          <DropdownButton tab container={this} menu='menu33'>\n            <span>Dropdown </span><Caret/>\n          </DropdownButton>\n          <Menu autoHide ref='menu33' bsStyle='orange75'>\n            <MenuItem href='#'>\n              <Tab dropdown pane='tab1:fat'>\n                @fat\n              </Tab>\n            </MenuItem>\n            <MenuItem href='#'>\n              <Tab dropdown pane='tab1:mdo'>\n                @mdo\n              </Tab>\n            </MenuItem>\n          </Menu>\n        </Tab>\n      </TabList>\n      <TabContent>\n        <TabPane tab='tab1:home' active>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab1:profile'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab1:fat'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab1:mdo'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n      </TabContent>\n    );\n  }\n});\n"
-
-/***/ },
-/* 135 */
-/***/ function(module, exports) {
-
-	module.exports = "var demo = React.createClass({\n  componentDidMount: function(itemprops) {\n    this.refs.tablist.selectTab('pane', 'tab2:profile');\n  },\n  render: function() {\n    return (\n      <TabList bsStyle='orange75' ref='tablist' listName='tab2'>\n        <Tab pane='tab2:home' active>Home</Tab>\n        <Tab pane='tab2:profile'>Profile</Tab>\n        <Tab>\n          <DropdownButton tab container={this} menu='menu34'>\n            <span>Dropdown </span><Caret/>\n          </DropdownButton>\n          <Menu autoHide ref='menu34' bsStyle='orange75'>\n            <MenuItem href='#'>\n              <Tab dropdown pane='tab2:fat'>\n                @fat\n              </Tab>\n            </MenuItem>\n            <MenuItem href='#'>\n              <Tab dropdown pane='tab2:mdo'>\n                @mdo\n              </Tab>\n            </MenuItem>\n          </Menu>\n        </Tab>\n      </TabList>\n      <TabContent>\n        <TabPane tab='tab2:home' active>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab2:profile'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab2:fat'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n        <TabPane tab='tab2:mdo'>\n          <LoremIpsum query='5s' />\n        </TabPane>\n      </TabContent>\n    );\n  }\n});\n"
-
-/***/ },
 /* 136 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  handleSelect: function(itemprops) {\\n    alert(itemprops.pane);\\n  },\\n  render: function() {\\n    return (\\n      <TabList bsStyle='orange75' onTabSelect={this.handleSelect} listName='tab1'>\\n        <Tab pane='tab1:home' active>Home</Tab>\\n        <Tab pane='tab1:profile'>Profile</Tab>\\n        <Tab>\\n          <DropdownButton tab container={this} menu='menu33'>\\n            <span>Dropdown </span><Caret/>\\n          </DropdownButton>\\n          <Menu autoHide ref='menu33' bsStyle='orange75'>\\n            <MenuItem href='#'>\\n              <Tab dropdown pane='tab1:fat'>\\n                @fat\\n              </Tab>\\n            </MenuItem>\\n            <MenuItem href='#'>\\n              <Tab dropdown pane='tab1:mdo'>\\n                @mdo\\n              </Tab>\\n            </MenuItem>\\n          </Menu>\\n        </Tab>\\n      </TabList>\\n      <TabContent>\\n        <TabPane tab='tab1:home' active>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab1:profile'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab1:fat'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab1:mdo'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n      </TabContent>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 137 */
+/***/ function(module, exports) {
+
+	module.exports = "module.exports = \"var demo = React.createClass({\\n  componentDidMount: function(itemprops) {\\n    this.refs.tablist.selectTab('pane', 'tab2:profile');\\n  },\\n  render: function() {\\n    return (\\n      <TabList bsStyle='orange75' ref='tablist' listName='tab2'>\\n        <Tab pane='tab2:home' active>Home</Tab>\\n        <Tab pane='tab2:profile'>Profile</Tab>\\n        <Tab>\\n          <DropdownButton tab container={this} menu='menu34'>\\n            <span>Dropdown </span><Caret/>\\n          </DropdownButton>\\n          <Menu autoHide ref='menu34' bsStyle='orange75'>\\n            <MenuItem href='#'>\\n              <Tab dropdown pane='tab2:fat'>\\n                @fat\\n              </Tab>\\n            </MenuItem>\\n            <MenuItem href='#'>\\n              <Tab dropdown pane='tab2:mdo'>\\n                @mdo\\n              </Tab>\\n            </MenuItem>\\n          </Menu>\\n        </Tab>\\n      </TabList>\\n      <TabContent>\\n        <TabPane tab='tab2:home' active>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab2:profile'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab2:fat'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n        <TabPane tab='tab2:mdo'>\\n          <LoremIpsum query='5s' />\\n        </TabPane>\\n      </TabContent>\\n    );\\n  }\\n});\\n\""
+
+/***/ },
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "navbar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "navbar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "navbar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "navbar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -28579,16 +29254,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 137 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "breadcrumbs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "breadcrumbs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "breadcrumbs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "breadcrumbs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -28666,16 +29341,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 138 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "pagination.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "pagination.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "pagination.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "pagination.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -28860,16 +29535,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 139 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "labels_and_badges.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "labels_and_badges.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "labels_and_badges.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "labels_and_badges.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -28973,16 +29648,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 140 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "jumbotron.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "jumbotron.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "jumbotron.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "jumbotron.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -29051,16 +29726,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 141 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "alerts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "alerts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "alerts.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "alerts.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -29194,16 +29869,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 142 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "progress.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "progress.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "progress.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "progress.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -29351,16 +30026,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 143 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "media.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "media.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "media.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "media.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -29509,16 +30184,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "list_group.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "list_group.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "list_group.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "list_group.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 
@@ -29757,16 +30432,16 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "l20ndocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "l20ndocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("E:\\dendi\\rubix\\node_modules\\react-hot-loader\\node_modules\\next-tick\\index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "l20ndocs.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "l20ndocs.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
 	var Sidebar = __webpack_require__(10);
 	var Footer = __webpack_require__(12);
 
-	var Doc = __webpack_require__(89);
+	var Doc = __webpack_require__(91);
 	var DocUnit = Doc.DocUnit;
 	var DocContainer = Doc.DocContainer;
 

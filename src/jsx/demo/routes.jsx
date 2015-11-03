@@ -52,8 +52,13 @@ var calendar = require('./routes/app/calendar.jsx');
 var lists = require('./routes/app/lists.jsx');
 var dropzone = require('./routes/app/dropzone.jsx');
 var crop = require('./routes/app/crop.jsx');
+
+
+
+// my pages
 var confirm = require('./routes/app/confirm.jsx');
-var standart = require('./routes/app/standart.jsx');
+var upload = require('./routes/app/upload.jsx');
+var cropping = require('./routes/app/cropping.jsx');
 
 /* EXTRA PAGES */
 var login = require('./routes/app/login.jsx');
@@ -160,7 +165,8 @@ module.exports = (
 
     <Route path='/app/file-utilities/dropzone' handler={dropzone} />
     <Route path='/app/file-utilities/crop' handler={crop} />
-    <Route path='/app/file-utilities/standart' handler={standart} />
+    <Route path='/app/file-utilities/upload' handler={upload} />
+    <Route path='/app/file-utilities/cropping' handler={cropping} />
 
     <Route path='/app/login' handler={login} />
     <Route path='/app/signup' handler={signup} />
