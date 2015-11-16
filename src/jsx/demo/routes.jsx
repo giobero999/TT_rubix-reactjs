@@ -52,6 +52,7 @@ var calendar = require('./routes/app/calendar.jsx');
 var lists = require('./routes/app/lists.jsx');
 var dropzone = require('./routes/app/dropzone.jsx');
 var crop = require('./routes/app/crop.jsx');
+var zones = require('./routes/app/zones.jsx');
 
 
 
@@ -142,6 +143,7 @@ module.exports = (
     <Route path='/app/codemirror' handler={codemirror} />
     <Route path='/app/maps' handler={maps} />
     <Route path='/app/editor' handler={editor} />
+    <Route path='/app/zones' handler={zones} />
 
     <Route path='/app/ui-elements/buttons' handler={buttons} />
     <Route path='/app/ui-elements/dropdowns' handler={dropdowns} />

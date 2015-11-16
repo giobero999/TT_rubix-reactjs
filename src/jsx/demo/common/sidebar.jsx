@@ -59,6 +59,7 @@ var ApplicationSidebar = React.createClass({
                   <SidebarNavItem href='/app/interactive-timeline' glyph='icon-fontello-back-in-time' name='Interactive Timeline' />
                   <SidebarNavItem href='/app/codemirror' glyph='icon-dripicons-code' name='Codemirror' />
                   <SidebarNavItem href='/app/maps' glyph='icon-ikons-pin-2' name='Maps' />
+                  <SidebarNavItem href='/app/zones' glyph='icon-ikons-pin-2' name='Zones' />
                   <SidebarNavItem href='/app/editor' glyph='icon-simple-line-icons-note' name='Editor' />
                   <SidebarNavItem glyph='icon-feather-toggle' name={<span>UI Elements <BLabel className='bg-deepred fg-white'>7</BLabel></span>}>
                     <SidebarNav>

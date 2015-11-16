@@ -3,7 +3,7 @@ var Brand = React.createClass({
     return (
       <NavHeader {...this.props}>
         <NavBrand tabIndex='-1'>
-          <img src='/imgs/logo.png' alt='rubix' width='111' height='28' />
+          <img src='/imgs/logo.png' alt='Taxitube' width='80' height='50' />
         </NavBrand>
       </NavHeader>
     );

@@ -2,25 +2,46 @@ var ApplicationSidebar = React.createClass({
   render: function() {
     return (
       <div>
+      <Grid gutterBottom>
+        <Row>
+          <Col xs={12}>
+            <div className='sidebar-header'>User Interface</div>
+            <div className='sidebar-nav-container'>
+              <SidebarNav style={{marginBottom: 0}}>
+                <SidebarNavItem glyph='icon-feather-share' name='Profile' href='/app/profile' />
+                <SidebarNavItem glyph='icon-ikons-login' name='Login' href='/app/login' />
+                <SidebarNavItem glyph='icon-simple-line-icons-users' name='Signup' href='/app/signup' />
+              </SidebarNav>
+            </div>
+          </Col>
+        </Row>
+      </Grid>
+
         <Grid>
           <Row>
             <Col xs={12}>
               <div className='sidebar-header'>PAGES</div>
               <div className='sidebar-nav-container'>
                 <SidebarNav style={{marginBottom: 0}}>
-                  <SidebarNavItem glyph='icon-fontello-gauge' name='Blank' href='/' />
-                  <SidebarNavItem glyph='icon-feather-mail' name={<span>Menu <BLabel className='bg-darkgreen45 fg-white'>3</BLabel></span>}>
+                  <SidebarNavItem href='/app/campaigns' glyph='icon-fontello-th-2' name='Campaigns' />
+                  <SidebarNavItem href='/app/tables' glyph='icon-fontello-view-mode' name='Tables' />
+                </SidebarNav>
+                <SidebarNav style={{marginBottom: 0}}>
+                  <SidebarNavItem glyph='icon-feather-mail' name={<span>assets</span>}>
                     <SidebarNav>
-                      <SidebarNavItem glyph='icon-feather-inbox' name='Inbox' />
-                      <SidebarNavItem glyph='icon-outlined-mail-open' name='Mail' />
-                      <SidebarNavItem glyph='icon-dripicons-message' name='Compose' />
+                      <SidebarNavItem href='/app/assets/gallery' glyph='icon-ikons-crop' name='Gallery' />
+                      <SidebarNavItem href='/app/assets/upload' glyph='icon-stroke-gap-icons-Download' name='Upload Files' />
+                      <SidebarNavItem href='/app/assets/crop' glyph='icon-ikons-crop' name='Cropping' />
                     </SidebarNav>
                   </SidebarNavItem>
+                    <SidebarNavItem href='/app/zones' glyph='icon-ikons-pin-2' name='Zones' />
+                    <SidebarNavItem href='/app/time' glyph='icon-ikons-pin-2' name='Time' />
                 </SidebarNav>
               </div>
             </Col>
           </Row>
         </Grid>
+
       </div>
     );
   }

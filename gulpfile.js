@@ -391,7 +391,7 @@ gulp.task('express', function() {
       NODE_ENV: process.env.NODE_ENV || 'development',
       APP: defaultAppName,
       RTL: createRTL,
-      PORT: 3010,
+      PORT: 3000,
       WPORT: wport,
       WHOST: whost
     },

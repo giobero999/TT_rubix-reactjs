@@ -112,7 +112,7 @@ var Body = React.createClass({
                           </div>
                         </Col>
                         <Col xs={12}>
-                          <Link to="/app/app/file-utilities/upload">
+                          <Link to="/app/zones">
                             <Button lg  style={{marginBottom: 5}} bsStyle='success pull-right next' >next</Button>{' '}
                           </Link>
                         </Col>
