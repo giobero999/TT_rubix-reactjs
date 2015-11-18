@@ -79,6 +79,7 @@ var Body = React.createClass({
              </Row>
            </Grid>
          </PanelHeader>
+           <Grid>
            <Col sm={12}>
              <PanelContainer controlStyles='bg-brown50 fg-white'>
                <Panel horizontal className='force-collapse'>
@@ -113,6 +114,7 @@ var Body = React.createClass({
              </PanelContainer>
            </Col>
 
+           </Grid>
          </Row>
        </Grid>
      </Container>

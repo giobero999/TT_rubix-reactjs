@@ -63,21 +63,7 @@ var SocialBanner = React.createClass({
 var Body = React.createClass({
   componentDidMount: function() {
     $('html').addClass('social');
-    (function() {
-      // create a map in the "map" div, set the view to a given place and zoom
-      var map = L.map('map', {
-        scrollWheelZoom: false
-      }).setView([40.7127, -74.0059], 16);
 
-      // add an OpenStreetMap tile layer
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      // add a marker in the given location, attach some popup content to it and open the popup
-      L.marker([40.7127, -74.0059]).addTo(map)
-          .openPopup();
-    })();
   },
   componentWillUnmount: function() {
     $('html').removeClass('social');
@@ -88,202 +74,207 @@ var Body = React.createClass({
         <SocialBanner />
         <Grid>
           <Row>
-            <Col sm={6} collapseRight>
-              <PanelContainer>
-                <PanelBody style={{padding: 12.5}}>
-                  <Textarea rows='3' placeholder="What's on your mind?" style={{border: 'none'}} />
-                </PanelBody>
-                <PanelFooter className='fg-black75 bg-gray' style={{padding: '12.5px 25px'}}>
-                  <Grid>
-                    <Row>
-                      <Col xs={6} collapseLeft collapseRight>
-                        <a href='#' style={{border: 'none'}}><Icon glyph='icon-dripicons-location icon-1-and-quarter-x fg-text' style={{marginRight: 25}} /></a>
-                        <a href='#' style={{border: 'none'}}><Icon glyph='icon-dripicons-camera icon-1-and-quarter-x fg-text' style={{marginRight: 25}} /></a>
-                        <a href='#' style={{border: 'none'}}><Icon glyph='icon-dripicons-calendar icon-1-and-quarter-x fg-text' style={{marginRight: 25}} /></a>
-                      </Col>
-                      <Col xs={6} className='text-right' collapseLeft collapseRight>
-                        <Button bsStyle='darkgreen45'>send</Button>
-                      </Col>
-                    </Row>
-                  </Grid>
-                </PanelFooter>
-              </PanelContainer>
-              <PanelContainer>
-                <PanelBody style={{padding: 25, paddingTop: 12.5}}>
-                  <div className='inbox-avatar'>
-                    <img src='/imgs/avatars/avatar7.png' width='40' height='40' />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Toby King</div>
-                      <div className='fg-text'><small>Wisconsin, USA</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div style={{position: 'relative', top: 0}}><Icon glyph='icon-fontello-anchor icon-1-and-quarter-x'/></div>
-                      <div style={{position: 'relative', top: -10}}><small><strong>2 hours ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='fg-text'>
-                      {"I'll be out of my mind and you'll be out of ideas pretty soon. So let's spend the afternoon in a cold hot air balloon. Leave your jacket behind. Lean out and touch the tree tops over town. I can't wait to kiss the ground wherever we touch back down."}
-                    </div>
-                  </div>
-                  <div style={{margin: -25, marginTop: 25}}>
-                    <Img responsive src='/imgs/gallery/tumblr_n8zm8ndGiY1st5lhmo1_1280.jpg' />
-                  </div>
-                </PanelBody>
-                <PanelFooter noRadius className='fg-black75 bg-gray' style={{padding: '12.5px 25px', margin: 0}}>
-                  <Grid className='fg-text'>
-                    <Row>
-                      <Col xs={6} collapseLeft collapseRight>
-                        <a href='#' className='fg-text' style={{border: 'none', marginRight: 25}}><Icon glyph='icon-dripicons-thumbs-up icon-1-and-quarter-x' /><span style={{position: 'relative', top: -2, left: 3}}>Like</span></a>
-                      </Col>
-                      <Col xs={6} className='text-right' collapseLeft collapseRight>
-                        <span style={{top: 5, position: 'relative'}}><strong>523</strong> people like this</span>
-                      </Col>
-                    </Row>
-                  </Grid>
-                </PanelFooter>
-                <PanelFooter style={{padding: 25, paddingTop: 0, paddingBottom: 0}}>
-                  <div className='inbox-avatar' style={{borderBottom: '1px solid #EAEDF1'}}>
-                    <img src='/imgs/avatars/avatar0.png' width='30' height='30' style={{verticalAlign: 'top', top: 10, position: 'relative'}} />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Anna Sanchez</div>
-                      <div className='fg-text'><small>Nice!</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div><small><strong>22 minutes ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div className='inbox-avatar' style={{borderBottom: '1px solid #EAEDF1'}}>
-                    <img src='/imgs/avatars/avatar9.png' width='30' height='30' style={{verticalAlign: 'top', top: 10, position: 'relative'}} />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Ava Parry</div>
-                      <div className='fg-text'><small>Woah! Beautiful pic and beautiful quote! Whats the source?</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div><small><strong>2 minutes ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div className='inbox-avatar' style={{borderBottom: '1px solid #EAEDF1'}}>
-                    <img src='/imgs/avatars/avatar7.png' width='30' height='30' style={{verticalAlign: 'top', top: 10, position: 'relative'}} />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Ava Parry</div>
-                      <div className='fg-text'><small>Thanks guys! Appreciate! :)</small></div>
-                      <div className='fg-text'><small>Source: <em>Owl City, Ocean Eyes</em></small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div><small><strong>few seconds ago</strong></small></div>
-                    </div>
-                  </div>
-                </PanelFooter>
-                <PanelFooter style={{padding: 12.5}}>
-                  <Textarea rows='1' placeholder='Write a comment...' style={{border: 'none'}} />
-                </PanelFooter>
-              </PanelContainer>
-            </Col>
-            <Col sm={6}>
-              <PanelContainer>
-                <PanelBody style={{padding: 25, paddingTop: 12.5}}>
-                  <div className='inbox-avatar'>
-                    <img src='/imgs/avatars/avatar5.png' width='40' height='40' />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Jordyn Ouellet created an event</div>
-                      <div className='fg-text'><small>Austin, USA</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div style={{position: 'relative', top: 0}}><Icon glyph='icon-ikons-calendar icon-1-and-quarter-x'/></div>
-                      <div style={{position: 'relative', top: -10}}><small><strong>3 hours ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='fg-darkgreen45'><strong>Birthday party on my Yacht in New York.</strong></div>
-                    <div className='fg-text'>July 10 at 10:00pm</div>
-                    <div className='fg-text'>New York, USA</div>
-                  </div>
-                  <div style={{margin: -25, marginTop: 25}}>
-                    <div>
-                      <div id='map' className='map leaflet-container leaflet-fade-anim' style={{height: 300}}></div>
-                    </div>
-                  </div>
-                </PanelBody>
-                <PanelFooter noRadius className='fg-black75 bg-gray' style={{padding: '12.5px 25px', margin: 0}}>
-                  <Grid className='fg-text'>
-                    <Row>
-                      <Col xs={6} collapseLeft collapseRight>
-                        <a href='#' className='fg-text' style={{border: 'none', marginRight: 25}}><Icon glyph='icon-dripicons-thumbs-up icon-1-and-quarter-x' /><span style={{position: 'relative', top: -2, left: 3}}>Like</span></a>
-                      </Col>
-                      <Col xs={6} className='text-right' collapseLeft collapseRight>
-                        <span style={{top: 5, position: 'relative'}}><strong>600</strong> people like this</span>
-                      </Col>
-                    </Row>
-                  </Grid>
-                </PanelFooter>
-                <PanelFooter style={{padding: 12.5}}>
-                  <Textarea rows='1' placeholder='Write a comment...' style={{border: 'none'}} />
-                </PanelFooter>
-              </PanelContainer>
-              <PanelContainer>
-                <PanelBody style={{padding: 25, paddingTop: 12.5}}>
-                  <div className='inbox-avatar'>
-                    <img src='/imgs/avatars/avatar9.png' width='40' height='40' />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Ava Parry</div>
-                      <div className='fg-text'><small>Massachusetts, USA</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div style={{position: 'relative', top: 0}}><Icon glyph='icon-feather-video icon-1-and-quarter-x'/></div>
-                      <div style={{position: 'relative', top: -10}}><small><strong>4 hours ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='fg-darkgreen45'>
-                      <strong>1983 Historic Apple Keynote by Steve Jobs</strong>
-                    </div>
-                  </div>
-                  <div style={{margin: -25, marginTop: 25}}>
-                    <div className="embed-responsive embed-responsive-16by9">
-                      <iframe className="embed-responsive-item" src='//www.youtube.com/embed/lSiQA6KKyJo?rel=0' allowFullScreen></iframe>
-                    </div>
-                  </div>
-                </PanelBody>
-                <PanelFooter noRadius className='fg-black75 bg-gray' style={{padding: '12.5px 25px', margin: 0}}>
-                  <Grid className='fg-text'>
-                    <Row>
-                      <Col xs={6} collapseLeft collapseRight>
-                        <a href='#' className='fg-text' style={{border: 'none', marginRight: 25}}><Icon glyph='icon-dripicons-thumbs-up icon-1-and-quarter-x' /><span style={{position: 'relative', top: -2, left: 3}}>Like</span></a>
-                      </Col>
-                      <Col xs={6} className='text-right' collapseLeft collapseRight>
-                        <span style={{top: 5, position: 'relative'}}><strong>4,350</strong> people like this</span>
-                      </Col>
-                    </Row>
-                  </Grid>
-                </PanelFooter>
-                <PanelFooter style={{padding: 25, paddingTop: 0, paddingBottom: 0}}>
-                  <div className='inbox-avatar' style={{borderBottom: '1px solid #EAEDF1'}}>
-                    <img src='/imgs/avatars/avatar0.png' width='30' height='30' style={{verticalAlign: 'top', top: 10, position: 'relative'}} />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Anna Sanchez</div>
-                      <div className='fg-text'><small>Love this! It also features the Superbowl ad</small></div>
-                      <div className='fg-text' style={{marginTop: -5}}><small>which is considered the greatest ad of all time!</small></div>
-                      <div className='fg-text'><small>Thanks for sharing!</small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div><small><strong>4 hours ago</strong></small></div>
-                    </div>
-                  </div>
-                  <div className='inbox-avatar' style={{borderBottom: '1px solid #EAEDF1'}}>
-                    <img src='/imgs/avatars/avatar9.png' width='30' height='30' style={{verticalAlign: 'top', top: 10, position: 'relative'}} />
-                    <div className='inbox-avatar-name'>
-                      <div className='fg-darkgrayishblue75'>Ava Parry</div>
-                      <div className='fg-text'><small><strong>Welcome! :)</strong></small></div>
-                    </div>
-                    <div className='inbox-date hidden-sm hidden-xs fg-text text-right'>
-                      <div><small><strong>4 hours ago</strong></small></div>
-                    </div>
-                  </div>
-                </PanelFooter>
-                <PanelFooter style={{padding: 12.5}}>
-                  <Textarea rows='1' placeholder='Write a comment...' style={{border: 'none'}} />
-                </PanelFooter>
+            <Col xs={12}>
+              <PanelContainer controlStyles='bg-grayishcyan fg-white'>
+                <Panel className='force-collapse'>
+                  <PanelHeader className='bg-red fg-white tabs'>
+                    <TabContainer>
+                      <TabList>
+                        <Tab pane='tpc_hf:home' active>
+                          <Icon bundle='fontello' glyph='home'/>
+                        </Tab>
+                        <Tab pane='tpc_hf:profile'>
+                          <Icon bundle='fontello' glyph='user'/>
+                        </Tab>
+                        <Tab pane='tpc_hf:settings'>
+                          <Icon bundle='fontello' glyph='cog'/>
+                        </Tab>
+                        <Tab pane='tpc_hf:users'>
+                          <Icon bundle='fontello' glyph='key'/>
+                        </Tab>
+                      </TabList>
+                    </TabContainer>
+                  </PanelHeader>
+                  <PanelBody>
+                    <Grid>
+                      <Row>
+                        <Col xs={12}>
+                          <TabContent>
+                            <TabPane tab='tpc_hf:home' active>
+                            <Grid>
+                              <Row>
+                                <Col xs={12}>
+                                  <h3>My Campaigns</h3>
+                                  <Table striped bordered className='tablesaw' data-mode="swipe" data-sortable data-sortable-switch data-mode-switch>
+                                    <thead>
+                                      <tr>
+                                        <th data-sortable-col data-sortable-default-col data-priority='persist'>ID</th>
+                                        <th data-sortable-col data-priority='3'>Campagn Name</th>
+                                        <th data-sortable-col data-priority='2'>End Date </th>
+                                        <th data-sortable-col data-priority='1'><abbr title='Rotten Tomato Rating'>Number of Times Played</abbr></th>
+                                        <th data-sortable-col data-priority='4'>Total Spent</th>
+                                        <th data-sortable-col data-priority='5'>Max Budget</th>
+                                        <th data-sortable-col data-priority='6'>Active (ON/OFF)</th>
+                                        <th data-sortable-col data-priority='7'>View</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Xmas</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td>Summer</td>
+                                        <td>2/10/2015</td>
+                                        <td>1</td>
+                                        <td>$10</td>
+                                        <td>$225</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>Independence day</td>
+                                        <td>27/8/2015</td>
+                                        <td>15</td>
+                                        <td>$200</td>
+                                        <td>$1000</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td>Halloween</td>
+                                        <td>5/4/2015</td>
+                                        <td>7</td>
+                                        <td>$150</td>
+                                        <td>$210</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>5</td>
+                                        <td>The Christmas Feast and Santa Claus</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>public holidays</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Mother’s Day</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>spring</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>Winter</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>autumn</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>Christmas</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>Summer</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>57$</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                                      </tr>
+                                       <tr>
+                                        <td>1</td>
+                                        <td>Mother’s Day</td>
+                                        <td>27/10/2015</td>
+                                        <td>4</td>
+                                        <td>$57</td>
+                                        <td>$200</td>
+                                        <td>on/off</td>
+                                        <td className="text-center"><Button sm outlined style={{marginBottom: 5}} bsStyle='info center-block'>Info</Button>{' '}</td>
+                                      </tr>
+                                    </tbody>
+                                  </Table>
+                                </Col>
+                              </Row>
+                            </Grid>
+                            </TabPane>
+                            <TabPane tab='tpc_hf:profile'>
+                              <h4>About</h4>
+                              <p><LoremIpsum query='2s'/></p>
+                            </TabPane>
+                            <TabPane tab='tpc_hf:settings'>
+                              <h4>Settings</h4>
+                              <p><LoremIpsum query='2s'/></p>
+                            </TabPane>
+                            <TabPane tab='tpc_hf:users'>
+                              <h4>Change</h4>
+                              <p><LoremIpsum query='3s'/></p>
+                            </TabPane>
+
+
+                          </TabContent>
+                        </Col>
+                      </Row>
+                    </Grid>
+                  </PanelBody>
+                </Panel>
               </PanelContainer>
             </Col>
           </Row>

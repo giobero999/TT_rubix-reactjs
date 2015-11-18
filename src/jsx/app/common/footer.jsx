@@ -15,7 +15,7 @@ var Footer = React.createClass({
         <Grid id='footer' className='text-center'>
           <Row>
             <Col xs={12}>
-              <div>© 2014 SketchPixy Creative - v{this.state.version}</div>
+              <div>© 2015 TaxiTube Team - v{this.state.version}</div>
             </Col>
           </Row>
         </Grid>
