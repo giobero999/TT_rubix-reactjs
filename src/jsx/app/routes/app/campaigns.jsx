@@ -61,7 +61,7 @@ var Body = React.createClass({
         <Grid>
           <Row>
             <Col xs={12}>
-              <PanelContainer>
+              <PanelContainer noControls>
                 <Panel>
                   <PanelBody>
                     <Grid>
@@ -95,7 +95,11 @@ var Body = React.createClass({
                               <td>$57</td>
                               <td>$200</td>
                               <td>on/off</td>
-                              <td><Button sm outlined style={{marginBottom: 5}} bsStyle='info'>Info</Button>{' '}</td>
+                              <td>
+                                <Link to="/app/zones">
+                                  <Button sm  style={{marginBottom: 5}} bsStyle='info pull-right next' >info</Button>{' '}
+                                </Link>
+                              </td>
                             </tr>
                             <tr>
                               <td>2</td>

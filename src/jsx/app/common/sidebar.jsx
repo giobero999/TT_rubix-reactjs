@@ -8,7 +8,8 @@ var ApplicationSidebar = React.createClass({
             <div className='sidebar-header'>User Interface</div>
             <div className='sidebar-nav-container'>
               <SidebarNav style={{marginBottom: 0}}>
-                <SidebarNavItem glyph='icon-feather-share' name='Profile' href='/app/profile' />
+                <SidebarNavItem glyph='icon-ikons-user-square 'name='Profile' href='/app/profile' />
+
                 <SidebarNavItem glyph='icon-ikons-login' name='Login' href='/app/login' />
                 <SidebarNavItem glyph='icon-simple-line-icons-users' name='Signup' href='/app/signup' />
               </SidebarNav>
@@ -26,7 +27,8 @@ var ApplicationSidebar = React.createClass({
                   <SidebarNavItem href='/app/campaigns' glyph='icon-fontello-th-2' name='Campaigns' />
                   <SidebarNavItem href='/app/tables' glyph='icon-fontello-view-mode' name='Tables' />
                 </SidebarNav>
-                <SidebarNav style={{marginBottom: 0}}>
+
+                <SidebarNav>
                   <SidebarNavItem glyph='icon-feather-mail' name={<span>assets</span>}>
                     <SidebarNav>
                       <SidebarNavItem href='/app/assets/gallery' glyph='icon-ikons-crop' name='Gallery' />
@@ -34,9 +36,19 @@ var ApplicationSidebar = React.createClass({
                       <SidebarNavItem href='/app/assets/crop' glyph='icon-ikons-crop' name='Cropping' />
                     </SidebarNav>
                   </SidebarNavItem>
-                    <SidebarNavItem href='/app/zones' glyph='icon-ikons-pin-2' name='Zones' />
-                    <SidebarNavItem href='/app/time' glyph='icon-ikons-pin-2' name='Time' />
                 </SidebarNav>
+
+                <SidebarNav>
+                  <SidebarNavItem href='/app/zones' glyph='icon-ikons-pin-2' name='Zones' />
+                  <SidebarNavItem href='/app/time' glyph='icon-ikons-time' name='Time' />
+                  <SidebarNavItem href='/app/map' glyph='icon-ikons-map' name='Map' />
+                </SidebarNav>
+
+                <SidebarNav style={{marginBottom: 0}}>
+                  <SidebarNavItem href='/app/charts/statistics' glyph='icon-nargela-statistics' name='Statistics' />
+                  <SidebarNavItem href='/app/billing' glyph='icon-stroke-gap-icons-Goto' name='Billing' />
+                </SidebarNav>
+
               </div>
             </Col>
           </Row>
@@ -94,7 +106,7 @@ var SidebarSection = React.createClass({
             <ApplicationSidebar />
           </Sidebar>
           <Sidebar sidebar={1}>
-            <DummySidebar />
+            <p>Taxitube</p>
           </Sidebar>
           <Sidebar sidebar={2}>
             <DummySidebar />

@@ -45,7 +45,7 @@ var Body = React.createClass({
         <Grid>
           <Row>
             <Col sm={12}>
-              <PanelContainer controlStyles='bg-darkgreen45 fg-white'>
+              <PanelContainer noControls>
                 <Panel>
                   <PanelHeader className='bg-darkgreen45 fg-white' style={{margin: 0}}>
                     <Grid>

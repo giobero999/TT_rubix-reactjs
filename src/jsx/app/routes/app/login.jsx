@@ -7,7 +7,7 @@ var Body = React.createClass({
   back: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.transitionTo('/app/invoice');
+    this.transitionTo('/app/billing');
   },
   handleSubmit:function(e){
       e.preventDefault();
@@ -88,11 +88,9 @@ var Body = React.createClass({
                                       <Button lg
                                               type='submit'
                                               bsStyle='red'
-                                              className='login'
-
-                                            >
+                                              className='login'>
                                             Login
-                                            </Button>
+                                      </Button>
                                     </Col>
                                   </Row>
                                 </Grid>

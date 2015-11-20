@@ -54,12 +54,12 @@ var Body = React.createClass({
     }));
 
     $('#example_3').ionRangeSlider({
-      min: 0.1,
-      max: 5,
+      min: 20,
+      max: 5000,
       type: 'single',
-      step: 0.1,
+      step: 20,
       postfix: ' $',
-      prettify: false,
+      prettify: true,
       hasGrid: true
     });
   },
@@ -67,7 +67,7 @@ var Body = React.createClass({
 
  render: function() {
    return (
-     <Container id='body'>
+     <Container id='body' >
        <Grid>
          <Row>
          <PanelHeader className='bg-green fg-white'>
@@ -81,7 +81,7 @@ var Body = React.createClass({
          </PanelHeader>
            <Grid>
            <Col sm={12}>
-             <PanelContainer controlStyles='bg-brown50 fg-white'>
+             <PanelContainer noControls>
                <Panel horizontal className='force-collapse'>
                  <PanelBody className='panel-sm-7' style={{padding: 0}}>
                    <Col sm={6} style={{paddingTop: 15}}>

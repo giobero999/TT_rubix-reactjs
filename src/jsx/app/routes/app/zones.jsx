@@ -5,7 +5,7 @@ var Footer = require('../../common/footer.jsx');
 var MapContainer = React.createClass({
   render: function() {
     return (
-      <PanelContainer>
+      <PanelContainer noControls>
         <Panel>
           <PanelBody style={{padding: 25}}>
             <h4 className='text-center' style={{marginTop: 0}}>{this.props.name}</h4>
@@ -44,9 +44,11 @@ var Body = React.createClass({
       }.bind(this)
     });
   },
+
+  toggleEditable: function() {
+    $('.times, .days').editable('toggleDisabled');
+  },
   componentDidMount: function() {
-
-
     (function() {
       var map = new GMaps({
         scrollwheel: false,
@@ -75,20 +77,38 @@ var Body = React.createClass({
       });
     })();
 
-
-
-
+    // tags
+    $('.times').editable({
+      mode: this.state.mode,
+      inputclass: 'input-large',
+      select2: {
+        tags: ['08:00 - 12:00', '12:00 - 18:00', '18:00 - 24:00', '24:00 - 08:00'],
+        tokenSeparators: [',', ' ']
+      },
+      disabled:true
+    });
+    $('.days').editable({
+      mode: this.state.mode,
+      inputclass: 'input-large',
+      select2: {
+        tags: ['monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday','Sunday'],
+        tokenSeparators: [',', ' ']
+      },
+      disabled:true
+    });
   },
+
+
   render: function() {
     return (
-      <Container id='body'>
+      <Container id='body' noControls>
         <Grid>
           <Row>
             <Col sm={12} collapseRight>
               <MapContainer id='markers' name='Create Zone' />
             </Col>
           </Row>
-          <PanelContainer>
+          <PanelContainer >
             <Panel>
               <PanelBody>
                 <Grid>
@@ -100,6 +120,7 @@ var Body = React.createClass({
                           <tr>
                             <th>Location</th>
                             <th>Radius</th>
+                            <th>Max Bid</th>
                             <th>Times</th>
                             <th>Days</th>
                             <th>Edit</th>
@@ -110,20 +131,47 @@ var Body = React.createClass({
                           <tr>
                             <td>Zone 1</td>
                             <td>100</td>
-                            <td>O.8$</td>
-                            <td>8:00</td>
+                            <td>0.2$</td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='times' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>12:00 - 18:00</a>
+                            </td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='days' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>Monday, Friday</a>
+                            </td>
+                            <td><Button sm outlined bsStyle='green' onClick={this.toggleEditable}>Edit</Button></td>
+                            <td>
+                              <Checkbox value='option1' name='checkbox-options'></Checkbox>
+                            </td>
                           </tr>
                           <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Zone 2</td>
+                            <td>50</td>
+                            <td>0.8$</td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='times' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>12:00 - 18:00</a>
+                            </td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='days' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>Monday</a>
+                            </td>
+                            <td><Button sm outlined bsStyle='green' onClick={this.toggleEditable}>Edit</Button></td>
+                            <td>
+                              <Checkbox value='option1' name='checkbox-options'></Checkbox>
+                            </td>
                           </tr>
                           <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td>Zone 3</td>
+                            <td>70</td>
+                            <td>0.9$</td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='times' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>12:00 - 18:00</a>
+                            </td>
+                            <td>
+                              <a href='#' key={this.state.refresh} className='days' data-type='select2' data-placement='left' data-pk='1' data-title='Enter tags'>Tursday, Monday</a>
+                            </td>
+                            <td><Button sm outlined bsStyle='green' onClick={this.toggleEditable}>Edit</Button></td>
+                            <td>
+                              <Checkbox value='option1' name='checkbox-options'></Checkbox>
+                            </td>
                           </tr>
                         </tbody>
                       </Table>

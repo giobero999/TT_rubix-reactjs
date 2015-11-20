@@ -1,4 +1,4 @@
-/*! rubix - v2.3.0 - 2015-11-13 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
+/*! rubix - v2.3.0 - 2015-11-20 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
 (function() {
 /*DO NOT MODIFY*/
 
@@ -567,30 +567,48 @@ var l20n=_RL20n_.l20n,
 	/* ERROR PAGES */
 	var notfound = __webpack_require__(7);
 
-	/* APP PAGES */
-	var login = __webpack_require__(11);
-	var signup = __webpack_require__(12);
-	var profile = __webpack_require__(13);
-	var blank = __webpack_require__(14);
-	var upload = __webpack_require__(15);
-	var crop = __webpack_require__(16);
+	var homepage = __webpack_require__(11);
+	var billing = __webpack_require__(12);
 
-	var campaigns = __webpack_require__(17);
-	var zones = __webpack_require__(18);
+	/* APP PAGES */
+	var login = __webpack_require__(13);
+	var signup = __webpack_require__(14);
+	var blank = __webpack_require__(15);
+
+	// assets
+	var upload = __webpack_require__(16);
+	var crop = __webpack_require__(17);
+	var gallery = __webpack_require__(18);
+
+
+	var tables = __webpack_require__(19);
+	var campaigns = __webpack_require__(20);
+
+	var zones = __webpack_require__(21);
+	var time = __webpack_require__(22);
+	var Tmap = __webpack_require__(26);
+
+	var statistics = __webpack_require__(27);
 
 	/* ROUTES */
 	module.exports = (
 	  React.createElement(Route, {handler: ReactRouter.RouteHandler}, 
-	    React.createElement(DefaultRoute, {handler: blank}), 
-	    React.createElement(Route, {path: "/", handler: blank}), 
+	    React.createElement(DefaultRoute, {handler: homepage}), 
+	    React.createElement(Route, {path: "/", handler: homepage}), 
 	    React.createElement(NotFoundRoute, {handler: notfound}), 
+	    React.createElement(Route, {path: "/app/profile", handler: homepage}), 
 	    React.createElement(Route, {path: "/app/campaigns", handler: campaigns}), 
-	    React.createElement(Route, {path: "/app/profile", handler: profile}), 
-	    React.createElement(Route, {path: "/app/upload", handler: upload}), 
+	    React.createElement(Route, {path: "/app/assets/upload", handler: upload}), 
+	    React.createElement(Route, {path: "/app/assets/crop", handler: crop}), 
+	    React.createElement(Route, {path: "/app/assets/gallery", handler: gallery}), 
 	    React.createElement(Route, {path: "/app/zones", handler: zones}), 
-	    React.createElement(Route, {path: "/app/crop", handler: crop}), 
+	    React.createElement(Route, {path: "/app/map", handler: Tmap}), 
 	    React.createElement(Route, {path: "/app/login", handler: login}), 
-	    React.createElement(Route, {path: "/app/signup", handler: signup})
+	    React.createElement(Route, {path: "/app/signup", handler: signup}), 
+	    React.createElement(Route, {path: "/app/time", handler: time}), 
+	    React.createElement(Route, {path: "/app/tables", handler: tables}), 
+	    React.createElement(Route, {path: "/app/billing", handler: billing}), 
+	    React.createElement(Route, {path: "/app/charts/statistics", handler: statistics})
 
 
 	  )
@@ -743,7 +761,8 @@ var l20n=_RL20n_.l20n,
 	            React.createElement("div", {className: "sidebar-header"}, "User Interface"), 
 	            React.createElement("div", {className: "sidebar-nav-container"}, 
 	              React.createElement(SidebarNav, {style: {marginBottom: 0}}, 
-	                React.createElement(SidebarNavItem, {glyph: "icon-feather-share", name: "Profile", href: "/app/profile"}), 
+	                React.createElement(SidebarNavItem, {glyph: "icon-ikons-user-square ", name: "Profile", href: "/app/profile"}), 
+
 	                React.createElement(SidebarNavItem, {glyph: "icon-ikons-login", name: "Login", href: "/app/login"}), 
 	                React.createElement(SidebarNavItem, {glyph: "icon-simple-line-icons-users", name: "Signup", href: "/app/signup"})
 	              )
@@ -758,17 +777,31 @@ var l20n=_RL20n_.l20n,
 	              React.createElement("div", {className: "sidebar-header"}, "PAGES"), 
 	              React.createElement("div", {className: "sidebar-nav-container"}, 
 	                React.createElement(SidebarNav, {style: {marginBottom: 0}}, 
-	                  React.createElement(SidebarNavItem, {href: "/app/campaigns", glyph: "icon-fontello-th-2", name: "Campaigns"})
+	                  React.createElement(SidebarNavItem, {href: "/app/campaigns", glyph: "icon-fontello-th-2", name: "Campaigns"}), 
+	                  React.createElement(SidebarNavItem, {href: "/app/tables", glyph: "icon-fontello-view-mode", name: "Tables"})
 	                ), 
-	                React.createElement(SidebarNav, {style: {marginBottom: 0}}, 
-	                  React.createElement(SidebarNavItem, {glyph: "icon-feather-mail", name: React.createElement("span", null, "files")}, 
+
+	                React.createElement(SidebarNav, null, 
+	                  React.createElement(SidebarNavItem, {glyph: "icon-feather-mail", name: React.createElement("span", null, "assets")}, 
 	                    React.createElement(SidebarNav, null, 
-	                      React.createElement(SidebarNavItem, {href: "/app/upload", glyph: "icon-stroke-gap-icons-Download", name: "Upload Files"}), 
-	                      React.createElement(SidebarNavItem, {href: "/app/crop", glyph: "icon-ikons-crop", name: "Cropping"})
+	                      React.createElement(SidebarNavItem, {href: "/app/assets/gallery", glyph: "icon-ikons-crop", name: "Gallery"}), 
+	                      React.createElement(SidebarNavItem, {href: "/app/assets/upload", glyph: "icon-stroke-gap-icons-Download", name: "Upload Files"}), 
+	                      React.createElement(SidebarNavItem, {href: "/app/assets/crop", glyph: "icon-ikons-crop", name: "Cropping"})
 	                    )
-	                  ), 
-	                    React.createElement(SidebarNavItem, {href: "/app/zones", glyph: "icon-ikons-pin-2", name: "Zones"})
+	                  )
+	                ), 
+
+	                React.createElement(SidebarNav, null, 
+	                  React.createElement(SidebarNavItem, {href: "/app/zones", glyph: "icon-ikons-pin-2", name: "Zones"}), 
+	                  React.createElement(SidebarNavItem, {href: "/app/time", glyph: "icon-ikons-time", name: "Time"}), 
+	                  React.createElement(SidebarNavItem, {href: "/app/map", glyph: "icon-ikons-map", name: "Map"})
+	                ), 
+
+	                React.createElement(SidebarNav, {style: {marginBottom: 0}}, 
+	                  React.createElement(SidebarNavItem, {href: "/app/charts/statistics", glyph: "icon-nargela-statistics", name: "Statistics"}), 
+	                  React.createElement(SidebarNavItem, {href: "/app/billing", glyph: "icon-stroke-gap-icons-Goto", name: "Billing"})
 	                )
+
 	              )
 	            )
 	          )
@@ -826,7 +859,7 @@ var l20n=_RL20n_.l20n,
 	            React.createElement(ApplicationSidebar, null)
 	          ), 
 	          React.createElement(Sidebar, {sidebar: 1}, 
-	            React.createElement(DummySidebar, null)
+	            React.createElement("p", null, "Taxitube")
 	          ), 
 	          React.createElement(Sidebar, {sidebar: 2}, 
 	            React.createElement(DummySidebar, null)
@@ -869,7 +902,7 @@ var l20n=_RL20n_.l20n,
 	        React.createElement(Grid, {id: "footer", className: "text-center"}, 
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {xs: 12}, 
-	              React.createElement("div", null, "© 2014 SketchPixy Creative - v", this.state.version)
+	              React.createElement("div", null, "© 2015 TaxiTube Team - v", this.state.version)
 	            )
 	          )
 	        )
@@ -885,6 +918,508 @@ var l20n=_RL20n_.l20n,
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "profile.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "profile.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var SocialBanner = __HUA.createClass({displayName: "SocialBanner",
+	  getInitialState: function() {
+	    return {
+	      follow: 'follow me',
+	      followActive: false,
+	      likeCount: 999,
+	      likeActive: false,
+	      likeTextStyle: 'fg-white'
+	    };
+	  },
+	  handleFollow: function() {
+	    this.setState({
+	      follow: 'followed',
+	      followActive: true
+	    });
+	  },
+	  handleLike: function() {
+	    this.setState({
+	      likeCount: 1000,
+	      likeActive: true,
+	      likeTextStyle: 'fg-orange75'
+	    });
+	  },
+	  render: function() {
+	    return (
+	      React.createElement("div", {style: {height: 350, marginTop: -25, backgroundImage: 'url(/imgs/shots/Blick_auf_Manhattan.JPG)', backgroundSize: 'cover', position: 'relative', marginBottom: 25, backgroundPosition: 'center'}}, 
+	        React.createElement("div", {className: "social-cover", style: {position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
+	        ), 
+	        React.createElement("div", {className: "social-desc"}, 
+	          React.createElement("div", null, 
+	            React.createElement("h1", {className: "fg-white"}, "Campaign Name"), 
+	            React.createElement("h5", {className: "fg-white", style: {opacity: 0.8}}, "Campaign Address"), 
+	            React.createElement("div", {style: {marginTop: 50}}, 
+	              React.createElement("div", {style: {display: 'inline-block'}}, 
+	                React.createElement(Button, {id: "likeCount", retainBackground: true, rounded: true, bsStyle: "orange75", active: this.state.likeActive, onClick: this.handleLike}, 
+	                  React.createElement(Icon, {glyph: "icon-fontello-heart-1"})
+	                ), 
+	                React.createElement(Label, {className: "social-like-count", htmlFor: "likeCount"}, React.createElement("span", {className: this.state.likeTextStyle}, this.state.likeCount, " likes"))
+	              )
+	            )
+	          )
+	        ), 
+	        React.createElement("div", {className: "social-avatar"}, 
+	          React.createElement(Img, {src: "/imgs/avatars/avatar.jpg", height: "100", width: "100", style: {display: 'block', borderRadius: 100, border: '2px solid #fff', margin: 'auto', marginTop: 50}}), 
+	          React.createElement("h4", {className: "fg-white text-center"}, "Username"), 
+	          React.createElement("h5", {className: "fg-white text-center", style: {opacity: 0.8}}, "User Position"), 
+	          React.createElement("hr", {className: "border-black75", style: {borderWidth: 2}}), 
+	          React.createElement("div", {className: "text-center"}, 
+	            React.createElement(Button, {outlined: true, inverse: true, retainBackground: true, active: this.state.followActive, bsStyle: "brightblue", onClick: this.handleFollow}, 
+	              React.createElement("span", null, this.state.follow)
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    $('html').addClass('social');
+
+	  },
+	  componentWillUnmount: function() {
+	    $('html').removeClass('social');
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body", className: "social"}, 
+	        React.createElement(SocialBanner, null), 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {xs: 12}, 
+	              React.createElement(PanelContainer, {noControls: true}, 
+	                React.createElement(Panel, {className: "force-collapse"}, 
+	                  React.createElement(PanelHeader, {className: "bg-red fg-white tabs"}, 
+	                    React.createElement(TabContainer, null, 
+	                      React.createElement(TabList, null, 
+	                        React.createElement(Tab, {pane: "tpc_hf:home", active: true}, 
+	                          React.createElement(Icon, {bundle: "fontello", glyph: "home"})
+	                        ), 
+	                        React.createElement(Tab, {pane: "tpc_hf:profile"}, 
+	                          React.createElement(Icon, {bundle: "fontello", glyph: "user"})
+	                        ), 
+	                        React.createElement(Tab, {pane: "tpc_hf:settings"}, 
+	                          React.createElement(Icon, {bundle: "fontello", glyph: "cog"})
+	                        ), 
+	                        React.createElement(Tab, {pane: "tpc_hf:users"}, 
+	                          React.createElement(Icon, {bundle: "fontello", glyph: "key"})
+	                        )
+	                      )
+	                    )
+	                  ), 
+	                  React.createElement(PanelBody, null, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement(TabContent, null, 
+	                            React.createElement(TabPane, {tab: "tpc_hf:home", active: true}, 
+	                            React.createElement(Grid, null, 
+	                              React.createElement(Row, null, 
+	                                React.createElement(Col, {xs: 12, style: {padding:0}}, 
+	                                  React.createElement("h3", null, "My Campaigns"), 
+	                                  React.createElement(Table, {striped: true, bordered: true, className: "tablesaw", "data-mode": "swipe", "data-sortable": true, "data-sortable-switch": true, "data-mode-switch": true}, 
+	                                    React.createElement("thead", null, 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-sortable-default-col": true, "data-priority": "persist"}, "ID"), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "3"}, "Campagn Name"), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "2"}, "End Date "), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "1"}, React.createElement("abbr", {title: "Rotten Tomato Rating"}, "Number of Times Played")), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "4"}, "Total Spent"), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "5"}, "Max Budget"), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "6"}, "Active (ON/OFF)"), 
+	                                        React.createElement("th", {"data-sortable-col": true, "data-priority": "7"}, "View")
+	                                      )
+	                                    ), 
+	                                    React.createElement("tbody", null, 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Xmas"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "2"), 
+	                                        React.createElement("td", null, "Summer"), 
+	                                        React.createElement("td", null, "2/10/2015"), 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "$10"), 
+	                                        React.createElement("td", null, "$225"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "3"), 
+	                                        React.createElement("td", null, "Independence day"), 
+	                                        React.createElement("td", null, "27/8/2015"), 
+	                                        React.createElement("td", null, "15"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "$1000"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "Halloween"), 
+	                                        React.createElement("td", null, "5/4/2015"), 
+	                                        React.createElement("td", null, "7"), 
+	                                        React.createElement("td", null, "$150"), 
+	                                        React.createElement("td", null, "$210"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "5"), 
+	                                        React.createElement("td", null, "The Christmas Feast and Santa Claus"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "public holidays"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                      React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Mother’s Day"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "spring"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Winter"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "autumn"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Christmas"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Summer"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "57$"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                                      ), 
+	                                       React.createElement("tr", null, 
+	                                        React.createElement("td", null, "1"), 
+	                                        React.createElement("td", null, "Mother’s Day"), 
+	                                        React.createElement("td", null, "27/10/2015"), 
+	                                        React.createElement("td", null, "4"), 
+	                                        React.createElement("td", null, "$57"), 
+	                                        React.createElement("td", null, "$200"), 
+	                                        React.createElement("td", null, "on/off"), 
+	                                        React.createElement("td", {className: "text-center"}, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info center-block"}, "Info"), ' ')
+	                                      )
+	                                    )
+	                                  )
+	                                )
+	                              )
+	                            )
+	                            ), 
+	                            React.createElement(TabPane, {tab: "tpc_hf:profile"}, 
+	                              React.createElement("h4", null, "About"), 
+	                              React.createElement("p", null, React.createElement(LoremIpsum, {query: "2s"}))
+	                            ), 
+	                            React.createElement(TabPane, {tab: "tpc_hf:settings"}, 
+	                              React.createElement("h4", null, "Settings"), 
+	                              React.createElement("p", null, React.createElement(LoremIpsum, {query: "2s"}))
+	                            ), 
+	                            React.createElement(TabPane, {tab: "tpc_hf:users"}, 
+	                              React.createElement("h4", null, "Change"), 
+	                              React.createElement("p", null, React.createElement(LoremIpsum, {query: "3s"}))
+	                            )
+
+
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ), 
+	        this.props.children
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Social = __HUA.createClass({displayName: "Social",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, {pressed: true}), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Social;
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "billing.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "billing.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {xs: 12}, 
+	              React.createElement(PanelContainer, {noControls: true}, 
+	                React.createElement(Panel, null, 
+	                  React.createElement(PanelHeader, null, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 6, style: {paddingTop: 25}}, 
+	                          React.createElement("div", null, React.createElement("img", {src: "/imgs/logo.png"})), React.createElement("br", null), 
+	                          React.createElement("address", null, 
+	                            React.createElement("strong", {className: "fg-black50"}, "LionTech Dummy Corp."), React.createElement("br", null), 
+	                            "123 Folsom Ave, Suite 600", React.createElement("br", null), 
+	                            "San Francisco, CA 94107", React.createElement("br", null), 
+	                            React.createElement("abbr", {title: "Phone"}, "P:"), " (123) 456-7890", React.createElement("br", null), 
+	                            React.createElement("div", {className: "hidden-print"}, React.createElement("abbr", {title: "Email"}, "E:"), ' ', React.createElement("a", {href: "mailto:support@sketchpixy.com"}, "support@sketchpixy.com"))
+	                          )
+	                        ), 
+	                        React.createElement(Col, {xs: 6, className: "text-right", style: {paddingTop: 25}}, 
+	                          React.createElement("h2", {className: "fg-black", style: {margin: 0, marginBottom: 12.5}}, "Invoice #006699"), 
+	                          React.createElement("div", null, "Issued April 24th, 2014"), 
+	                          React.createElement("div", {className: "fg-red hidden-print"}, "Payment due September 25th, 2014"), React.createElement("br", null), 
+	                          React.createElement("address", null, 
+	                            React.createElement("strong", {className: "fg-black50"}, "SuperTech Client."), React.createElement("br", null), 
+	                            "795 Folsom Ave, Suite 300", React.createElement("br", null), 
+	                            "San Francisco, CA 12345", React.createElement("br", null), 
+	                            React.createElement("abbr", {title: "Phone"}, "P:"), " (098) 765-4321"
+	                          )
+	                        )
+	                      )
+	                    ), 
+	                    React.createElement("hr", {className: "hidden-print", style: {marginTop: 0}})
+	                  ), 
+	                  React.createElement(PanelBody, null, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement(Table, {striped: true}, 
+	                            React.createElement("thead", {className: "bg-darkgrayishblue75 fg-white"}, 
+	                              React.createElement("tr", null, 
+	                                React.createElement("th", null, "#"), 
+	                                React.createElement("th", null, "Item"), 
+	                                React.createElement("th", null, "Quantity"), 
+	                                React.createElement("th", null, "Unit Price"), 
+	                                React.createElement("th", null, "Sub-total")
+	                              )
+	                            ), 
+	                            React.createElement("tbody", null, 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Website wireframe for 5 pages"), 
+	                                React.createElement("td", null, "10 hours"), 
+	                                React.createElement("td", null, "$75"), 
+	                                React.createElement("td", null, "$750")
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "2"), 
+	                                React.createElement("td", null, "Design and layout of 5 pages in Photoshop"), 
+	                                React.createElement("td", null, "20 hours"), 
+	                                React.createElement("td", null, "$75"), 
+	                                React.createElement("td", null, "$1,500")
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "3"), 
+	                                React.createElement("td", null, "Logo design"), 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "$500"), 
+	                                React.createElement("td", null, "$500")
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "PSD to HTML coding"), 
+	                                React.createElement("td", null, "25 hours"), 
+	                                React.createElement("td", null, "$100"), 
+	                                React.createElement("td", null, "$2,500")
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "5"), 
+	                                React.createElement("td", null, "E-Commerce development"), 
+	                                React.createElement("td", null, "10 hours"), 
+	                                React.createElement("td", null, "$100"), 
+	                                React.createElement("td", null, "$1,000")
+	                              )
+	                            ), 
+	                            React.createElement("tfoot", {className: "bg-darkgrayishblue75 fg-white"}, 
+	                              React.createElement("tr", null, 
+	                                React.createElement("th", {colSpan: "3"}), 
+	                                React.createElement("th", null, "Total"), 
+	                                React.createElement("th", null, "$6,250")
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    ), 
+	                    React.createElement("hr", {className: "hidden-print", style: {marginTop: 0}}), 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 8}, 
+	                          React.createElement("p", null, 
+	                            React.createElement(LoremIpsum, {query: "6s"})
+	                          ), 
+	                          React.createElement("p", null, 
+	                            React.createElement("strong", null, "Thank you very much for choosing us. It was a pleasure to have worked with you.")
+	                          ), 
+	                          React.createElement("p", null, 
+	                            React.createElement("img", {src: "/imgs/shots/paypal.jpg", style: {marginLeft: -8, marginRight: -8}})
+	                          )
+	                        ), 
+	                        React.createElement(Col, {xs: 4}, 
+	                          React.createElement("div", {className: "bg-darkgrayishblue75 text-uppercase text-centered"}, 
+	                              React.createElement("h5", {className: "subheader fg-white", style: {margin: 0, padding: 12.5}}, "amount due")
+	                          ), 
+	                          React.createElement("div", null, 
+	                              React.createElement(Table, null, 
+	                                React.createElement("tbody", null, 
+	                                  React.createElement("tr", null, 
+	                                    React.createElement("td", null, "Subtotal"), 
+	                                    React.createElement("td", null, "$6,250")
+	                                  ), 
+	                                  React.createElement("tr", null, 
+	                                    React.createElement("td", null, "Tax (2%)"), 
+	                                    React.createElement("td", null, "$125")
+	                                  ), 
+	                                  React.createElement("tr", null, 
+	                                    React.createElement("td", null, "Total"), 
+	                                    React.createElement("td", null, "$6,375")
+	                                  )
+	                                )
+	                              )
+	                          )
+	                        )
+	                      )
+	                    ), 
+	                    React.createElement("hr", {className: "hidden-print", style: {marginTop: 0}}), 
+	                    React.createElement(Grid, {className: "hidden-print"}, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12, className: "text-right"}, 
+	                          React.createElement("div", null, React.createElement(Button, {outlined: true, lg: true, bsStyle: "darkgrayishblue75", onClick: window.print}, "print invoice")), React.createElement("br", null)
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Billing = __HUA.createClass({displayName: "Billing",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Billing;
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "login.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Header = __webpack_require__(8);
@@ -896,7 +1431,7 @@ var l20n=_RL20n_.l20n,
 	  back: function(e) {
 	    e.preventDefault();
 	    e.stopPropagation();
-	    this.transitionTo('/app/invoice');
+	    this.transitionTo('/app/billing');
 	  },
 	  handleSubmit:function(e){
 	      e.preventDefault();
@@ -977,11 +1512,9 @@ var l20n=_RL20n_.l20n,
 	                                      React.createElement(Button, {lg: true, 
 	                                              type: "submit", 
 	                                              bsStyle: "red", 
-	                                              className: "login"
-
-	                                            }, 
+	                                              className: "login"}, 
 	                                            "Login"
-	                                            )
+	                                      )
 	                                    )
 	                                  )
 	                                )
@@ -1045,7 +1578,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "signup.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "signup.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -1448,330 +1981,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "profile.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "profile.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
-
-	var Header = __webpack_require__(8);
-	var Sidebar = __webpack_require__(9);
-	var Footer = __webpack_require__(10);
-
-	var SocialBanner = __HUA.createClass({displayName: "SocialBanner",
-	  getInitialState: function() {
-	    return {
-	      follow: 'follow me',
-	      followActive: false,
-	      likeCount: 999,
-	      likeActive: false,
-	      likeTextStyle: 'fg-white'
-	    };
-	  },
-	  handleFollow: function() {
-	    this.setState({
-	      follow: 'followed',
-	      followActive: true
-	    });
-	  },
-	  handleLike: function() {
-	    this.setState({
-	      likeCount: 1000,
-	      likeActive: true,
-	      likeTextStyle: 'fg-orange75'
-	    });
-	  },
-	  render: function() {
-	    return (
-	      React.createElement("div", {style: {height: 350, marginTop: -25, backgroundImage: 'url(/imgs/shots/Blick_auf_Manhattan.JPG)', backgroundSize: 'cover', position: 'relative', marginBottom: 25, backgroundPosition: 'center'}}, 
-	        React.createElement("div", {className: "social-cover", style: {position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
-	        ), 
-	        React.createElement("div", {className: "social-desc"}, 
-	          React.createElement("div", null, 
-	            React.createElement("h1", {className: "fg-white"}, "Empire State, NY, USA"), 
-	            React.createElement("h5", {className: "fg-white", style: {opacity: 0.8}}, "- Aug 20th, 2014"), 
-	            React.createElement("div", {style: {marginTop: 50}}, 
-	              React.createElement("div", {style: {display: 'inline-block'}}, 
-	                React.createElement(Button, {id: "likeCount", retainBackground: true, rounded: true, bsStyle: "orange75", active: this.state.likeActive, onClick: this.handleLike}, 
-	                  React.createElement(Icon, {glyph: "icon-fontello-heart-1"})
-	                ), 
-	                React.createElement(Label, {className: "social-like-count", htmlFor: "likeCount"}, React.createElement("span", {className: this.state.likeTextStyle}, this.state.likeCount, " likes"))
-	              )
-	            )
-	          )
-	        ), 
-	        React.createElement("div", {className: "social-avatar"}, 
-	          React.createElement(Img, {src: "/imgs/avatars/avatar.jpg", height: "100", width: "100", style: {display: 'block', borderRadius: 100, border: '2px solid #fff', margin: 'auto', marginTop: 50}}), 
-	          React.createElement("h4", {className: "fg-white text-center"}, "Anna Sanchez"), 
-	          React.createElement("h5", {className: "fg-white text-center", style: {opacity: 0.8}}, "DevOps Engineer, NY"), 
-	          React.createElement("hr", {className: "border-black75", style: {borderWidth: 2}}), 
-	          React.createElement("div", {className: "text-center"}, 
-	            React.createElement(Button, {outlined: true, inverse: true, retainBackground: true, active: this.state.followActive, bsStyle: "brightblue", onClick: this.handleFollow}, 
-	              React.createElement("span", null, this.state.follow)
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	var Body = __HUA.createClass({displayName: "Body",
-	  componentDidMount: function() {
-	    $('html').addClass('social');
-	    (function() {
-	      // create a map in the "map" div, set the view to a given place and zoom
-	      var map = L.map('map', {
-	        scrollWheelZoom: false
-	      }).setView([40.7127, -74.0059], 16);
-
-	      // add an OpenStreetMap tile layer
-	      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	      }).addTo(map);
-
-	      // add a marker in the given location, attach some popup content to it and open the popup
-	      L.marker([40.7127, -74.0059]).addTo(map)
-	          .openPopup();
-	    })();
-	  },
-	  componentWillUnmount: function() {
-	    $('html').removeClass('social');
-	  },
-	  render: function() {
-	    return (
-	      React.createElement(Container, {id: "body", className: "social"}, 
-	        React.createElement(SocialBanner, null), 
-	        React.createElement(Grid, null, 
-	          React.createElement(Row, null, 
-	            React.createElement(Col, {sm: 6, collapseRight: true}, 
-	              React.createElement(PanelContainer, null, 
-	                React.createElement(PanelBody, {style: {padding: 12.5}}, 
-	                  React.createElement(Textarea, {rows: "3", placeholder: "What's on your mind?", style: {border: 'none'}})
-	                ), 
-	                React.createElement(PanelFooter, {className: "fg-black75 bg-gray", style: {padding: '12.5px 25px'}}, 
-	                  React.createElement(Grid, null, 
-	                    React.createElement(Row, null, 
-	                      React.createElement(Col, {xs: 6, collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("a", {href: "#", style: {border: 'none'}}, React.createElement(Icon, {glyph: "icon-dripicons-location icon-1-and-quarter-x fg-text", style: {marginRight: 25}})), 
-	                        React.createElement("a", {href: "#", style: {border: 'none'}}, React.createElement(Icon, {glyph: "icon-dripicons-camera icon-1-and-quarter-x fg-text", style: {marginRight: 25}})), 
-	                        React.createElement("a", {href: "#", style: {border: 'none'}}, React.createElement(Icon, {glyph: "icon-dripicons-calendar icon-1-and-quarter-x fg-text", style: {marginRight: 25}}))
-	                      ), 
-	                      React.createElement(Col, {xs: 6, className: "text-right", collapseLeft: true, collapseRight: true}, 
-	                        React.createElement(Button, {bsStyle: "darkgreen45"}, "send")
-	                      )
-	                    )
-	                  )
-	                )
-	              ), 
-	              React.createElement(PanelContainer, null, 
-	                React.createElement(PanelBody, {style: {padding: 25, paddingTop: 12.5}}, 
-	                  React.createElement("div", {className: "inbox-avatar"}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar7.png", width: "40", height: "40"}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Toby King"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Wisconsin, USA"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", {style: {position: 'relative', top: 0}}, React.createElement(Icon, {glyph: "icon-fontello-anchor icon-1-and-quarter-x"})), 
-	                      React.createElement("div", {style: {position: 'relative', top: -10}}, React.createElement("small", null, React.createElement("strong", null, "2 hours ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", null, 
-	                    React.createElement("div", {className: "fg-text"}, 
-	                      "I'll be out of my mind and you'll be out of ideas pretty soon. So let's spend the afternoon in a cold hot air balloon. Leave your jacket behind. Lean out and touch the tree tops over town. I can't wait to kiss the ground wherever we touch back down."
-	                    )
-	                  ), 
-	                  React.createElement("div", {style: {margin: -25, marginTop: 25}}, 
-	                    React.createElement(Img, {responsive: true, src: "/imgs/gallery/tumblr_n8zm8ndGiY1st5lhmo1_1280.jpg"})
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {noRadius: true, className: "fg-black75 bg-gray", style: {padding: '12.5px 25px', margin: 0}}, 
-	                  React.createElement(Grid, {className: "fg-text"}, 
-	                    React.createElement(Row, null, 
-	                      React.createElement(Col, {xs: 6, collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("a", {href: "#", className: "fg-text", style: {border: 'none', marginRight: 25}}, React.createElement(Icon, {glyph: "icon-dripicons-thumbs-up icon-1-and-quarter-x"}), React.createElement("span", {style: {position: 'relative', top: -2, left: 3}}, "Like"))
-	                      ), 
-	                      React.createElement(Col, {xs: 6, className: "text-right", collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("span", {style: {top: 5, position: 'relative'}}, React.createElement("strong", null, "523"), " people like this")
-	                      )
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {style: {padding: 25, paddingTop: 0, paddingBottom: 0}}, 
-	                  React.createElement("div", {className: "inbox-avatar", style: {borderBottom: '1px solid #EAEDF1'}}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar0.png", width: "30", height: "30", style: {verticalAlign: 'top', top: 10, position: 'relative'}}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Anna Sanchez"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Nice!"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", null, React.createElement("small", null, React.createElement("strong", null, "22 minutes ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", {className: "inbox-avatar", style: {borderBottom: '1px solid #EAEDF1'}}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar9.png", width: "30", height: "30", style: {verticalAlign: 'top', top: 10, position: 'relative'}}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Ava Parry"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Woah! Beautiful pic and beautiful quote! Whats the source?"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", null, React.createElement("small", null, React.createElement("strong", null, "2 minutes ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", {className: "inbox-avatar", style: {borderBottom: '1px solid #EAEDF1'}}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar7.png", width: "30", height: "30", style: {verticalAlign: 'top', top: 10, position: 'relative'}}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Ava Parry"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Thanks guys! Appreciate! :)")), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Source: ", React.createElement("em", null, "Owl City, Ocean Eyes")))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", null, React.createElement("small", null, React.createElement("strong", null, "few seconds ago")))
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {style: {padding: 12.5}}, 
-	                  React.createElement(Textarea, {rows: "1", placeholder: "Write a comment...", style: {border: 'none'}})
-	                )
-	              )
-	            ), 
-	            React.createElement(Col, {sm: 6}, 
-	              React.createElement(PanelContainer, null, 
-	                React.createElement(PanelBody, {style: {padding: 25, paddingTop: 12.5}}, 
-	                  React.createElement("div", {className: "inbox-avatar"}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar5.png", width: "40", height: "40"}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Jordyn Ouellet created an event"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Austin, USA"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", {style: {position: 'relative', top: 0}}, React.createElement(Icon, {glyph: "icon-ikons-calendar icon-1-and-quarter-x"})), 
-	                      React.createElement("div", {style: {position: 'relative', top: -10}}, React.createElement("small", null, React.createElement("strong", null, "3 hours ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", null, 
-	                    React.createElement("div", {className: "fg-darkgreen45"}, React.createElement("strong", null, "Birthday party on my Yacht in New York.")), 
-	                    React.createElement("div", {className: "fg-text"}, "July 10 at 10:00pm"), 
-	                    React.createElement("div", {className: "fg-text"}, "New York, USA")
-	                  ), 
-	                  React.createElement("div", {style: {margin: -25, marginTop: 25}}, 
-	                    React.createElement("div", null, 
-	                      React.createElement("div", {id: "map", className: "map leaflet-container leaflet-fade-anim", style: {height: 300}})
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {noRadius: true, className: "fg-black75 bg-gray", style: {padding: '12.5px 25px', margin: 0}}, 
-	                  React.createElement(Grid, {className: "fg-text"}, 
-	                    React.createElement(Row, null, 
-	                      React.createElement(Col, {xs: 6, collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("a", {href: "#", className: "fg-text", style: {border: 'none', marginRight: 25}}, React.createElement(Icon, {glyph: "icon-dripicons-thumbs-up icon-1-and-quarter-x"}), React.createElement("span", {style: {position: 'relative', top: -2, left: 3}}, "Like"))
-	                      ), 
-	                      React.createElement(Col, {xs: 6, className: "text-right", collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("span", {style: {top: 5, position: 'relative'}}, React.createElement("strong", null, "600"), " people like this")
-	                      )
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {style: {padding: 12.5}}, 
-	                  React.createElement(Textarea, {rows: "1", placeholder: "Write a comment...", style: {border: 'none'}})
-	                )
-	              ), 
-	              React.createElement(PanelContainer, null, 
-	                React.createElement(PanelBody, {style: {padding: 25, paddingTop: 12.5}}, 
-	                  React.createElement("div", {className: "inbox-avatar"}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar9.png", width: "40", height: "40"}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Ava Parry"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Massachusetts, USA"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", {style: {position: 'relative', top: 0}}, React.createElement(Icon, {glyph: "icon-feather-video icon-1-and-quarter-x"})), 
-	                      React.createElement("div", {style: {position: 'relative', top: -10}}, React.createElement("small", null, React.createElement("strong", null, "4 hours ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", null, 
-	                    React.createElement("div", {className: "fg-darkgreen45"}, 
-	                      React.createElement("strong", null, "1983 Historic Apple Keynote by Steve Jobs")
-	                    )
-	                  ), 
-	                  React.createElement("div", {style: {margin: -25, marginTop: 25}}, 
-	                    React.createElement("div", {className: "embed-responsive embed-responsive-16by9"}, 
-	                      React.createElement("iframe", {className: "embed-responsive-item", src: "//www.youtube.com/embed/lSiQA6KKyJo?rel=0", allowFullScreen: true})
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {noRadius: true, className: "fg-black75 bg-gray", style: {padding: '12.5px 25px', margin: 0}}, 
-	                  React.createElement(Grid, {className: "fg-text"}, 
-	                    React.createElement(Row, null, 
-	                      React.createElement(Col, {xs: 6, collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("a", {href: "#", className: "fg-text", style: {border: 'none', marginRight: 25}}, React.createElement(Icon, {glyph: "icon-dripicons-thumbs-up icon-1-and-quarter-x"}), React.createElement("span", {style: {position: 'relative', top: -2, left: 3}}, "Like"))
-	                      ), 
-	                      React.createElement(Col, {xs: 6, className: "text-right", collapseLeft: true, collapseRight: true}, 
-	                        React.createElement("span", {style: {top: 5, position: 'relative'}}, React.createElement("strong", null, "4,350"), " people like this")
-	                      )
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {style: {padding: 25, paddingTop: 0, paddingBottom: 0}}, 
-	                  React.createElement("div", {className: "inbox-avatar", style: {borderBottom: '1px solid #EAEDF1'}}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar0.png", width: "30", height: "30", style: {verticalAlign: 'top', top: 10, position: 'relative'}}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Anna Sanchez"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Love this! It also features the Superbowl ad")), 
-	                      React.createElement("div", {className: "fg-text", style: {marginTop: -5}}, React.createElement("small", null, "which is considered the greatest ad of all time!")), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, "Thanks for sharing!"))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", null, React.createElement("small", null, React.createElement("strong", null, "4 hours ago")))
-	                    )
-	                  ), 
-	                  React.createElement("div", {className: "inbox-avatar", style: {borderBottom: '1px solid #EAEDF1'}}, 
-	                    React.createElement("img", {src: "/imgs/avatars/avatar9.png", width: "30", height: "30", style: {verticalAlign: 'top', top: 10, position: 'relative'}}), 
-	                    React.createElement("div", {className: "inbox-avatar-name"}, 
-	                      React.createElement("div", {className: "fg-darkgrayishblue75"}, "Ava Parry"), 
-	                      React.createElement("div", {className: "fg-text"}, React.createElement("small", null, React.createElement("strong", null, "Welcome! :)")))
-	                    ), 
-	                    React.createElement("div", {className: "inbox-date hidden-sm hidden-xs fg-text text-right"}, 
-	                      React.createElement("div", null, React.createElement("small", null, React.createElement("strong", null, "4 hours ago")))
-	                    )
-	                  )
-	                ), 
-	                React.createElement(PanelFooter, {style: {padding: 12.5}}, 
-	                  React.createElement(Textarea, {rows: "1", placeholder: "Write a comment...", style: {border: 'none'}})
-	                )
-	              )
-	            )
-	          )
-	        ), 
-	        this.props.children
-	      )
-	    );
-	  }
-	});
-
-	var classSet = React.addons.classSet;
-	var Social = __HUA.createClass({displayName: "Social",
-	  mixins: [SidebarMixin],
-	  render: function() {
-	    var classes = classSet({
-	      'container-open': this.state.open
-	    });
-	    return (
-	      React.createElement(Container, {id: "container", className: classes}, 
-	        React.createElement(Sidebar, null), 
-	        React.createElement(Header, {pressed: true}), 
-	        React.createElement(Body, null), 
-	        React.createElement(Footer, null)
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Social;
-
-
-/***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "blank.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "blank.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -1823,7 +2033,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "upload.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "upload.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -1875,7 +2085,7 @@ var l20n=_RL20n_.l20n,
 	        React.createElement(Grid, null, 
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {sm: 12}, 
-	              React.createElement(PanelContainer, {controlStyles: "bg-darkgreen45 fg-white"}, 
+	              React.createElement(PanelContainer, {noControls: true}, 
 	                React.createElement(Panel, null, 
 	                  React.createElement(PanelHeader, {className: "bg-darkgreen45 fg-white", style: {margin: 0}}, 
 	                    React.createElement(Grid, null, 
@@ -1961,7 +2171,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "crop.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "crop.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -2026,7 +2236,7 @@ var l20n=_RL20n_.l20n,
 	        React.createElement(Grid, null, 
 	          React.createElement(Row, null, 
 	          React.createElement(Col, {sm: 12}, 
-	            React.createElement(PanelContainer, {controlStyles: "bg-red fg-white"}, 
+	            React.createElement(PanelContainer, {noControls: true}, 
 	              React.createElement(Panel, null, 
 	                React.createElement(PanelHeader, {className: "bg-red fg-white", style: {margin: 0}}, 
 	                  React.createElement(Grid, null, 
@@ -2110,7 +2320,367 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 17 */
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "gallery.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "gallery.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var GalleryItem = __HUA.createClass({displayName: "GalleryItem",
+	  getInitialState: function() {
+	    return {
+	      active: this.props.active || false,
+	      counts: (Math.round(Math.random() * 20) + 4)
+	    };
+	  },
+	  handleIncrement: function(e) {
+	    if(this.state.active) return;
+	    this.setState({
+	      active: true,
+	      counts: this.state.counts+1
+	    });
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, null, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelHeader, null, 
+	            React.createElement(Grid, {className: "gallery-item"}, 
+	              React.createElement(Row, null, 
+	                React.createElement(Col, {xs: 12, style: {padding: 12.5}}, 
+	                  React.createElement("a", {className: "gallery-1 gallery-item-link", href: '/imgs/gallery/'+this.props.image+'.jpg', title: this.props.title}, 
+	                    React.createElement(Img, {responsive: true, src: '/imgs/gallery/'+this.props.image+'-thumb.jpg', alt: this.props.title, width: "200", height: "150"}), 
+	                    React.createElement("div", {className: "black-wrapper text-center"}, 
+	                      React.createElement(Table, {style: {height: '100%', width: '100%'}}, 
+	                        React.createElement("tbody", null, 
+	                          React.createElement("tr", null, 
+	                            React.createElement("td", null, 
+	                              React.createElement(Icon, {glyph: "icon-outlined-magnifier-plus icon-3x"})
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  ), 
+	                  React.createElement("div", {className: "text-center"}, 
+	                    React.createElement("h4", {className: "fg-darkgrayishblue75 hidden-xs", style: {textTransform: 'uppercase'}}, this.props.title), 
+	                    React.createElement("h6", {className: "fg-darkgrayishblue75 visible-xs", style: {textTransform: 'uppercase'}}, this.props.title), 
+	                    React.createElement("h5", {className: "fg-darkgray50 hidden-xs", style: {textTransform: 'uppercase'}}, this.props.subtitle), 
+	                    React.createElement("h6", {className: "visible-xs", style: {textTransform: 'uppercase'}}, React.createElement("small", {className: "fg-darkgray50"}, this.props.subtitle)), 
+	                      React.createElement(Button, {outlined: true, onlyOnHover: true, bsStyle: "red", className: "fav-btn", active: this.state.active, onClick: this.handleIncrement}, 
+	                        React.createElement(Icon, {glyph: "icon-flatline-heart"}), 
+	                        React.createElement("span", {className: "counts"}, this.state.counts)
+	                      )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    var links = document.getElementsByClassName('gallery-1');
+	    $('.gallery-1').unbind('click').bind('click', function(event) {
+	      blueimp.Gallery(links, {
+	        index: $(this).get(0),
+	        event: event
+	      });
+	    });
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, {className: "gallery-view"}, 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n6es0tRk5w1st5lhmo1_1280", title: "skyline", subtitle: "10th Dec - 12th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {active: true, image: "tumblr_n6eszmeQMR1st5lhmo1_1280", title: "me at ny", subtitle: "11th Dec - 12th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n6rzkfxeOR1st5lhmo1_1280", title: "vintage cameras", subtitle: "13th Dec - 14th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n6rztipoQy1st5lhmo1_1280", title: "columns", subtitle: "13th Dec - 14th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n7fg2vYZ741st5lhmo1_1280", title: "peak", subtitle: "14th Dec - 15th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n7fgnop0bz1st5lhmo1_1280", title: "Mac", subtitle: "14th Dec - 15th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n7yhe1sTa41st5lhmo1_1280", title: "Taxi cabs", subtitle: "14th Dec - 15th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n8gxs0oWZ21st5lhmo1_1280", title: "Golden gate", subtitle: "14th Dec - 15th Dec"})
+	            ), 
+	            React.createElement(Col, {xs: 6, sm: 4, collapseRight: true}, 
+	              React.createElement(GalleryItem, {image: "tumblr_n9hyqfJavs1st5lhmo1_1280", title: "Empire state", subtitle: "14th Dec - 15th Dec"})
+	            )
+	          )
+	        ), 
+	        this.props.children
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var GalleryPage = __HUA.createClass({displayName: "GalleryPage",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = GalleryPage;
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "tables.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "tables.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    $('.tablesaw').table();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {xs: 12}, 
+	              React.createElement(PanelContainer, {noControls: true}, 
+	                React.createElement(Panel, null, 
+	                  React.createElement(PanelHeader, {className: "bg-red fg-white"}, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement("h3", null, "My Campaigns")
+	                        )
+	                      )
+	                    )
+	                  ), 
+	                  React.createElement(PanelBody, null, 
+	                    React.createElement(Grid, null, 
+	                      React.createElement(Row, null, 
+	                        React.createElement(Col, {xs: 12}, 
+	                          React.createElement("p", null, "Swipe Mode, ModeSwitch, Sortable, SortableSwitch"), 
+	                          React.createElement(Table, {striped: true, bordered: true, className: "tablesaw", "data-mode": "swipe", "data-sortable": true, "data-sortable-switch": true, "data-mode-switch": true}, 
+	                            React.createElement("thead", null, 
+	                              React.createElement("tr", null, 
+	                                React.createElement("th", {"data-sortable-col": true, "data-sortable-default-col": true, "data-priority": "persist"}, "ID"), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "3"}, "Campagn Name"), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "2"}, "End Date "), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "1"}, React.createElement("abbr", {title: "Rotten Tomato Rating"}, "Number of Times Played")), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "4"}, "Total Spent"), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "5"}, "Max Budget"), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "6"}, "Active (ON/OFF)"), 
+	                                React.createElement("th", {"data-sortable-col": true, "data-priority": "7"}, "View")
+	                              )
+	                            ), 
+	                            React.createElement("tbody", null, 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Xmas"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "2"), 
+	                                React.createElement("td", null, "Summer"), 
+	                                React.createElement("td", null, "2/10/2015"), 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "$10"), 
+	                                React.createElement("td", null, "$225"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "3"), 
+	                                React.createElement("td", null, "Independence day"), 
+	                                React.createElement("td", null, "27/8/2015"), 
+	                                React.createElement("td", null, "15"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "$1000"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "Halloween"), 
+	                                React.createElement("td", null, "5/4/2015"), 
+	                                React.createElement("td", null, "7"), 
+	                                React.createElement("td", null, "$150"), 
+	                                React.createElement("td", null, "$210"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "5"), 
+	                                React.createElement("td", null, "The Christmas Feast and Santa Claus"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "public holidays"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                              React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Mother’s Day"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "spring"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Winter"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "autumn"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Christmas"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Summer"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "57$"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                              ), 
+	                               React.createElement("tr", null, 
+	                                React.createElement("td", null, "1"), 
+	                                React.createElement("td", null, "Mother’s Day"), 
+	                                React.createElement("td", null, "27/10/2015"), 
+	                                React.createElement("td", null, "4"), 
+	                                React.createElement("td", null, "$57"), 
+	                                React.createElement("td", null, "$200"), 
+	                                React.createElement("td", null, "on/off"), 
+	                                React.createElement("td", {className: "text-center"}, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info center-block"}, "Info"), ' ')
+	                              )
+
+	                            )
+
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Tablesaw = __HUA.createClass({displayName: "Tablesaw",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+
+
+	module.exports = Tablesaw;
+
+
+/***/ },
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "campaigns.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "campaigns.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -2129,6 +2699,23 @@ var l20n=_RL20n_.l20n,
 	          { targets: [-1, -5], className: 'dt-body-right' }
 	        ]
 	    });
+	    var table = $('#example').DataTable();
+
+	   $('#example tbody').on( 'click', 'tr', function () {
+	       if ( $(this).hasClass('selected') ) {
+	           $(this).removeClass('selected');
+	       }
+	       else {
+	           table.$('tr.selected').removeClass('selected');
+	           $(this).addClass('selected');
+	       }
+	   } );
+
+	   $('#button').click( function () {
+	       table.row('.selected').remove().draw( false );
+	   } );
+
+
 
 	  },
 	  gold: function() {
@@ -2147,9 +2734,9 @@ var l20n=_RL20n_.l20n,
 	          React.createElement("p", null, "What package do you prefer")
 	        ), 
 	        React.createElement(ModalFooter, {onClick: ModalManager.remove, onTouchEnd: ModalManager.remove}, 
-	          React.createElement(Link, {to: "/app/file-utilities/standart", style: {border:0}}, React.createElement(Button, {bsStyle: "primary", style: { marginRight:15}}, "Standart")), 
+	          React.createElement(Link, {to: "/app/assets/upload", style: {border:0}}, React.createElement(Button, {bsStyle: "primary", style: { marginRight:15}}, "Standart")), 
 	          React.createElement("span", null, "or"), 
-	          React.createElement(Link, {to: "/app/file-utilities/standart", style: {border:0}}, React.createElement(Button, {bsStyle: "danger", style: {borderRadius:8,  marginLeft:15}}, "Gold"))
+	          React.createElement(Link, {to: "/app/assets/upload", style: {border:0}}, React.createElement(Button, {bsStyle: "danger", style: {borderRadius:8,  marginLeft:15}}, "Gold"))
 	        )
 	      )
 	    );
@@ -2159,503 +2746,173 @@ var l20n=_RL20n_.l20n,
 	    return (
 	      React.createElement(Container, {id: "body"}, 
 	        React.createElement(Grid, null, 
-
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {xs: 12}, 
-	              React.createElement(PanelContainer, null, 
-
+	              React.createElement(PanelContainer, {noControls: true}, 
 	                React.createElement(Panel, null, 
 	                  React.createElement(PanelBody, null, 
 	                    React.createElement(Grid, null, 
 	                      React.createElement(Row, null, 
 	                        React.createElement(Col, {xs: 12}, 
 	                          React.createElement("div", {className: "text-right"}, 
-	                              React.createElement(Button, {lg: true, style: {margin: 15, borderRadius:3}, bsStyle: "danger", id: "button-click", onClick: ModalManager.create.bind(this, this.getModal()), onTouchEnd: ModalManager.create.bind(this, this.getModal())}, "Create Campaign")
+	                              React.createElement(Button, {lg: true, style: {margin: 15, borderRadius:3}, bsStyle: "warning", id: "button-click", onClick: ModalManager.create.bind(this, this.getModal()), onTouchEnd: ModalManager.create.bind(this, this.getModal())}, "Create Campaign")
+
 	                        )
 	                      ), 
 	                        React.createElement(Col, {xs: 12}, 
 	                          React.createElement(Table, {id: "example", className: "display", cellSpacing: "0", width: "100%"}, 
-	                            React.createElement("thead", null, 
-	                              React.createElement("tr", null, 
-	                                React.createElement("th", null, "Name"), 
-	                                React.createElement("th", null, "Position"), 
-	                                React.createElement("th", null, "Office"), 
-	                                React.createElement("th", null, "Age"), 
-	                                React.createElement("th", null, "Start date"), 
-	                                React.createElement("th", null, "Salary")
-
-	                              )
-	                            ), 
-	                            React.createElement("tfoot", null, 
-	                              React.createElement("tr", null, 
-	                                React.createElement("th", null, "Name"), 
-	                                React.createElement("th", null, "Position"), 
-	                                React.createElement("th", null, "Office"), 
-	                                React.createElement("th", null, "Age"), 
-	                                React.createElement("th", null, "Start date"), 
-	                                React.createElement("th", null, "Salary")
-	                              )
-	                            ), 
-	                            React.createElement("tbody", null, 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Tiger Nixon"), 
-	                                React.createElement("td", null, "System Architect"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "61"), 
-	                                React.createElement("td", null, "2011/04/25"), 
-	                                React.createElement("td", null, "$320,800")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Garrett Winters"), 
-	                                React.createElement("td", null, "Accountant"), 
-	                                React.createElement("td", null, "Tokyo"), 
-	                                React.createElement("td", null, "63"), 
-	                                React.createElement("td", null, "2011/07/25"), 
-	                                React.createElement("td", null, "$170,750")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Ashton Cox"), 
-	                                React.createElement("td", null, "Junior Technical Author"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "66"), 
-	                                React.createElement("td", null, "2009/01/12"), 
-	                                React.createElement("td", null, "$86,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Cedric Kelly"), 
-	                                React.createElement("td", null, "Senior Javascript Developer"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "22"), 
-	                                React.createElement("td", null, "2012/03/29"), 
-	                                React.createElement("td", null, "$433,060")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Airi Satou"), 
-	                                React.createElement("td", null, "Accountant"), 
-	                                React.createElement("td", null, "Tokyo"), 
-	                                React.createElement("td", null, "33"), 
-	                                React.createElement("td", null, "2008/11/28"), 
-	                                React.createElement("td", null, "$162,700")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Brielle Williamson"), 
-	                                React.createElement("td", null, "Integration Specialist"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "61"), 
-	                                React.createElement("td", null, "2012/12/02"), 
-	                                React.createElement("td", null, "$372,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Herrod Chandler"), 
-	                                React.createElement("td", null, "Sales Assistant"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "59"), 
-	                                React.createElement("td", null, "2012/08/06"), 
-	                                React.createElement("td", null, "$137,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Rhona Davidson"), 
-	                                React.createElement("td", null, "Integration Specialist"), 
-	                                React.createElement("td", null, "Tokyo"), 
-	                                React.createElement("td", null, "55"), 
-	                                React.createElement("td", null, "2010/10/14"), 
-	                                React.createElement("td", null, "$327,900")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Colleen Hurst"), 
-	                                React.createElement("td", null, "Javascript Developer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "39"), 
-	                                React.createElement("td", null, "2009/09/15"), 
-	                                React.createElement("td", null, "$205,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Sonya Frost"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "23"), 
-	                                React.createElement("td", null, "2008/12/13"), 
-	                                React.createElement("td", null, "$103,600")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jena Gaines"), 
-	                                React.createElement("td", null, "Office Manager"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "30"), 
-	                                React.createElement("td", null, "2008/12/19"), 
-	                                React.createElement("td", null, "$90,560")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Quinn Flynn"), 
-	                                React.createElement("td", null, "Support Lead"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "22"), 
-	                                React.createElement("td", null, "2013/03/03"), 
-	                                React.createElement("td", null, "$342,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Charde Marshall"), 
-	                                React.createElement("td", null, "Regional Director"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "36"), 
-	                                React.createElement("td", null, "2008/10/16"), 
-	                                React.createElement("td", null, "$470,600")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Haley Kennedy"), 
-	                                React.createElement("td", null, "Senior Marketing Designer"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "43"), 
-	                                React.createElement("td", null, "2012/12/18"), 
-	                                React.createElement("td", null, "$313,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Tatyana Fitzpatrick"), 
-	                                React.createElement("td", null, "Regional Director"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "19"), 
-	                                React.createElement("td", null, "2010/03/17"), 
-	                                React.createElement("td", null, "$385,750")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Michael Silva"), 
-	                                React.createElement("td", null, "Marketing Designer"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "66"), 
-	                                React.createElement("td", null, "2012/11/27"), 
-	                                React.createElement("td", null, "$198,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Paul Byrd"), 
-	                                React.createElement("td", null, "Chief Financial Officer (CFO)"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "64"), 
-	                                React.createElement("td", null, "2010/06/09"), 
-	                                React.createElement("td", null, "$725,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Gloria Little"), 
-	                                React.createElement("td", null, "Systems Administrator"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "59"), 
-	                                React.createElement("td", null, "2009/04/10"), 
-	                                React.createElement("td", null, "$237,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Bradley Greer"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "41"), 
-	                                React.createElement("td", null, "2012/10/13"), 
-	                                React.createElement("td", null, "$132,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Dai Rios"), 
-	                                React.createElement("td", null, "Personnel Lead"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "35"), 
-	                                React.createElement("td", null, "2012/09/26"), 
-	                                React.createElement("td", null, "$217,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jenette Caldwell"), 
-	                                React.createElement("td", null, "Development Lead"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "30"), 
-	                                React.createElement("td", null, "2011/09/03"), 
-	                                React.createElement("td", null, "$345,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Yuri Berry"), 
-	                                React.createElement("td", null, "Chief Marketing Officer (CMO)"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "40"), 
-	                                React.createElement("td", null, "2009/06/25"), 
-	                                React.createElement("td", null, "$675,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Caesar Vance"), 
-	                                React.createElement("td", null, "Pre-Sales Support"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "21"), 
-	                                React.createElement("td", null, "2011/12/12"), 
-	                                React.createElement("td", null, "$106,450")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Doris Wilder"), 
-	                                React.createElement("td", null, "Sales Assistant"), 
-	                                React.createElement("td", null, "Sidney"), 
-	                                React.createElement("td", null, "23"), 
-	                                React.createElement("td", null, "2010/09/20"), 
-	                                React.createElement("td", null, "$85,600")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Angelica Ramos"), 
-	                                React.createElement("td", null, "Chief Executive Officer (CEO)"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "47"), 
-	                                React.createElement("td", null, "2009/10/09"), 
-	                                React.createElement("td", null, "$1,200,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Gavin Joyce"), 
-	                                React.createElement("td", null, "Developer"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "42"), 
-	                                React.createElement("td", null, "2010/12/22"), 
-	                                React.createElement("td", null, "$92,575")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jennifer Chang"), 
-	                                React.createElement("td", null, "Regional Director"), 
-	                                React.createElement("td", null, "Singapore"), 
-	                                React.createElement("td", null, "28"), 
-	                                React.createElement("td", null, "2010/11/14"), 
-	                                React.createElement("td", null, "$357,650")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Brenden Wagner"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "28"), 
-	                                React.createElement("td", null, "2011/06/07"), 
-	                                React.createElement("td", null, "$206,850")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Fiona Green"), 
-	                                React.createElement("td", null, "Chief Operating Officer (COO)"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "48"), 
-	                                React.createElement("td", null, "2010/03/11"), 
-	                                React.createElement("td", null, "$850,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Shou Itou"), 
-	                                React.createElement("td", null, "Regional Marketing"), 
-	                                React.createElement("td", null, "Tokyo"), 
-	                                React.createElement("td", null, "20"), 
-	                                React.createElement("td", null, "2011/08/14"), 
-	                                React.createElement("td", null, "$163,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Michelle House"), 
-	                                React.createElement("td", null, "Integration Specialist"), 
-	                                React.createElement("td", null, "Sidney"), 
-	                                React.createElement("td", null, "37"), 
-	                                React.createElement("td", null, "2011/06/02"), 
-	                                React.createElement("td", null, "$95,400")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Suki Burks"), 
-	                                React.createElement("td", null, "Developer"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "53"), 
-	                                React.createElement("td", null, "2009/10/22"), 
-	                                React.createElement("td", null, "$114,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Prescott Bartlett"), 
-	                                React.createElement("td", null, "Technical Author"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "27"), 
-	                                React.createElement("td", null, "2011/05/07"), 
-	                                React.createElement("td", null, "$145,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Gavin Cortez"), 
-	                                React.createElement("td", null, "Team Leader"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "22"), 
-	                                React.createElement("td", null, "2008/10/26"), 
-	                                React.createElement("td", null, "$235,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Martena Mccray"), 
-	                                React.createElement("td", null, "Post-Sales support"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "46"), 
-	                                React.createElement("td", null, "2011/03/09"), 
-	                                React.createElement("td", null, "$324,050")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Unity Butler"), 
-	                                React.createElement("td", null, "Marketing Designer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "47"), 
-	                                React.createElement("td", null, "2009/12/09"), 
-	                                React.createElement("td", null, "$85,675")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Howard Hatfield"), 
-	                                React.createElement("td", null, "Office Manager"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "51"), 
-	                                React.createElement("td", null, "2008/12/16"), 
-	                                React.createElement("td", null, "$164,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Hope Fuentes"), 
-	                                React.createElement("td", null, "Secretary"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "41"), 
-	                                React.createElement("td", null, "2010/02/12"), 
-	                                React.createElement("td", null, "$109,850")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Vivian Harrell"), 
-	                                React.createElement("td", null, "Financial Controller"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "62"), 
-	                                React.createElement("td", null, "2009/02/14"), 
-	                                React.createElement("td", null, "$452,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Timothy Mooney"), 
-	                                React.createElement("td", null, "Office Manager"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "37"), 
-	                                React.createElement("td", null, "2008/12/11"), 
-	                                React.createElement("td", null, "$136,200")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jackson Bradshaw"), 
-	                                React.createElement("td", null, "Director"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "65"), 
-	                                React.createElement("td", null, "2008/09/26"), 
-	                                React.createElement("td", null, "$645,750")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Olivia Liang"), 
-	                                React.createElement("td", null, "Support Engineer"), 
-	                                React.createElement("td", null, "Singapore"), 
-	                                React.createElement("td", null, "64"), 
-	                                React.createElement("td", null, "2011/02/03"), 
-	                                React.createElement("td", null, "$234,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Bruno Nash"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "38"), 
-	                                React.createElement("td", null, "2011/05/03"), 
-	                                React.createElement("td", null, "$163,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Sakura Yamamoto"), 
-	                                React.createElement("td", null, "Support Engineer"), 
-	                                React.createElement("td", null, "Tokyo"), 
-	                                React.createElement("td", null, "37"), 
-	                                React.createElement("td", null, "2009/08/19"), 
-	                                React.createElement("td", null, "$139,575")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Thor Walton"), 
-	                                React.createElement("td", null, "Developer"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "61"), 
-	                                React.createElement("td", null, "2013/08/11"), 
-	                                React.createElement("td", null, "$98,540")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Finn Camacho"), 
-	                                React.createElement("td", null, "Support Engineer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "47"), 
-	                                React.createElement("td", null, "2009/07/07"), 
-	                                React.createElement("td", null, "$87,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Serge Baldwin"), 
-	                                React.createElement("td", null, "Data Coordinator"), 
-	                                React.createElement("td", null, "Singapore"), 
-	                                React.createElement("td", null, "64"), 
-	                                React.createElement("td", null, "2012/04/09"), 
-	                                React.createElement("td", null, "$138,575")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Zenaida Frank"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "63"), 
-	                                React.createElement("td", null, "2010/01/04"), 
-	                                React.createElement("td", null, "$125,250")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Zorita Serrano"), 
-	                                React.createElement("td", null, "Software Engineer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "56"), 
-	                                React.createElement("td", null, "2012/06/01"), 
-	                                React.createElement("td", null, "$115,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jennifer Acosta"), 
-	                                React.createElement("td", null, "Junior Javascript Developer"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "43"), 
-	                                React.createElement("td", null, "2013/02/01"), 
-	                                React.createElement("td", null, "$75,650")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Cara Stevens"), 
-	                                React.createElement("td", null, "Sales Assistant"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "46"), 
-	                                React.createElement("td", null, "2011/12/06"), 
-	                                React.createElement("td", null, "$145,600")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Hermione Butler"), 
-	                                React.createElement("td", null, "Regional Director"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "47"), 
-	                                React.createElement("td", null, "2011/03/21"), 
-	                                React.createElement("td", null, "$356,250")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Lael Greer"), 
-	                                React.createElement("td", null, "Systems Administrator"), 
-	                                React.createElement("td", null, "London"), 
-	                                React.createElement("td", null, "21"), 
-	                                React.createElement("td", null, "2009/02/27"), 
-	                                React.createElement("td", null, "$103,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Jonas Alexander"), 
-	                                React.createElement("td", null, "Developer"), 
-	                                React.createElement("td", null, "San Francisco"), 
-	                                React.createElement("td", null, "30"), 
-	                                React.createElement("td", null, "2010/07/14"), 
-	                                React.createElement("td", null, "$86,500")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Shad Decker"), 
-	                                React.createElement("td", null, "Regional Director"), 
-	                                React.createElement("td", null, "Edinburgh"), 
-	                                React.createElement("td", null, "51"), 
-	                                React.createElement("td", null, "2008/11/13"), 
-	                                React.createElement("td", null, "$183,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Michael Bruce"), 
-	                                React.createElement("td", null, "Javascript Developer"), 
-	                                React.createElement("td", null, "Singapore"), 
-	                                React.createElement("td", null, "29"), 
-	                                React.createElement("td", null, "2011/06/27"), 
-	                                React.createElement("td", null, "$183,000")
-	                              ), 
-	                              React.createElement("tr", null, 
-	                                React.createElement("td", null, "Donna Snider"), 
-	                                React.createElement("td", null, "Customer Support"), 
-	                                React.createElement("td", null, "New York"), 
-	                                React.createElement("td", null, "27"), 
-	                                React.createElement("td", null, "2011/01/25"), 
-	                                React.createElement("td", null, "$112,000")
-	                              )
+	                          React.createElement("thead", null, 
+	                            React.createElement("tr", null, 
+	                              React.createElement("th", null, "ID"), 
+	                              React.createElement("th", null, "Campagn Name"), 
+	                              React.createElement("th", null, "End Date"), 
+	                              React.createElement("th", null, "Number of times played"), 
+	                              React.createElement("th", null, "Total Spent"), 
+	                              React.createElement("th", null, "Max Budget"), 
+	                              React.createElement("th", null, "Active (ON/OFF)"), 
+	                              React.createElement("th", null, "View")
 	                            )
 	                          ), 
-	                          React.createElement("br", null)
+	                          React.createElement("tbody", null, 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Xmas"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, 
+	                                React.createElement(Link, {to: "/app/zones"}, 
+	                                  React.createElement(Button, {sm: true, style: {marginBottom: 5}, bsStyle: "info pull-right next"}, "info"), ' '
+	                                )
+	                              )
+	                            ), 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "2"), 
+	                              React.createElement("td", null, "Summer"), 
+	                              React.createElement("td", null, "2/10/2015"), 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "$10"), 
+	                              React.createElement("td", null, "$225"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "3"), 
+	                              React.createElement("td", null, "Independence day"), 
+	                              React.createElement("td", null, "27/8/2015"), 
+	                              React.createElement("td", null, "15"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "$1000"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "Halloween"), 
+	                              React.createElement("td", null, "5/4/2015"), 
+	                              React.createElement("td", null, "7"), 
+	                              React.createElement("td", null, "$150"), 
+	                              React.createElement("td", null, "$210"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "5"), 
+	                              React.createElement("td", null, "The Christmas Feast and Santa Claus"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "public holidays"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                            React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Mother’s Day"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "spring"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Winter"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "autumn"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Christmas"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Summer"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "57$"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info"}, "Info"), ' ')
+	                            ), 
+	                             React.createElement("tr", null, 
+	                              React.createElement("td", null, "1"), 
+	                              React.createElement("td", null, "Mother’s Day"), 
+	                              React.createElement("td", null, "27/10/2015"), 
+	                              React.createElement("td", null, "4"), 
+	                              React.createElement("td", null, "$57"), 
+	                              React.createElement("td", null, "$200"), 
+	                              React.createElement("td", null, "on/off"), 
+	                              React.createElement("td", {className: "text-center"}, React.createElement(Button, {sm: true, outlined: true, style: {marginBottom: 5}, bsStyle: "info center-block"}, "Info"), ' ')
+	                            )
+
+	                          )
+	                          ), 
+	                          React.createElement("br", null), 
+	                            React.createElement(Button, {sm: true, style: {margin: 15, borderRadius:3}, id: "button", bsStyle: "danger"}, "delete campagn")
 	                        )
 	                      )
 	                    )
@@ -2692,7 +2949,7 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "zones.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "zones.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
@@ -2704,7 +2961,7 @@ var l20n=_RL20n_.l20n,
 	var MapContainer = __HUA.createClass({displayName: "MapContainer",
 	  render: function() {
 	    return (
-	      React.createElement(PanelContainer, null, 
+	      React.createElement(PanelContainer, {noControls: true}, 
 	        React.createElement(Panel, null, 
 	          React.createElement(PanelBody, {style: {padding: 25}}, 
 	            React.createElement("h4", {className: "text-center", style: {marginTop: 0}}, this.props.name), 
@@ -2743,9 +3000,11 @@ var l20n=_RL20n_.l20n,
 	      }.bind(this)
 	    });
 	  },
+
+	  toggleEditable: function() {
+	    $('.times, .days').editable('toggleDisabled');
+	  },
 	  componentDidMount: function() {
-
-
 	    (function() {
 	      var map = new GMaps({
 	        scrollwheel: false,
@@ -2774,13 +3033,31 @@ var l20n=_RL20n_.l20n,
 	      });
 	    })();
 
-
-
-
+	    // tags
+	    $('.times').editable({
+	      mode: this.state.mode,
+	      inputclass: 'input-large',
+	      select2: {
+	        tags: ['08:00 - 12:00', '12:00 - 18:00', '18:00 - 24:00', '24:00 - 08:00'],
+	        tokenSeparators: [',', ' ']
+	      },
+	      disabled:true
+	    });
+	    $('.days').editable({
+	      mode: this.state.mode,
+	      inputclass: 'input-large',
+	      select2: {
+	        tags: ['monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday','Sunday'],
+	        tokenSeparators: [',', ' ']
+	      },
+	      disabled:true
+	    });
 	  },
+
+
 	  render: function() {
 	    return (
-	      React.createElement(Container, {id: "body"}, 
+	      React.createElement(Container, {id: "body", noControls: true}, 
 	        React.createElement(Grid, null, 
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {sm: 12, collapseRight: true}, 
@@ -2799,6 +3076,7 @@ var l20n=_RL20n_.l20n,
 	                          React.createElement("tr", null, 
 	                            React.createElement("th", null, "Location"), 
 	                            React.createElement("th", null, "Radius"), 
+	                            React.createElement("th", null, "Max Bid"), 
 	                            React.createElement("th", null, "Times"), 
 	                            React.createElement("th", null, "Days"), 
 	                            React.createElement("th", null, "Edit"), 
@@ -2809,20 +3087,47 @@ var l20n=_RL20n_.l20n,
 	                          React.createElement("tr", null, 
 	                            React.createElement("td", null, "Zone 1"), 
 	                            React.createElement("td", null, "100"), 
-	                            React.createElement("td", null, "O.8$"), 
-	                            React.createElement("td", null, "8:00")
+	                            React.createElement("td", null, "0.2$"), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "times", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "12:00 - 18:00")
+	                            ), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "days", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "Monday, Friday")
+	                            ), 
+	                            React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, bsStyle: "green", onClick: this.toggleEditable}, "Edit")), 
+	                            React.createElement("td", null, 
+	                              React.createElement(Checkbox, {value: "option1", name: "checkbox-options"})
+	                            )
 	                          ), 
 	                          React.createElement("tr", null, 
-	                            React.createElement("td", null, "2"), 
-	                            React.createElement("td", null, "Jacob"), 
-	                            React.createElement("td", null, "Thornton"), 
-	                            React.createElement("td", null, "@fat")
+	                            React.createElement("td", null, "Zone 2"), 
+	                            React.createElement("td", null, "50"), 
+	                            React.createElement("td", null, "0.8$"), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "times", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "12:00 - 18:00")
+	                            ), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "days", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "Monday")
+	                            ), 
+	                            React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, bsStyle: "green", onClick: this.toggleEditable}, "Edit")), 
+	                            React.createElement("td", null, 
+	                              React.createElement(Checkbox, {value: "option1", name: "checkbox-options"})
+	                            )
 	                          ), 
 	                          React.createElement("tr", null, 
-	                            React.createElement("td", null, "3"), 
-	                            React.createElement("td", null, "Larry"), 
-	                            React.createElement("td", null, "the Bird"), 
-	                            React.createElement("td", null, "@twitter")
+	                            React.createElement("td", null, "Zone 3"), 
+	                            React.createElement("td", null, "70"), 
+	                            React.createElement("td", null, "0.9$"), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "times", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "12:00 - 18:00")
+	                            ), 
+	                            React.createElement("td", null, 
+	                              React.createElement("a", {href: "#", key: this.state.refresh, className: "days", "data-type": "select2", "data-placement": "left", "data-pk": "1", "data-title": "Enter tags"}, "Tursday, Monday")
+	                            ), 
+	                            React.createElement("td", null, React.createElement(Button, {sm: true, outlined: true, bsStyle: "green", onClick: this.toggleEditable}, "Edit")), 
+	                            React.createElement("td", null, 
+	                              React.createElement(Checkbox, {value: "option1", name: "checkbox-options"})
+	                            )
 	                          )
 	                        )
 	                      )
@@ -2830,13 +3135,757 @@ var l20n=_RL20n_.l20n,
 	                  ), 
 	                  React.createElement(Row, null, 
 	                    React.createElement(Col, {xs: 12}, 
-	                      React.createElement(Link, {to: "/app/zones"}, 
+	                      React.createElement(Link, {to: "/app/time"}, 
 	                        React.createElement(Button, {lg: true, style: {marginBottom: 5}, bsStyle: "success pull-right next"}, "next"), ' '
 	                      )
 	                    )
 	                  )
 	                )
 	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var MorrisJSPage = __HUA.createClass({displayName: "MorrisJSPage",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = MorrisJSPage;
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "time.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "time.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var ReactStyle = __webpack_require__(23);
+
+	var Contact = __HUA.createClass({displayName: "Contact",
+	  getInitialState: function() {
+	    return {
+	      invited: this.props.invited ? true : false,
+	      invitedText: this.props.invited ? 'invited' : 'invite'
+	    };
+	  },
+	  handleClick: function(e) {
+	    e.preventDefault();
+	    e.stopPropagation();
+	    this.setState({
+	      invited: !this.state.invited,
+	      invitedText: (!this.state.invited) ? 'invited': 'invite'
+	    });
+	  },
+	  render: function() {
+	    return (
+	      React.createElement("tr", null, 
+	        React.createElement("td", {style: {verticalAlign: 'middle', borderTop: this.props.noBorder ? 'none': null}}, 
+	          React.createElement("img", {src: '/imgs/avatars/'+this.props.avatar+'.png'})
+	        ), 
+	        React.createElement("td", {style: {verticalAlign: 'middle', borderTop: this.props.noBorder ? 'none': null}}, 
+	          this.props.name
+	        ), 
+	        React.createElement("td", {style: {verticalAlign: 'middle', borderTop: this.props.noBorder ? 'none': null}, className: "text-right"}, 
+	          React.createElement(Button, {onlyOnHover: true, bsStyle: "orange", active: this.state.invited, onClick: this.handleClick}, 
+	            this.state.invitedText
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    (function() {
+	      $(this.refs.datetimepicker1.getDOMNode()).datetimepicker({
+	        widgetParent: '#datetimepicker1-parent',
+	      }).hide();
+
+	    }.bind(this))();
+
+	    ReactStyle.addRules(ReactStyle.create({
+	      '#ex1': {
+	        background: '#000'
+	      }
+	    }));
+
+	    $('#example_3').ionRangeSlider({
+	      min: 20,
+	      max: 5000,
+	      type: 'single',
+	      step: 20,
+	      postfix: ' $',
+	      prettify: true,
+	      hasGrid: true
+	    });
+	  },
+
+
+	 render: function() {
+	   return (
+	     React.createElement(Container, {id: "body"}, 
+	       React.createElement(Grid, null, 
+	         React.createElement(Row, null, 
+	         React.createElement(PanelHeader, {className: "bg-green fg-white"}, 
+	           React.createElement(Grid, null, 
+	             React.createElement(Row, null, 
+	               React.createElement(Col, {xs: 12}, 
+	                 React.createElement("h3", null, "Time")
+	               )
+	             )
+	           )
+	         ), 
+	           React.createElement(Grid, null, 
+	           React.createElement(Col, {sm: 12}, 
+	             React.createElement(PanelContainer, {noControls: true}, 
+	               React.createElement(Panel, {horizontal: true, className: "force-collapse"}, 
+	                 React.createElement(PanelBody, {className: "panel-sm-7", style: {padding: 0}}, 
+	                   React.createElement(Col, {sm: 6, style: {paddingTop: 15}}, 
+	                    React.createElement("h3", null, "max budget"), 
+	                    React.createElement("div", null, 
+	                      React.createElement(Input, {type: "text", id: "example_3", ref: "example_3"})
+	                    )
+	                   ), 
+	                   React.createElement(Col, {sm: 6}, 
+	                     React.createElement(InputGroup, {className: "date", ref: "datetimepicker1"}, 
+	                       React.createElement(Input, {type: "text", className: "form-control"}), 
+	                       React.createElement(InputGroupAddon, null, 
+	                         React.createElement(Icon, {glyph: "icon-fontello-calendar"})
+	                       )
+	                     ), 
+	                     React.createElement("div", null, 
+	                       React.createElement("h3", null, "End Date"), 
+	                       React.createElement("div", {id: "datetimepicker1-parent", 
+	                            className: "datetimepicker-inline"}
+	                       )
+	                     )
+	                   ), 
+	                     React.createElement(Col, {xs: 12}, 
+	                       React.createElement(Link, {to: "/app/campaigns"}, 
+	                         React.createElement(Button, {lg: true, style: {marginBottom: 5}, bsStyle: "success pull-right next"}, "FINISH"), ' '
+	                       )
+	                     )
+	                 )
+	               )
+	             )
+	           )
+
+	           )
+	         )
+	       )
+	     )
+	   );
+	 }
+
+	 });
+
+	var classSet = React.addons.classSet;
+	var Time = __HUA.createClass({displayName: "Time",
+	 mixins: [SidebarMixin],
+	 render: function() {
+	   var classes = classSet({
+	     'dashboard': true,
+	     'container-open': this.state.open
+	   });
+	   return (
+	     React.createElement(Container, {id: "container", className: classes}, 
+	       React.createElement(Sidebar, null), 
+	       React.createElement(Header, null), 
+	       React.createElement(Body, null), 
+	       React.createElement(Footer, null)
+	     )
+	   );
+	 }
+	});
+
+	module.exports = Time;
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @providesModule ReactStyle
+	 */
+
+	var ReactStyleRules = __webpack_require__(24);
+	var ReactStyleRulesManager = __webpack_require__(25);
+
+	/**
+	 * @constructor
+	 */
+	function ReactStyle() {
+	  // Stylesheet has limits in Internet Explorer 8 and 9 so we need to
+	  // shard style rules into several stylesheets.
+	  // 1. A sheet may contain up to 4095 rules.
+	  // 2. A sheet may @import up to 31 sheets
+	  // See http://bit.ly/mARqBv
+	  this._rulesManager = new ReactStyleRulesManager(4095, 31);
+	  this._listenersMap = {};
+	  this._changeEvent = {target: this, type: 'change'};
+	}
+
+	/**
+	 * @param {object} rulesMap
+	 * @return {ReactStyleRules}
+	 */
+	ReactStyle.prototype.create = function(rulesMap) {
+	  return new ReactStyleRules(rulesMap);
+	};
+
+	/**
+	 * @param {ReactStyleRules} styleRules
+	 * @return {ReactStyle}
+	 */
+	ReactStyle.prototype.addRules = function(styleRules) {
+	  if (this._rulesManager.addRules(styleRules)) {
+	    this.dispatchEvent(this._changeEvent);
+	  }
+	  return this;
+	};
+
+	/**
+	 * @return {array<object>}
+	 */
+	ReactStyle.prototype.renderToComponents = function() {
+	  return this._rulesManager.renderToComponents();
+	};
+
+	/**
+	 * Implements W3C {EventTarget} interface
+	 * @param {string} type
+	 * @param {function|EventListener}
+	 */
+	ReactStyle.prototype.addEventListener = function(type, listener) {
+	  var listeners = this._listenersMap[type] || [];
+	  if (listeners.indexOf(listener) < 0) {
+	    listeners.push(listener);
+	  }
+	  this._listenersMap[type] = listeners;
+	};
+
+	/**
+	 * Implements W3C {EventTarget} interface
+	 * @param {string} type
+	 * @param {function|EventListener}
+	 */
+	ReactStyle.prototype.removeEventListener = function(type, listener) {
+	  var listeners = this._listenersMap[type];
+	  if (listeners) {
+	    var idx = listeners.indexOf(listener);
+	    if (idx > -1) {
+	      listener.splice(listener);
+	    }
+	  }
+	};
+
+	/**
+	 * Implements W3C {EventTarget} interface
+	 * @param {object} evt
+	 * @return {boolean}
+	 */
+	ReactStyle.prototype.dispatchEvent = function(evt) {
+	  var type = evt.type;
+	  var listeners = this._listenersMap[type];
+	  if (listeners) {
+	    for (var i = 0, j = listeners.length; i < j; i++) {
+	      var handler = listeners[i];
+	      if (handler.handleEvent) {
+	        handler.handleEvent.call(this, evt);
+	      } else {
+	        handler.call(this, evt);
+	      }
+	    }
+	  }
+	  return true;
+	};
+
+
+	// Export the singleton instance.
+	module.exports = new ReactStyle();
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	/**
+	 * @providesModule ReactStyleRules
+	 */
+
+	'use strict'
+
+	/**
+	 * @type {RegExp}
+	 */
+	var CLASSNAME_SELECTOR_PATTERN = /(\.)([a-zA-Z_\-][a-zA-Z_\-\d]*)/ig;
+
+	/**
+	 * @type {RegExp}
+	 */
+	var HYPHENATE_PATTERN = /([a-z])([A-Z])/g;
+
+	/**
+	 * @type {number}
+	 */
+	var _namespaceID = 0;
+
+	/**
+	 * @param {object} rulesMap
+	 * @constructor
+	 */
+	function ReactStyleRules(rulesMap) {
+	  var namespace = '';
+	  var i = 0;
+	  var rules = [];
+	  var replacer = namespaceReplacer.bind(null, this, namespace);
+	  for (var selectors in rulesMap) {
+	    var ruleText = namespacify(selectors, replacer) + '{';
+	    var declarations = rulesMap[selectors];
+	    for (var property in declarations) {
+	      var value = declarations[property];
+	      ruleText += hyphenate(property) + ':' + value + ';';
+	    }
+	    ruleText += '}';
+	    rules[i] = ruleText.replace("\\", '');
+	    i++;
+	  }
+
+	  this._rules = rules;
+	  this._namespace = namespace;
+	  this.length = rules.length;
+	}
+
+	/**
+	 * @return {string}
+	 */
+	ReactStyleRules.prototype.toString = function() {
+	  return this._rules.join('\n');
+	};
+
+	/**
+	 * @param {string} str
+	 * @param {string} newSubStr
+	 * @return {string}
+	 */
+	function namespacify(str, newSubStr) {
+	  return str.replace(CLASSNAME_SELECTOR_PATTERN, newSubStr);
+	}
+
+	/**
+	 * @param {object} classNameMap
+	 * @param {string} namespace
+	 * @param {string} m1
+	 * @param {string} m2
+	 * @param {string} className
+	 * @return {string}
+	 */
+	function namespaceReplacer(classNameMap, namespace, m1, m2, className) {
+	  var newClassName = namespace + className;
+	  classNameMap[className] = newClassName;
+	  return '.\\' + newClassName;
+	}
+
+	/**
+	 * @param {string} str
+	 * @return {string}
+	 */
+	function hyphenate(str) {
+	  return str.replace(HYPHENATE_PATTERN, '$1-$2').toLowerCase();
+	}
+
+	module.exports = ReactStyleRules;
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @providesModule ReactStyleRulesManager
+	 * @jsx React.DOM
+	 */
+
+	'use strict'
+
+	var ReactStyleRules = __webpack_require__(24);
+
+	/**
+	 * @param {number} maxRulesLengthPerStyle
+	 * @param {number} maxComponentsLength
+	 * @constructor
+	 */
+	function ReactStyleRulesManager(maxRulesLengthPerStyle, maxComponentsLength) {
+	  /**
+	   * @type {array<ReactStyleRules>}
+	   */
+	  this._styleRulesList = [];
+
+	  /**
+	   * @type {number}
+	   */
+	  this._maxRulesLengthPerStyle = maxRulesLengthPerStyle;
+
+	  /**
+	   * @type {number}
+	   */
+	  this._maxComponentsLength = maxComponentsLength;
+	}
+
+	/**
+	 * @param {ReactStyleRules} styleRules
+	 * @return {boolean}
+	 */
+	ReactStyleRulesManager.prototype.addRules = function(styleRules) {
+	  if (!styleRules || styleRules.constructor !== ReactStyleRules) {
+	    throw new Error('Invalid rules');
+	  }
+	  var styleRulesList = this._styleRulesList;
+	  for (var i = 0, j = styleRulesList.lenth; i < j; i++) {
+	    var anotherReactStyleRules = styleRulesList[i];
+	    if (anotherReactStyleRules === styleRules) {
+	      return false;
+	    }
+	  }
+	  styleRulesList.push(styleRules);
+	  return true;
+	};
+
+
+	/**
+	 * @return {array<object>}
+	 */
+	ReactStyleRulesManager.prototype.renderToComponents = function() {
+	  var styleRulesList = this._styleRulesList;
+	  var components = [];
+	  var cssText = '';
+	  var rulesCount = 0;
+	  var index = 0;
+	  var maxRulesLengthPerStyle = this._maxRulesLengthPerStyle;
+	  var maxComponentsLength = this._maxComponentsLength;
+
+	  for (var i = 0, j = styleRulesList.length; i < j; i++) {
+	    var styleRules = styleRulesList[i];
+	    var newRulesCount = rulesCount + styleRules.length;
+	    if (newRulesCount > maxRulesLengthPerStyle) {
+	      if (cssText) {
+	        components.push(
+	          React.createElement("style", {
+	            key: 's' + (index++), 
+	            dangerouslySetInnerHTML: {__html: cssText}}
+	          )
+	        );
+	        cssText = '';
+	        rulesCount = 0;
+	      }
+	    } else {
+	      rulesCount = newRulesCount;
+	      cssText += styleRules.toString();
+	    }
+	  }
+
+	  if (cssText) {
+	    components.push(
+	      React.createElement("style", {
+	        key: 's' + (index++), 
+	        dangerouslySetInnerHTML: {__html: cssText}}
+	      )
+	    );
+	    cssText = null;
+	  }
+
+	  if (components.lenth > maxComponentsLength) {
+	    throw new Error('Too many styles');
+	  }
+
+	  return components;
+	}
+
+	module.exports = ReactStyleRulesManager;
+
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "map.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "map.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var MapContainer = __HUA.createClass({displayName: "MapContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noControls: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding: 5}}, 
+	            React.createElement("h4", {className: "text-center", style: {marginTop: 0}}, this.props.name), 
+	            this.props.children, 
+	            React.createElement("div", {id: this.props.id, style: {height: 600}})
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  geocode: null,
+	  routingmap: null,
+	  getInitialState: function() {
+	    return {
+	      routeslist: []
+	    };
+	  },
+	  geoCode: function(address) {
+	    GMaps.geocode({
+	      address: address,
+	      callback: function(results, status) {
+	        if (status == 'OK') {
+	          var latlng = results[0].geometry.location;
+	          this.geocode.setCenter(latlng.lat(), latlng.lng());
+	          this.geocode.addMarker({
+	            lat: latlng.lat(),
+	            lng: latlng.lng(),
+	            infoWindow: {
+	              content: '<div><strong>Address:</strong> '+results[0].formatted_address+'</div>'
+	            }
+	          });
+	        }
+	      }.bind(this)
+	    });
+	  },
+	  componentDidMount: function() {
+	    (function() {
+	      var map = new GMaps({
+	        scrollwheel: false,
+	        div: '#markers',
+	        zoom: 16,
+	        lat: -12.043333,
+	        lng: -77.028333
+	      });
+
+	      map.addMarker({
+	        lat: -12.043333,
+	        lng: -77.028333,
+	        title: 'Lima',
+	        click: function(e) {
+	          alert('You clicked in this marker');
+	        }
+	      });
+
+	      map.addMarker({
+	        lat: -12.043333,
+	        lng: -77.029333,
+	        title: 'Lima',
+	        infoWindow: {
+	          content: '<p>Some content here!</p>'
+	        }
+	      });
+
+	      map.addMarker({
+	        lat: -12.043833,
+	        lng: -77.029333,
+	        title: 'Lima',
+	        infoWindow: {
+	          content: '<p>Some content here!</p>'
+	        }
+	      });
+
+	      map.addMarker({
+	        lat: -12.043833,
+	        lng: -77.031333,
+	        title: 'Lima',
+	        infoWindow: {
+	          content: '<p>Some content here!</p>'
+	        }
+	      });
+
+	    })();
+
+	  },
+
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(PanelContainer, {noControls: true}, 
+	            React.createElement(Panel, null, 
+	              React.createElement(PanelBody, null, 
+	                React.createElement(Grid, null, 
+	                  React.createElement(Row, null, 
+	                    React.createElement(Col, {sm: 12}, 
+	                      React.createElement(MapContainer, {id: "markers", name: "Live streaming"})
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var MorrisJSPage = __HUA.createClass({displayName: "MorrisJSPage",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = MorrisJSPage;
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(2); var getHotUpdateAPI = __webpack_require__(3); return getHotUpdateAPI(React, "morris.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "morris.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/George/Desktop/TT_rubix-reactjs/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(8);
+	var Sidebar = __webpack_require__(9);
+	var Footer = __webpack_require__(10);
+
+	var ChartContainer = __HUA.createClass({displayName: "ChartContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noOverflow: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding: 25}, className: "text-center"}, 
+	            React.createElement("h4", null, this.props.name), 
+	            React.createElement("div", {id: this.props.id})
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  componentDidMount: function() {
+	    (function() {
+	      // data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type
+	      var tax_data = [
+	           {"period": "2011 Q3", "licensed": 3407, "sorned": 660},
+	           {"period": "2011 Q2", "licensed": 3351, "sorned": 629},
+	           {"period": "2011 Q1", "licensed": 3269, "sorned": 618},
+	           {"period": "2010 Q4", "licensed": 3246, "sorned": 661},
+	           {"period": "2009 Q4", "licensed": 3171, "sorned": 676},
+	           {"period": "2008 Q4", "licensed": 3155, "sorned": 681},
+	           {"period": "2007 Q4", "licensed": 3226, "sorned": 620},
+	           {"period": "2006 Q4", "licensed": 3245, "sorned": null},
+	           {"period": "2005 Q4", "licensed": 3289, "sorned": null}
+	      ];
+	      Morris.Line({
+	        element: 'hero-graph',
+	        data: tax_data,
+	        xkey: 'period',
+	        ykeys: ['licensed', 'sorned'],
+	        labels: ['Licensed', 'Off the road']
+	      });
+
+	      Morris.Donut({
+	        element: 'hero-donut',
+	        data: [
+	          {label: 'Jam', value: 25 },
+	          {label: 'Frosted', value: 40 },
+	          {label: 'Custard', value: 25 },
+	          {label: 'Sugar', value: 10 }
+	        ],
+	        formatter: function (y) { return y + "%" }
+	      });
+
+	      Morris.Area({
+	        element: 'hero-area',
+	        data: [
+	          {period: '2010 Q1', iphone: 2666, ipad: null, itouch: 2647},
+	          {period: '2010 Q2', iphone: 2778, ipad: 2294, itouch: 2441},
+	          {period: '2010 Q3', iphone: 4912, ipad: 1969, itouch: 2501},
+	          {period: '2010 Q4', iphone: 3767, ipad: 3597, itouch: 5689},
+	          {period: '2011 Q1', iphone: 6810, ipad: 1914, itouch: 2293},
+	          {period: '2011 Q2', iphone: 5670, ipad: 4293, itouch: 1881},
+	          {period: '2011 Q3', iphone: 4820, ipad: 3795, itouch: 1588},
+	          {period: '2011 Q4', iphone: 15073, ipad: 5967, itouch: 5175},
+	          {period: '2012 Q1', iphone: 10687, ipad: 4460, itouch: 2028},
+	          {period: '2012 Q2', iphone: 8432, ipad: 5713, itouch: 1791}
+	        ],
+	        xkey: 'period',
+	        ykeys: ['iphone', 'ipad', 'itouch'],
+	        labels: ['iPhone', 'iPad', 'iPod Touch'],
+	        pointSize: 2,
+	        hideHover: 'auto'
+	      });
+
+	      Morris.Bar({
+	        element: 'hero-bar',
+	        data: [
+	          {device: 'iPhone', geekbench: 136},
+	          {device: 'iPhone 3G', geekbench: 137},
+	          {device: 'iPhone 3GS', geekbench: 275},
+	          {device: 'iPhone 4', geekbench: 380},
+	          {device: 'iPhone 4S', geekbench: 655},
+	          {device: 'iPhone 5', geekbench: 1571}
+	        ],
+	        xkey: 'device',
+	        ykeys: ['geekbench'],
+	        labels: ['Geekbench'],
+	        barRatio: 0.4,
+	        xLabelAngle: 35,
+	        hideHover: 'auto'
+	      });
+	    })();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 6, collapseRight: true}, 
+	              React.createElement(ChartContainer, {id: "hero-graph", name: "Jaguar 'E' Type vehicles in the UK"}), 
+	              React.createElement(ChartContainer, {id: "hero-area", name: "Quarterly Apple iOS device unit sales"})
+	            ), 
+	            React.createElement(Col, {sm: 6}, 
+	              React.createElement(ChartContainer, {id: "hero-bar", name: "iPhone CPU benchmarks"}), 
+	              React.createElement(ChartContainer, {id: "hero-donut", name: "Donut Flavours"})
 	            )
 	          )
 	        )

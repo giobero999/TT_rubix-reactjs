@@ -32,8 +32,8 @@ var SocialBanner = React.createClass({
         </div>
         <div className='social-desc'>
           <div>
-            <h1 className='fg-white'>Empire State, NY, USA</h1>
-            <h5 className='fg-white' style={{opacity: 0.8}}>- Aug 20th, 2014</h5>
+            <h1 className='fg-white'>Campaign Name</h1>
+            <h5 className='fg-white' style={{opacity: 0.8}}>Campaign Address</h5>
             <div style={{marginTop: 50}}>
               <div style={{display: 'inline-block'}}>
                 <Button id='likeCount' retainBackground rounded bsStyle='orange75' active={this.state.likeActive} onClick={this.handleLike}>
@@ -46,8 +46,8 @@ var SocialBanner = React.createClass({
         </div>
         <div className='social-avatar'>
           <Img src='/imgs/avatars/avatar.jpg' height='100' width='100' style={{display: 'block', borderRadius: 100, border: '2px solid #fff', margin: 'auto', marginTop: 50}} />
-          <h4 className='fg-white text-center'>Anna Sanchez</h4>
-          <h5 className='fg-white text-center' style={{opacity: 0.8}}>DevOps Engineer, NY</h5>
+          <h4 className='fg-white text-center'>Username</h4>
+          <h5 className='fg-white text-center' style={{opacity: 0.8}}>User Position</h5>
           <hr className='border-black75' style={{borderWidth: 2}}/>
           <div className='text-center'>
             <Button outlined inverse retainBackground active={this.state.followActive} bsStyle='brightblue' onClick={this.handleFollow}>
@@ -75,7 +75,7 @@ var Body = React.createClass({
         <Grid>
           <Row>
             <Col xs={12}>
-              <PanelContainer controlStyles='bg-grayishcyan fg-white'>
+              <PanelContainer noControls>
                 <Panel className='force-collapse'>
                   <PanelHeader className='bg-red fg-white tabs'>
                     <TabContainer>
@@ -100,10 +100,10 @@ var Body = React.createClass({
                       <Row>
                         <Col xs={12}>
                           <TabContent>
-                            <TabPane tab='tpc_hf:home' active>
+                            <TabPane tab='tpc_hf:home' active >
                             <Grid>
                               <Row>
-                                <Col xs={12}>
+                                <Col xs={12} style={{padding:0}}>
                                   <h3>My Campaigns</h3>
                                   <Table striped bordered className='tablesaw' data-mode="swipe" data-sortable data-sortable-switch data-mode-switch>
                                     <thead>
